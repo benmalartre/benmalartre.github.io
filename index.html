@@ -1,1 +1,28 @@
-"Hello World" 
+<!DOCTYPE html>
+<html>
+
+   <body style="background:rgb(100,100,100)">
+		<div class="content" style="background:rgba(0,0,0,0)">
+		<script type="text/javascript" src="scripts/size.js"></script>
+
+		<canvas id="godrays" class="background"></canvas>
+		<script type="text/javascript" src="scripts/manager.js"></script>
+		<script type="text/javascript" src="scripts/mouse.js"></script>
+		<script type="text/javascript" src="scripts/godrays.js"></script>
+		<script type="text/javascript">
+			var m = new Manager();
+			var size = GetWindowSize();
+
+			var godrays = new GodRays(3,256,256);
+			m.AddObject(godrays);
+			
+			
+			setInterval(function(){m.Update(mouseX,mouseY)},1000/60);
+		</script>
+
+		</div>
+
+	</body>
+	
+	
+</html>
