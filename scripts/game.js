@@ -4,9 +4,6 @@ window.webkitRequestAnimationFrame ||
 window.mozRequestAnimationFrame	||
 window.msRequestAnimationFrame;
 
-var game;
-window.addEventListener('load', InitGame, false);
-
 include('scripts/math.js');
 include('scripts/object.js');
 include('scripts/mouse.js');
@@ -34,6 +31,11 @@ Game.prototype.Update = function(){
     }
 }
 
-var game = new Game();
-game.Init();
+var game;
+function InitGame(){
+    game = new Game();
+    game.Init();
+}
+window.addEventListener('load', InitGame, false);
+
 
