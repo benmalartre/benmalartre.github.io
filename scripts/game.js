@@ -39,7 +39,7 @@ class Game {
     
     Update(){
         console.log("GAME UPDATE");
-        for(var i=0;i<this.objects.length;i++){
+        for(var i=0;i<this.objects.length();i++){
             this.objects[i].Update();
         }
     }
