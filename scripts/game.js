@@ -19,6 +19,16 @@ class Game {
         this.player = null;
         this.events = new Array();
     }
+    
+    AddObject(object) {
+        this.objects.push(object);
+    }
+    
+    Update(){
+        for(var i=0;i<this.objects.length;i++){
+            this.objects[i].Update();
+        }
+    }
 
     Init() {
         this.player = new Player(250,25);
@@ -38,15 +48,6 @@ class Game {
         setInterval(function(){this.Update()},1000/60);
     };
 
-    AddObject(object) {
-        this.objects.push(object);
-    }
-    
-    Update(){
-        for(var i=0;i<this.objects.length;i++){
-            this.objects[i].Update();
-        }
-    }
 };
 
 function InitGame(){
