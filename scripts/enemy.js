@@ -3,7 +3,7 @@ var ENEMY_UNIQUE_ID = 0
 
 class Enemy extends Character{
     constructor(x, y){
-        
+        console.log("NEW ENEMY POSITION : "+x+", "+y)
         super(OBJECT_TYPE.ENEMY, x, y, ENEMY_UNIQUE_ID);
         ENEMY_UNIQUE_ID += 1;
         ENEMY_COUNTER += 1;

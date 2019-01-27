@@ -9,7 +9,7 @@ class Character extends Object{
         document.getElementById("GameContainer").appendChild(elem);
 
         super(type, x, y, elem);
-
+        
         this.energy = 100;
         this.damage = 0;
         this.jump_counter = 0;
