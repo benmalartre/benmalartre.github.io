@@ -63,13 +63,12 @@ class Game {
             this.enemies.push(enemy );
             this.objects.push(enemy);
         }
-
-        setInterval(function(){this.Update},1000/60);
     };
 
 };
 
 function InitGame(){
     var game = new Game();
-	game.Init();
+    game.Init();
+    setInterval(function(){game.Update()},1000/60);
 }
