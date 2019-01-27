@@ -70,7 +70,6 @@ class Game_t {
     }
     
     Update(){
-        console.log("GAME UPDATE");
         for(var i=0;i<this.objects.length;i++){
             this.objects[i].Update();
         }
@@ -86,7 +85,7 @@ class Game_t {
         this.events.push(new KeyEvent('ArrowUp', this.player, 'Up'));
         this.events.push(new KeyEvent('ArrowDown', this.player, 'Down'));
 
-        var numEnemies = Math.random() * 12 + 6;
+        var numEnemies = Math.random() * 128 + 6;
         var w = document.width;
         var h = document.height;
         for(var i=0; i<numEnemies;i++)

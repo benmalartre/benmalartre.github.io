@@ -1,5 +1,5 @@
 class Active_t extends Object_t{
-    constructor(type, x, y){
+    constructor(type, x, y, z){
         var elem = document.createElement('div');
         
         elem.style.position = 'absolute';
@@ -8,7 +8,7 @@ class Active_t extends Object_t{
 
         document.getElementById('GameContainer').appendChild(elem);
 
-        super(type, x, y, elem);
+        super(type, x, y, z, elem);
         
         this.energy = 100;
         this.damage = 0;

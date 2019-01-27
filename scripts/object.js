@@ -14,9 +14,10 @@ class Object_t{
         this.z = z;
     }
 
-    SetPosition(x, y){
+    SetPosition(x, y, z){
         this.x = x;
         this.y = y;
+        this.z = z;
     }
     
     Draw(){

@@ -22,16 +22,21 @@ class Enemy_t extends Active_t{
     }
 
     Init(){
-        this.x = Math.random() * document.width;
-        this.y = Math.random() * document.height;
+        this.x = Math.random() * 250;
+        this.y = Math.random() * 250;
         this.z = Math.random() * 100;
      }
 
     Wander(){
         this.x += (Math.random() * 10)-5;
         this.y += (Math.random() * 10)-5;
-        this.elem.style.left = this.x +'px';
-        this.elem.style.top = this.y +'px';
+        //this.elem.style.left = this.x +'px';
+        //this.elem.style.top = this.y +'px';
+        this.elem.style.transform = 'translate('+this.x+'px, '+this.y+'px)';
+
+
+        //this.elem.style.transform = 'translateY('+this.y+')';
+        //this.elem.style.transform = 'rotate('+(Math.random()*10-5)+'deg)';
     }
 
     Update(){
