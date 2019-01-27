@@ -14,7 +14,7 @@ class Player extends Object{
         elem.style.x = Math.random() * 120;
         elem.style.y = Math.random() * 120;
         
-        document.getElementsByTagName('body')[0].appendChild(elem);
+        document.body.appendChild(elem);
 
         super(OBJECT_TYPE.PLAYER, x, y, elem);
         this.energy = 100;
