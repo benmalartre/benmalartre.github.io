@@ -33,13 +33,13 @@ class Game {
         this.events = new Array();
     }
 
-    AddObject(object) {
-        this.objects.push(object);
+    AddObject(obj) {
+        this.objects.push(obj);
     }
     
     Update(){
         console.log("GAME UPDATE");
-        for(var i=0;i<this.objects.length();i++){
+        for(var i=0;i<this.objects.length;i++){
             this.objects[i].Update();
         }
     }
