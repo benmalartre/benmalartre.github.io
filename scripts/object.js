@@ -37,8 +37,8 @@ class Object{
         
         if(this.elem)
         {
+            this.elem.style.left = this.x;
             console.log("MOVE To The TRigh");
-            this.elem.style.top = this.x;
         }
         
     };
