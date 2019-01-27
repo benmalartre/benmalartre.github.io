@@ -10,7 +10,7 @@ class Enemy extends Character{
         this.elem.style.width = Math.random(64)+32+'px';
         this.elem.style.height = Math.random(64)+32+'px';
         this.elem.style.color = "white";
-        this.elem.style.background = "red";
+        this.elem.style.background = GetColorString(GetRandomColor());
         this.elem.innerHTML = "Enemy"+this.id;
         this.elem.style.top = x+'px';
         this.elem.style.left = y+'px';
