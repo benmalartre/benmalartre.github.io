@@ -8,6 +8,8 @@ document.addEventListener('keydown', function(event) {
             console.log('AP');
         case 'KeyDown':
             console.log('DAWN');
+        case 'KeySpace':
+            console.log('JAMP!!!');
         default:
             console.log('DEFALT');
     }
