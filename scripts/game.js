@@ -22,7 +22,7 @@ class Game {
 
     Init() {
         this.player = new Player(0,0);
-        this.space_pressed = new KeyEvent('Space', this.Jump);
+        this.space_pressed = new KeyEvent('Space', this.player.Jump);
         for(var i=0;i<this.objects.length;i++){
             this.objects[i].Init();
         }
@@ -30,11 +30,6 @@ class Game {
         alert( "GAME LOADED ! START NOW");
     };
 
-    Jump(){
-        this.player.Jump();
-    };
-    
-    
     AddObject(object) {
         this.objects.push(object);
     }
