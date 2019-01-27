@@ -3,7 +3,6 @@ var ENEMY_UNIQUE_ID = 0
 
 class Enemy extends Character{
     constructor(x, y){
-        console.log("NEW ENEMY POSITION : "+x+", "+y)
         super(OBJECT_TYPE.ENEMY, x, y, ENEMY_UNIQUE_ID);
         ENEMY_UNIQUE_ID += 1;
         ENEMY_COUNTER += 1;
@@ -28,18 +27,14 @@ class Enemy extends Character{
      }
 
     Wander(){
-        //this.jump_counter;
-        console.log("ENEMEY Jump : ");
-        console.log(this.jump_counter);
-        console.log("ENEMY POSITION : "+this.x+", "+this.y);
-
-        this.x = Math.random() * 120;
-        this.y = Math.random() * 120;
+        this.x += (Math.random() * 10)-5;
+        this.y = (Math.random() * 10)-5;
         this.elem.style.left = this.x +'px';
         this.elem.style.top = this.y +'px';
     }
 
     Update(){
+        this.Wander();
         this.elem.style.background = GetColorString(GetRandomColor());
     }
 }
