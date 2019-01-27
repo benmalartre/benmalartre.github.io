@@ -7,5 +7,6 @@ function Player(x, y){
 
 Player.prototype.jump = function(){
     this.jump_counter += 1;
-    console.log("Jump : "+this.jump_counter);
+    console.log("Jump : ");
+    console.log(this.jump_counter);
 }
