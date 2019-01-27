@@ -4,7 +4,39 @@ window.webkitRequestAnimationFrame ||
 window.mozRequestAnimationFrame	||
 window.msRequestAnimationFrame;
 
+
+
+var elem = document.documentElement;
+
+// View in fullscreen
+function OpenFullscreen() {
+    console.log("OPEn FULL SCRREEN CALLZD..3");
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.mozRequestFullScreen) { // Firefox
+    elem.mozRequestFullScreen();
+  } else if (elem.webkitRequestFullscreen) { // Chrome, Safari and Opera 
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { // IE
+    elem.msRequestFullscreen();
+  }
+}
+
+// Close fullscreen
+function CloseFullscreen() {
+  if (document.exitFullscreen) {
+    document.exitFullscreen();
+  } else if (document.mozCancelFullScreen) { // Firefox 
+    document.mozCancelFullScreen();
+  } else if (document.webkitExitFullscreen) { // Chrome, Safari and Opera
+    document.webkitExitFullscreen();
+  } else if (document.msExitFullscreen) { // IE/Edge
+    document.msExitFullscreen();
+  }
+}
+
 window.addEventListener('load', InitGame, false);
+window.addEventListener('onclick', OpenFullscreen, false);
 
 function loadCharacters(){
     include('scripts/player.js');
@@ -18,34 +50,6 @@ include('scripts/keyboard.js');
 include('scripts/character.js', loadCharacters);
 
 console.log(NUM_LOADING);
-
-var elem = document.documentElement;
-
-/* View in fullscreen */
-function openFullscreen() {
-  if (elem.requestFullscreen) {
-    elem.requestFullscreen();
-  } else if (elem.mozRequestFullScreen) { /* Firefox */
-    elem.mozRequestFullScreen();
-  } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
-    elem.webkitRequestFullscreen();
-  } else if (elem.msRequestFullscreen) { /* IE/Edge */
-    elem.msRequestFullscreen();
-  }
-}
-
-/* Close fullscreen */
-function closeFullscreen() {
-  if (document.exitFullscreen) {
-    document.exitFullscreen();
-  } else if (document.mozCancelFullScreen) { /* Firefox */
-    document.mozCancelFullScreen();
-  } else if (document.webkitExitFullscreen) { /* Chrome, Safari and Opera */
-    document.webkitExitFullscreen();
-  } else if (document.msExitFullscreen) { /* IE/Edge */
-    document.msExitFullscreen();
-  }
-}
 
 class Game {
     constructor(){
@@ -102,6 +106,6 @@ function UpdateGame(){
 function InitGame(){
     game = new Game();
     game.Init();
-    openFullscreen();
+    
     setInterval(UpdateGame,1000/60);
 }
