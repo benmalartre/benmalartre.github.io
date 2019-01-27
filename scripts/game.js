@@ -27,6 +27,8 @@ class Game {
         this.view.style.position = 'relative';
         this.view.style = 'orange';
 
+        this.view.requestFullscreen();
+
         this.objects = new Array();
         this.player = null;
         this.enemies = new Array();
