@@ -12,11 +12,6 @@ class Object{
         this.y = y;
     }
 
-    Init(){
-        this.x = 0;
-        this.y = 0;
-    }
-    
     SetPosition(x, y){
         this.x = x;
         this.y = y;
@@ -49,8 +44,8 @@ class Object{
     Update(){
         if(this.elem)
         {
-            this.elem.style.x = this.x;
-            this.elem.style.y = this.y;
+            this.elem.style.left = this.x;
+            this.elem.style.top = this.y;
         }
     }
 };
