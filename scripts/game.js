@@ -22,6 +22,7 @@ class Game {
 
     Init() {
         this.player = new Player(250,25);
+        this.objects.push(this.player);
 
         this.events.push(new KeyEvent('Space', this.player, "Jump"));
         this.events.push(new KeyEvent('ArrowLeft', this.player, "Left"));
@@ -32,8 +33,9 @@ class Game {
         for(var i=0;i<this.objects.length;i++){
             this.objects[i].Init();
         }
-    
+
         alert( "GAME LOADED ! START NOW");
+        setInterval(function(){this.Update()},1000/60);
     };
 
     AddObject(object) {
@@ -42,7 +44,7 @@ class Game {
     
     Update(){
         for(var i=0;i<this.objects.length;i++){
-            this.objects[i].Update(m_x,m_y);
+            this.objects[i].Update();
         }
     }
 };

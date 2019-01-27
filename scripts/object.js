@@ -23,10 +23,6 @@ class Object{
     Left() {
         console.log("Left : "+this.x);
         this.x -= 1;
-        if(this.elem){
-            this.elem.style.left = this.x+"px";
-        }
-
     };
     
     Right() {
@@ -44,5 +40,13 @@ class Object{
         console.log("Down : "+this.y);
         this.y -= 1;
     };
+
+    Update(){
+        if(this.elem)
+        {
+            this.elem.style.x = this.x;
+            this.elem.style.y = this.y;
+        }
+    }
 };
 
