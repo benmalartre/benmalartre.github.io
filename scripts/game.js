@@ -21,6 +21,7 @@ class Game {
         this.view.style.height = document.height;
         this.view.style.position = 'relative';
         this.view.style = 'orange';
+        document.body.appendChild(this.view);
         this.objects = new Array();
         this.player = null;
         this.events = new Array();
