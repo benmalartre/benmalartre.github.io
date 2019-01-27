@@ -11,6 +11,7 @@ include('scripts/mouse.js');
 include('scripts/keyboard.js');
 include('scripts/character.js');
 include('scripts/player.js');
+include('scripts/enemy.js');
 
 console.log(NUM_LOADING);
 
