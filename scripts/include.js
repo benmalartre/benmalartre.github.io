@@ -1,14 +1,6 @@
 var TIMESTAMP = (new Date().getTime());
 var NUM_LOADING = 0
 
-function UrlExists(url)
-{
-    var http = new XMLHttpRequest();
-    http.open('HEAD', url, false);
-    http.send();
-    return http.status!=404;
-}
-
 function fetchStatus( address ) {
     var client = new XMLHttpRequest();
     client.onload = function() {
@@ -28,59 +20,27 @@ function returnStatus( status ) {
     }
 }
 
-var includeWithCallback = function(url, callback){
+var include = function(url, callback){
  
-    /* check url exists */
-    if(!UrlExists(url)) alert(url +' does NOT exists!!');
-    else
-    {
-        /* on crée une balise<script type="text/javascript"></script> */
-        var script = document.createElement('script');
-        script.type = 'text/javascript';
-    
-        /* On fait pointer la balise sur le script qu'on veut charger
-        avec en prime un timestamp pour éviter les problèmes de cache
-        */
-    
-        script.src = url + '?' + (new Date().getTime());
-    
-        /* On dit d'exécuter cette fonction une fois que le script est chargé */
-        if (callback) {
-            script.onreadystatechange = callback;
-            script.onload = script.onreadystatechange;
-        }
-    
-        /* On rajoute la balise script dans le head, ce qui démarre le téléchargement */
-        document.getElementsByTagName('head')[0].appendChild(script);
-    }
-    
-}
+    /* on crée une balise<script type="text/javascript"></script> */
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
 
-var include = function(url){
- 
-    /* check url exists */
-    if(!UrlExists(url)) alert(url +' does NOT exists!!');
-    else
-    {
-        /* on crée une balise<script type="text/javascript"></script> */
-        var script = document.createElement('script');
-        script.type = 'text/javascript';
-    
-        /* On fait pointer la balise sur le script qu'on veut charger
-        avec en prime un timestamp pour éviter les problèmes de cache
-        */
-        script.src = url + '?' + TIMESTAMP;
-        NUM_LOADING += 1;
+    /* On fait pointer la balise sur le script qu'on veut charger
+    avec en prime un timestamp pour éviter les problèmes de cache
+    */
+    script.src = url + '?' + TIMESTAMP;
+    NUM_LOADING += 1;
 
-        script.onreadystatechange = function decrementLoading(){
-            console.log("DECREMENT LOADING SCRIPTS : "+ NUM_LOADING)
-            NUM_LOADING -= 1;
-        };
-        script.onload = script.onreadystatechange;
+    script.onreadystatechange = function decrementLoading(callback){
+        console.log("DECREMENT LOADING SCRIPTS : "+ NUM_LOADING)
+        if(callback) script.onload = callback;
+        NUM_LOADING -= 1;
+    };
+    script.onload = script.onreadystatechange;
 
-    
-        /* On rajoute la balise script dans le head, ce qui démarre le téléchargement */
-        document.getElementsByTagName('head')[0].appendChild(script);
-    }
+    /* On rajoute la balise script dans le head, ce qui démarre le téléchargement */
+    document.getElementsByTagName('head')[0].appendChild(script);
+
     
 }
