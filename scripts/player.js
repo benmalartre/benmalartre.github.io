@@ -6,7 +6,7 @@ class Player extends Object{
         elem.style.background = "red";
         elem.style.color = "white";
         elem.innerHTML = "Hello";
-        elem.style.position = "Absolute";
+        elem.style.position = "absolute";
         elem.style.padding = '10px';
         elem.style.background = '#00ff00';
         elem.style.display = 'block';
