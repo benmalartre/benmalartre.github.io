@@ -5,13 +5,16 @@ window.mozRequestAnimationFrame	||
 window.msRequestAnimationFrame;
 
 window.addEventListener('load', InitGame, false);
+
+function loadCharacters(){
+    include('scripts/player.js');
+    include('scripts/enemy.js');
+}
 include('scripts/math.js');
 include('scripts/object.js');
 include('scripts/mouse.js');
 include('scripts/keyboard.js');
-include('scripts/character.js');
-include('scripts/player.js');
-include('scripts/enemy.js');
+include('scripts/character.js', loadCharacters);
 
 console.log(NUM_LOADING);
 
