@@ -19,6 +19,34 @@ include('scripts/character.js', loadCharacters);
 
 console.log(NUM_LOADING);
 
+var elem = document.documentElement;
+
+/* View in fullscreen */
+function openFullscreen() {
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.mozRequestFullScreen) { /* Firefox */
+    elem.mozRequestFullScreen();
+  } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE/Edge */
+    elem.msRequestFullscreen();
+  }
+}
+
+/* Close fullscreen */
+function closeFullscreen() {
+  if (document.exitFullscreen) {
+    document.exitFullscreen();
+  } else if (document.mozCancelFullScreen) { /* Firefox */
+    document.mozCancelFullScreen();
+  } else if (document.webkitExitFullscreen) { /* Chrome, Safari and Opera */
+    document.webkitExitFullscreen();
+  } else if (document.msExitFullscreen) { /* IE/Edge */
+    document.msExitFullscreen();
+  }
+}
+
 class Game {
     constructor(){
         this.view = document.getElementById('GameContainer');
@@ -26,8 +54,6 @@ class Game {
         this.view.style.height = document.height;
         this.view.style.position = 'relative';
         this.view.style = 'orange';
-
-        this.view.requestFullscreen();
 
         this.objects = new Array();
         this.player = null;
@@ -76,5 +102,6 @@ function UpdateGame(){
 function InitGame(){
     game = new Game();
     game.Init();
+    openFullscreen();
     setInterval(UpdateGame,1000/60);
 }
