@@ -21,11 +21,21 @@ class Object{
     }
 
     Left() {
+        if(this.elem)
+        {
+            document.getElementById("myDIV").style.transform = "translate(1)";
+            this.elem.transform
+        }
         console.log("Left : "+this.x);
         this.x -= 1;
     };
     
     Right() {
+        if(this.elem)
+        {
+            document.getElementById("myDIV").style.transform = "translate(1)";
+            this.elem.transform
+        }
         console.log("Right : "+this.x);
         this.x += 1;
     };

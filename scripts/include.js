@@ -26,13 +26,12 @@ var loaded = function(){
 
 var include = function(url, callback){
  
-    /* on crée une balise<script type="text/javascript"></script> */
+    // on crée une balise<script type="text/javascript"></script>
     var script = document.createElement('script');
     script.type = 'text/javascript';
 
-    /* On fait pointer la balise sur le script qu'on veut charger
-    avec en prime un timestamp pour éviter les problèmes de cache
-    */
+    // On fait pointer la balise sur le script qu'on veut charger
+    // avec en prime un timestamp pour éviter les problèmes de cache
     script.src = url + '?' + TIMESTAMP;
 
     if(callback){
@@ -46,7 +45,7 @@ var include = function(url, callback){
     }
     script.onload = script.onreadystatechange;
 
-    /* On rajoute la balise script dans le head, ce qui démarre le téléchargement */
+    // On rajoute la balise script dans le head, ce qui démarre le téléchargement
     document.getElementsByTagName('head')[0].appendChild(script);
 
     
