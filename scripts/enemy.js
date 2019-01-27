@@ -28,7 +28,7 @@ class Enemy extends Character{
 
     Wander(){
         this.x += (Math.random() * 10)-5;
-        this.y = (Math.random() * 10)-5;
+        this.y += (Math.random() * 10)-5;
         this.elem.style.left = this.x +'px';
         this.elem.style.top = this.y +'px';
     }

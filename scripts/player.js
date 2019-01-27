@@ -3,9 +3,9 @@ class Player extends Character{
         super(OBJECT_TYPE.PLAYER, x, y, 0);
         this.elem.style.width = '64px';
         this.elem.style.height = '64px';
-        this.elem.style.color = "white";
-        this.elem.style.background = "green";
-        this.elem.innerHTML = "HERO";
+        this.elem.style.color = 'white';
+        this.elem.style.background = 'green';
+        this.elem.innerHTML = 'HERO';
         this.elem.style.top = x+'px';
         this.elem.style.left = y+'px';
 
@@ -20,19 +20,14 @@ class Player extends Character{
      }
 
     Jump(){
-        //this.jump_counter;
-        console.log("Jump : ");
-        console.log(this.jump_counter);
-        console.log("POSITION : "+this.x+", "+this.y);
-
         this.x = Math.random() * 120;
         this.y = Math.random() * 120;
-       this.elem.style.left = this.x +'px';
-       this.elem.style.top = this.y +'px';
+        this.elem.style.left = this.x +'px';
+        this.elem.style.top = this.y +'px';
     }
 
     Update(){
-        console.log("PLAYER : UPDATE...");
+        
     }
     
     
