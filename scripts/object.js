@@ -4,13 +4,14 @@ var OBJECT_TYPE = {
     BACKGROUND: 3
   };
 
-class Object{
-    constructor(cls, x, y, elem, id){
+class Object_t{
+    constructor(cls, x, y, z, elem, id){
         this.id = id
         this.cls = cls;
         this.elem = elem;
         this.x = x;
         this.y = y;
+        this.z = z;
     }
 
     SetPosition(x, y){
@@ -27,21 +28,26 @@ class Object{
     };
     
     Right() {
-        console.log("Right : "+this.x);
         this.x += 1;
         if(this.elem)this.elem.style.left = this.x+'px';
     };
     
     Up() {
-        console.log("Up : "+this.y);
         this.y += 1;
         if(this.elem)this.elem.style.top = this.x+'py';
     };
     
     Down() {
-        console.log("Down : "+this.y);
         this.y -= 1;
         if(this.elem)this.elem.style.top = this.x+'py';
+    };
+
+    Forward() {
+        this.z += 1;
+    };
+    
+    Backward() {
+        this.z -= 1;
     };
 
     Update(){

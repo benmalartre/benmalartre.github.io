@@ -38,7 +38,7 @@ function CloseFullscreen() {
 window.addEventListener('load', InitGame, false);
 window.addEventListener('onclick', OpenFullscreen, false);
 
-function loadCharacters(){
+function loadActives(){
     include('scripts/player.js');
     include('scripts/enemy.js');
 }
@@ -47,11 +47,11 @@ include('scripts/color.js');
 include('scripts/object.js');
 include('scripts/mouse.js');
 include('scripts/keyboard.js');
-include('scripts/character.js', loadCharacters);
+include('scripts/active.js', loadActives);
 
 console.log(NUM_LOADING);
 
-class Game {
+class Game_t {
     constructor(){
         this.view = document.getElementById('GameContainer');
         this.view.style.width = document.width;
@@ -77,7 +77,7 @@ class Game {
     }
 
     Init() {
-        this.player = new Player(250,25);
+        this.player = new Player_t(250,25,0);
         this.objects.push(this.player);
 
         this.events.push(new KeyEvent('Space', this.player, 'Jump'));
@@ -91,7 +91,7 @@ class Game {
         var h = document.height;
         for(var i=0; i<numEnemies;i++)
         {
-            var enemy = new Enemy(Math.random()*1000, Math.random()*2000);
+            var enemy = new Enemy_t(Math.random()*1000, Math.random()*2000, Math.random()*2000);
             this.enemies.push(enemy );
             this.objects.push(enemy);
         }
@@ -104,7 +104,7 @@ function UpdateGame(){
     game.Update();
 }
 function InitGame(){
-    game = new Game();
+    game = new Game_t();
     game.Init();
     
     setInterval(UpdateGame,1000/60);

@@ -1,6 +1,6 @@
-class Player extends Character{
-    constructor(x, y){
-        super(OBJECT_TYPE.PLAYER, x, y, 0);
+class Player_t extends Active_t{
+    constructor(x, y, z){
+        super(OBJECT_TYPE.PLAYER, x, y, z, 0);
         this.elem.style.width = '64px';
         this.elem.style.height = '64px';
         this.elem.style.color = 'white';
