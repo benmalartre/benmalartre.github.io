@@ -4,7 +4,7 @@ window.webkitRequestAnimationFrame ||
 window.mozRequestAnimationFrame	||
 window.msRequestAnimationFrame;
 
-
+window.addEventListener('load', InitGame, false);
 include('scripts/math.js');
 include('scripts/object.js');
 include('scripts/mouse.js');
@@ -12,16 +12,6 @@ include('scripts/keyboard.js');
 include('scripts/player.js');
 
 console.log(NUM_LOADING);
-
-var LOADED = false;
-var COUNTER = 0;
-while(!LOADED)
-{
-    setTimeout(function(){
-        COUNTER += 1;
-        if(loaded() || COUNTER > 100) LOADED = True;
-    }, 100); 
-};
 
 function Game() {
     this.objects = new Array();
@@ -50,4 +40,7 @@ Game.prototype.Update = function(){
     }
 }
 
-
+function InitGame(){
+    var game = new Game();
+	game.Init();
+}
