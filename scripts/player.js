@@ -31,6 +31,9 @@ class Player extends Character{
        this.elem.style.top = this.y +'px';
     }
 
+    Update(){
+        console.log("PLAYER : UPDATE...");
+    }
     
     
 }

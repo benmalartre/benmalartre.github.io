@@ -38,15 +38,14 @@ class Game {
     }
     
     Update(){
-        /*
         for(var i=0;i<this.objects.length;i++){
             this.objects[i].Update();
-        }*/
+        }
     }
 
     Init() {
         this.player = new Player(250,25);
-        //this.objects.push(this.player);
+        this.objects.push(this.player);
 
         this.events.push(new KeyEvent('Space', this.player, 'Jump'));
         this.events.push(new KeyEvent('ArrowLeft', this.player, 'Left'));
@@ -58,14 +57,14 @@ class Game {
         var w = document.width;
         var h = document.height;
         for(var i=0; i<numEnemies;i++)
-            this.enemies.push( new Enemy(Math.random()*1000, Math.random()*2000));
-        /*
-        for(var i=0;i<this.objects.length;i++){
-            this.objects[i].Init();
+        {
+            var enemy = new Enemy(Math.random()*1000, Math.random()*2000);
+            this.enemies.push(enemy );
+            this.objects.push(enemy);
         }
-        */
+
         alert( 'GAME LOADED ! START NOW');
-        //setInterval(function(){this.Update},1000/60);
+        setInterval(function(){this.Update},1000/60);
     };
 
 };

@@ -38,5 +38,9 @@ class Enemy extends Character{
         this.elem.style.left = this.x +'px';
         this.elem.style.top = this.y +'px';
     }
+
+    Update(){
+        this.elem.style.background = GetColorString(GetRandomColor());
+    }
 }
 
