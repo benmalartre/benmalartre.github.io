@@ -38,6 +38,7 @@ class Game {
     }
     
     Update(){
+        console.log("GAME UPDATE");
         for(var i=0;i<this.objects.length;i++){
             this.objects[i].Update();
         }
@@ -63,7 +64,6 @@ class Game {
             this.objects.push(enemy);
         }
 
-        alert( 'GAME LOADED ! START NOW');
         setInterval(function(){this.Update},1000/60);
     };
 
