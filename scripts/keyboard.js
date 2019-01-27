@@ -11,7 +11,7 @@ document.addEventListener('keydown', function(event) {
         case 'KeySpace':
             console.log('JAMP!!!');
         default:
-            console.log('DEFALT');
+            console.log('DEFALT ---> '+ event.code);
     }
     /*
     if (event.code == 'KeyZ' && (event.ctrlKey || event.metaKey)) {
