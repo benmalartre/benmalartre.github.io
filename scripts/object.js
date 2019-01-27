@@ -5,7 +5,8 @@ var OBJECT_TYPE = {
   };
 
 class Object{
-    constructor(cls, x, y, elem){
+    constructor(cls, x, y, elem, id){
+        this.id = id
         this.cls = cls;
         this.elem = elem;
         this.x = x;
