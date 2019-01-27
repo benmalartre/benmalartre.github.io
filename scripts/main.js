@@ -1,3 +1,3 @@
-include('object.js', function() {
-    alert( "IT's WORKIN...");
+include('scripts/object.js', function() {
+    alert( "IT's WORKIN :)...");
 });
