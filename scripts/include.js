@@ -1,4 +1,5 @@
 var TIMESTAMP = (new Date().getTime());
+var NUM_LOADING = 0
 
 function UrlExists(url)
 {
@@ -68,9 +69,15 @@ var include = function(url){
         /* On fait pointer la balise sur le script qu'on veut charger
         avec en prime un timestamp pour éviter les problèmes de cache
         */
-    
         script.src = url + '?' + TIMESTAMP;
-        script.defer = 1;
+        NUM_LOADING += 1;
+
+        script.onreadystatechange = function decrementLoading(){
+            console.log("DECREMENT LOADING SCRIPTS : "+ NUM_LOADING)
+            NUM_LOADING -= 1;
+        };
+        script.onload = script.onreadystatechange;
+
     
         /* On rajoute la balise script dans le head, ce qui démarre le téléchargement */
         document.getElementsByTagName('head')[0].appendChild(script);

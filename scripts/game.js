@@ -12,6 +12,8 @@ include('scripts/object.js');
 include('scripts/mouse.js');
 include('scripts/keyboard.js');
 
+console.log(NUM_LOADING);
+
 function Game(){
     this.objects = new Array();
 
