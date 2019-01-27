@@ -9,6 +9,7 @@ include('scripts/math.js');
 include('scripts/object.js');
 include('scripts/mouse.js');
 include('scripts/keyboard.js');
+include('scripts/character.js');
 include('scripts/player.js');
 
 console.log(NUM_LOADING);
@@ -23,6 +24,7 @@ class Game {
 
         this.objects = new Array();
         this.player = null;
+        this.enemies = new Array();
         this.events = new Array();
     }
 
@@ -47,6 +49,9 @@ class Game {
         this.events.push(new KeyEvent('ArrowUp', this.player, 'Up'));
         this.events.push(new KeyEvent('ArrowDown', this.player, 'Down'));
 
+        var numEnemies = Math.random() * 12 + 6;
+        for(var i=0; i<numEnemies;i++)
+            this.enemies.push( new Enemy())
         /*
         for(var i=0;i<this.objects.length;i++){
             this.objects[i].Init();

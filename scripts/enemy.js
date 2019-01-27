@@ -1,6 +1,7 @@
-class Player extends Character{
+class Enemy extends Character{
     constructor(x, y){
-        super(OBJECT_TYPE.PLAYER, x, y);
+        
+        super(OBJECT_TYPE.ENEMY, x, y);
         this.energy = 100;
         this.damage = 0;
         this.jump_counter = 0;
@@ -13,14 +14,14 @@ class Player extends Character{
 
     Jump(){
         //this.jump_counter;
-        console.log("Jump : ");
+        console.log("ENEMEY Jump : ");
         console.log(this.jump_counter);
-        console.log("POSITION : "+this.x+", "+this.y);
+        console.log("ENEMY POSITION : "+this.x+", "+this.y);
 
         this.x = Math.random() * 120;
         this.y = Math.random() * 120;
-       this.elem.style.left = this.x +'px';
-       this.elem.style.top = this.y +'px';
+        this.elem.style.left = this.x +'px';
+        this.elem.style.top = this.y +'px';
     }
 
     

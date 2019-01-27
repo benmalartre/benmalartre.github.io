@@ -1,5 +1,5 @@
 class Character extends Object{
-    constructor(x, y, type){
+    constructor(type, x, y){
         var elem = document.createElement('div');
         elem.style.width = "100px";
         elem.style.height = "100px";
@@ -16,7 +16,8 @@ class Character extends Object{
         
         document.getElementById("GameContainer").appendChild(elem);
 
-        super(OBJECT_TYPE.PLAYER, x, y, elem);
+        super(type, x, y, elem);
+
         this.energy = 100;
         this.damage = 0;
         this.jump_counter = 0;
@@ -29,9 +30,9 @@ class Character extends Object{
 
     Jump(){
         //this.jump_counter;
-        console.log("Jump : ");
+        console.log("PLAYER Jump : ");
         console.log(this.jump_counter);
-        console.log("POSITION : "+this.x+", "+this.y);
+        console.log("PLAYER POSITION : "+this.x+", "+this.y);
 
         this.x = Math.random() * 120;
         this.y = Math.random() * 120;
