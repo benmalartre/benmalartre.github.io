@@ -20,6 +20,11 @@ class Player extends Object{
         this.jump_counter = 0;
     }
 
+    Init(){
+        this.x = Math.random() * document.width;
+        this.y = Math.random() * document.height;
+     }
+
     Jump(){
         //this.jump_counter;
         console.log("Jump : ");
