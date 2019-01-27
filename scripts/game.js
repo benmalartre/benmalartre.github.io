@@ -12,7 +12,7 @@ include('scripts/keyboard.js');
 include('scripts/player.js');
 
 console.log(NUM_LOADING);
-
+/*
 var LOADED = false;
 while(!LOADED)
 {
@@ -20,7 +20,7 @@ while(!LOADED)
         if(loaded()) LOADED = True;
     }, 250); 
 };
-
+*/
 function Game() {
     this.objects = new Array();
     this.player = null;
