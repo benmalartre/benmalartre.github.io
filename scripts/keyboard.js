@@ -9,7 +9,8 @@ function KeyEvent(key, object, callback){
 document.addEventListener('keydown', function(event) {
     if(KEY_EVENTS_MAP.has(event.code )) 
     {
-        KEY_EVENTS_MAP.get(event.code).object[callback]();
+        var keyEvent = KEY_EVENTS_MAP.get(event.code);
+        keyEvent.object[keyEvent.callback]();
     }
 /*
     switch(event.code){
