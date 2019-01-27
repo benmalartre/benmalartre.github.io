@@ -1,14 +1,14 @@
 document.addEventListener('keydown', function(event) {
     switch(event.code){
-        case 'KeyLeft':
+        case 'ArrowLeft':
             console.log('LAFT');
-        case 'KeyRight':
+        case 'ArrowRight':
             console.log('RAGT');
-        case 'KeyUp':
+        case 'ArrowUp':
             console.log('AP');
-        case 'KeyDown':
+        case 'ArrowDown':
             console.log('DAWN');
-        case 'KeySpace':
+        case 'Space':
             console.log('JAMP!!!');
         default:
             console.log('DEFALT ---> '+ event.code);
