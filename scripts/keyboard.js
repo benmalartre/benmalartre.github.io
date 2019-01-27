@@ -1,6 +1,7 @@
 var KEY_EVENTS_MAP = new Map();
 
-function KeyEvent(key, callback){
+function KeyEvent(key, object, callback){
+    this.object = object;
     this.callback = callback;
     KEY_EVENTS_MAP.set(key, this);
 };
@@ -8,7 +9,7 @@ function KeyEvent(key, callback){
 document.addEventListener('keydown', function(event) {
     if(KEY_EVENTS_MAP.has(event.code )) 
     {
-        KEY_EVENTS_MAP.get(event.code).callback();
+        KEY_EVENTS_MAP.get(event.code).object[callback]();
     }
 /*
     switch(event.code){

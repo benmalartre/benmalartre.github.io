@@ -23,7 +23,7 @@ class Game {
     Init() {
         this.player = new Player(250,25);
         console.log("CREATE PLAYER AT POS : "+this.player.x+", "+this.player.y);
-        this.space_pressed = new KeyEvent('Space', this.player.Jump);
+        this.space_pressed = new KeyEvent('Space', this.player, "Jump");
         for(var i=0;i<this.objects.length;i++){
             this.objects[i].Init();
         }
