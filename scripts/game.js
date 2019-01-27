@@ -14,11 +14,12 @@ console.log(NUM_LOADING);
 
 function Game() {
     this.objects = new Array();
-    this.player = new Player(0,0);
-    this.space_pressed = new KeyEvent('Space', callback)
+    this.player = null;
+    this.space_pressed = new KeyEvent('Space', player.j)
 };
 
 Game.prototype.Init = function() {
+    this.player = new Player(0,0);
     for(var i=0;i<this.objects.length;i++){
         this.objects[i].Init();
     }
