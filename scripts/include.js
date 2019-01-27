@@ -21,7 +21,6 @@ function returnStatus( status ) {
 }
 
 var loaded = function(){
-    console.log("NUM LOADING : "+NUM_LOADING);
     return (NUM_LOADING == 0);
 }
 
@@ -42,7 +41,6 @@ var include = function(url, callback){
     else{
         NUM_LOADING += 1;
         script.onreadystatechange = function decrementLoading(callback){
-            console.log("DECREMENT LOADING SCRIPTS : "+ NUM_LOADING)
             NUM_LOADING -= 1;
         };
     }
