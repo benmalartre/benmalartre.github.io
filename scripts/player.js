@@ -35,8 +35,8 @@ class Player extends Object{
 
         this.x = Math.random() * 120;
         this.y = Math.random() * 120;
-       this.elem.style.top = this.y;
-       this.elem.style.left = this.x;
+       this.elem.style.x = this.y +'px';
+       this.elem.style.y = this.x +'px';
     }
 
     
