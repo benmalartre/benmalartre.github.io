@@ -19,7 +19,7 @@ class Game {
         this.player = null;
         this.events = new Array();
     }
-    
+
     AddObject(object) {
         this.objects.push(object);
     }
@@ -45,7 +45,7 @@ class Game {
         }
 
         alert( "GAME LOADED ! START NOW");
-        setInterval(function(){this.Update()},1000/60);
+        setInterval(function(){this.Update},1000/60);
     };
 
 };
