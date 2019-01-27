@@ -15,6 +15,12 @@ console.log(NUM_LOADING);
 
 class Game {
     constructor(){
+        this.view = document.createElement('div');
+        this.id = 'GameContainer';
+        this.view.style.width = document.width;
+        this.view.style.height = document.height;
+        this.view.style.position = 'relative';
+        this.view.style = 'orange';
         this.objects = new Array();
         this.player = null;
         this.events = new Array();
@@ -35,18 +41,18 @@ class Game {
         this.player = new Player(250,25);
         //this.objects.push(this.player);
 
-        this.events.push(new KeyEvent('Space', this.player, "Jump"));
-        this.events.push(new KeyEvent('ArrowLeft', this.player, "Left"));
-        this.events.push(new KeyEvent('ArrowRight', this.player, "Right"));
-        this.events.push(new KeyEvent('ArrowUp', this.player, "Up"));
-        this.events.push(new KeyEvent('ArrowDown', this.player, "Down"));
+        this.events.push(new KeyEvent('Space', this.player, 'Jump'));
+        this.events.push(new KeyEvent('ArrowLeft', this.player, 'Left'));
+        this.events.push(new KeyEvent('ArrowRight', this.player, 'Right'));
+        this.events.push(new KeyEvent('ArrowUp', this.player, 'Up'));
+        this.events.push(new KeyEvent('ArrowDown', this.player, 'Down'));
 
         /*
         for(var i=0;i<this.objects.length;i++){
             this.objects[i].Init();
         }
         */
-        alert( "GAME LOADED ! START NOW");
+        alert( 'GAME LOADED ! START NOW');
         //setInterval(function(){this.Update},1000/60);
     };
 
