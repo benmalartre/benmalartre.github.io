@@ -20,6 +20,10 @@ function returnStatus( status ) {
     }
 }
 
+var loaded = function(){
+    return (NUM_LOADING == 0);
+}
+
 var include = function(url, callback){
  
     /* on crée une balise<script type="text/javascript"></script> */

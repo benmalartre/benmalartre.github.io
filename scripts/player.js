@@ -1,4 +1,4 @@
-function Player(x, y) {
+function Player(x, y){
     Object.call(this, OBJECT_TYPE.PLAYER, x, y);
     this.energy = 100;
     this.damage = 0;
