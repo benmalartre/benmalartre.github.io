@@ -20,10 +20,6 @@ class Game {
         this.space_pressed = null;
     }
 
-    Jump(){
-        this.player.Jump();
-    };
-    
     Init() {
         this.player = new Player(0,0);
         this.space_pressed = new KeyEvent('Space', this.Jump);
@@ -33,6 +29,11 @@ class Game {
     
         alert( "GAME LOADED ! START NOW");
     };
+
+    Jump(){
+        this.player.Jump();
+    };
+    
     
     AddObject(object) {
         this.objects.push(object);
