@@ -30,13 +30,17 @@ var include = function(url, callback){
     avec en prime un timestamp pour éviter les problèmes de cache
     */
     script.src = url + '?' + TIMESTAMP;
-    NUM_LOADING += 1;
 
-    script.onreadystatechange = function decrementLoading(callback){
-        console.log("DECREMENT LOADING SCRIPTS : "+ NUM_LOADING)
-        if(callback) script.onload = callback;
-        NUM_LOADING -= 1;
-    };
+    if(callback){
+        script.onreadystatechange = callback;
+    }
+    else{
+        NUM_LOADING += 1;
+        script.onreadystatechange = function decrementLoading(callback){
+            console.log("DECREMENT LOADING SCRIPTS : "+ NUM_LOADING)
+            NUM_LOADING -= 1;
+        };
+    }
     script.onload = script.onreadystatechange;
 
     /* On rajoute la balise script dans le head, ce qui démarre le téléchargement */
