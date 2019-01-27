@@ -9,7 +9,6 @@ var manager;
 window.addEventListener('load', InitManager, false);
 
 
-
 function Manager(){
 	this.objects = new Array();
 	

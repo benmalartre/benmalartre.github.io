@@ -1,4 +1,3 @@
-
 window.requestAnimationFrame = 
 window.requestAnimationFrame ||
 window.webkitRequestAnimationFrame ||
@@ -8,6 +7,10 @@ window.msRequestAnimationFrame;
 var game;
 window.addEventListener('load', InitGame, false);
 
+include('scripts/math.js');
+include('scripts/object.js');
+include('scripts/mouse.js');
+include('scripts/keyboard.js');
 
 function Game(){
     this.objects = new Array();

@@ -1,4 +1,4 @@
-DEGTORAD	 = 0.0174532925;
+
 var IE = document.all?true:false
 if (!IE) document.captureEvents(Event.MOUSEMOVE)
 
