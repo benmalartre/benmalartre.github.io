@@ -54,8 +54,10 @@ class Game {
         this.events.push(new KeyEvent('ArrowDown', this.player, 'Down'));
 
         var numEnemies = Math.random() * 12 + 6;
+        var w = document.width;
+        var h = document.height;
         for(var i=0; i<numEnemies;i++)
-            this.enemies.push( new Enemy())
+            this.enemies.push( new Enemy(Math.random()*w, Math.random()*h));
         /*
         for(var i=0;i<this.objects.length;i++){
             this.objects[i].Init();
