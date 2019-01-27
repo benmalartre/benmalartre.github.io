@@ -25,9 +25,10 @@ class Game {
     }
     
     Update(){
+        /*
         for(var i=0;i<this.objects.length;i++){
             this.objects[i].Update();
-        }
+        }*/
     }
 
     Init() {
@@ -40,10 +41,11 @@ class Game {
         this.events.push(new KeyEvent('ArrowUp', this.player, "Up"));
         this.events.push(new KeyEvent('ArrowDown', this.player, "Down"));
 
+        /*
         for(var i=0;i<this.objects.length;i++){
             this.objects[i].Init();
         }
-
+        */
         alert( "GAME LOADED ! START NOW");
         setInterval(function(){this.Update},1000/60);
     };
