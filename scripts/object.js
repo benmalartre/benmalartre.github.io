@@ -23,24 +23,13 @@ class Object{
     Left() {
         console.log("Left : "+this.x);
         this.x -= 1;
-        
-        if(this.elem)
-        {
-            this.elem.style.left = this.x;
-        }
-        
+
     };
     
     Right() {
         console.log("Right : "+this.x);
         this.x += 1;
-        
-        if(this.elem)
-        {
-            this.elem.style.left = this.x;
-            console.log("MOVE To The TRigh");
-        }
-        
+    
     };
     
     Up() {
