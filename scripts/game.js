@@ -11,6 +11,7 @@ function loadCharacters(){
     include('scripts/enemy.js');
 }
 include('scripts/math.js');
+include('scripts/color.js');
 include('scripts/object.js');
 include('scripts/mouse.js');
 include('scripts/keyboard.js');
