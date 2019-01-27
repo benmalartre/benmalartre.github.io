@@ -1,5 +1,5 @@
-class Player extends Character{
-    constructor(x, y){
+class Character extends Object{
+    constructor(x, y, type){
         var elem = document.createElement('div');
         elem.style.width = "100px";
         elem.style.height = "100px";
@@ -11,8 +11,8 @@ class Player extends Character{
         elem.style.background = '#00ff00';
         elem.style.display = 'block';
         elem.style.zIndex = 99;
-        elem.style.top = Math.random() * 120;
-        elem.style.left = Math.random() * 120;
+        elem.style.top = Math.random() * 120+'px';
+        elem.style.left = Math.random() * 120+'px';
         
         document.getElementById("GameContainer").appendChild(elem);
 

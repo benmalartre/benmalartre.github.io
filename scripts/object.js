@@ -21,25 +21,26 @@ class Object{
     }
 
     Left() {
-        console.log("Left : "+this.x);
         this.x -= 1;
-        if(this.elem)this.elem.style.left = this.x;
+        if(this.elem)this.elem.style.left = this.x+'px';
     };
     
     Right() {
         console.log("Right : "+this.x);
         this.x += 1;
-    
+        if(this.elem)this.elem.style.left = this.x+'px';
     };
     
     Up() {
         console.log("Up : "+this.y);
         this.y += 1;
+        if(this.elem)this.elem.style.top = this.x+'py';
     };
     
     Down() {
         console.log("Down : "+this.y);
         this.y -= 1;
+        if(this.elem)this.elem.style.top = this.x+'py';
     };
 
     Update(){
