@@ -21,6 +21,7 @@ class Object{
     }
 
     Left() {
+        console.log("Left : "+this.x);
         this.x -= 1;
         if(this.elem)
         {
@@ -30,6 +31,7 @@ class Object{
     };
     
     Right() {
+        console.log("Right : "+this.x);
         this.x += 1;
         if(this.elem)
         {
