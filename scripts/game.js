@@ -70,5 +70,5 @@ class Game {
 function InitGame(){
     var game = new Game();
     game.Init();
-    setInterval(function(){game.Update()},1000/60);
+    setInterval(game.Update,1000/60);
 }
