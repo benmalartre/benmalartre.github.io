@@ -16,12 +16,13 @@ console.log(NUM_LOADING);
 class Game {
     constructor(){
         this.view = document.createElement('div');
-        this.id = 'GameContainer';
+        this.view.id = 'GameContainer';
         this.view.style.width = document.width;
         this.view.style.height = document.height;
         this.view.style.position = 'relative';
         this.view.style = 'orange';
         document.body.appendChild(this.view);
+        
         this.objects = new Array();
         this.player = null;
         this.events = new Array();
