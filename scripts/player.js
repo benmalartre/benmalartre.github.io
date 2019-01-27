@@ -6,6 +6,7 @@ class Player extends Object{
         elem.style.background = "red";
         elem.style.color = "white";
         elem.innerHTML = "Hello";
+        elem.style.position = "Absolute";
         
         document.getElementsByTagName('body')[0].appendChild(elem);
 
