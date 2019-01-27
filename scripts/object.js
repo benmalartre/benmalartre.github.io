@@ -21,19 +21,21 @@ class Object{
     }
 
     Left() {
+        this.x -= 1;
         if(this.elem)
         {
-            this.elem.style.transform = "translate(-1)";
+            this.elem.style.x = this.x;
         }
-        this.x -= 1;
+        
     };
     
     Right() {
+        this.x += 1;
         if(this.elem)
         {
-            this.elem.style.transform = "translate(1)";
+            this.elem.style.x = this.x;
         }
-        this.x += 1;
+        
     };
     
     Up() {
