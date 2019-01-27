@@ -7,7 +7,7 @@ class Player extends Object{
     }
 
     Jump(){
-        this.jump_counter += 1;
+        //this.jump_counter;
         console.log("Jump : ");
         console.log(this.jump_counter);
     }
