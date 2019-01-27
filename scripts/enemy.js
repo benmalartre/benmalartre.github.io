@@ -7,8 +7,8 @@ class Enemy extends Character{
         super(OBJECT_TYPE.ENEMY, x, y, ENEMY_UNIQUE_ID);
         ENEMY_UNIQUE_ID += 1;
         ENEMY_COUNTER += 1;
-        this.elem.style.width = Random(64)+32+'px';
-        this.elem.style.height = Random(64)+32+'px';
+        this.elem.style.width = Math.random(64)+32+'px';
+        this.elem.style.height = Math.random(64)+32+'px';
         this.elem.style.color = "white";
         this.elem.style.background = "red";
         this.elem.innerHTML = "Enemy"+this.id;
