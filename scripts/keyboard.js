@@ -3,13 +3,14 @@ var KEY_EVENTS_MAP = new Map();
 function KeyEvent(key, callback){
     this.key = key;
     this.callback = callback;
-    KEY_EVENTS_MAP.set(key, this)
+    KEY_EVENTS_MAP.set(key, this);
+    console.log(KEY_EVENTS_MAP.size);
 };
 
 document.addEventListener('keydown', function(event) {
     console.log("KEY PRESSED : "+event.code);
 
-    if(KEY_EVENTS_MAP.has(event.code )) KEY_EVENTS_MAP.get(event.code).callback;
+    if(KEY_EVENTS_MAP.has(event.code )) KEY_EVENTS_MAP.get(event.code).callback();
 /*
     switch(event.code){
         case 'ArrowLeft':
