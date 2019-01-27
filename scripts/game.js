@@ -33,7 +33,7 @@ class Game {
 
     Init() {
         this.player = new Player(250,25);
-        this.objects.push(this.player);
+        //this.objects.push(this.player);
 
         this.events.push(new KeyEvent('Space', this.player, "Jump"));
         this.events.push(new KeyEvent('ArrowLeft', this.player, "Left"));
@@ -47,7 +47,7 @@ class Game {
         }
         */
         alert( "GAME LOADED ! START NOW");
-        setInterval(function(){this.Update},1000/60);
+        //setInterval(function(){this.Update},1000/60);
     };
 
 };
