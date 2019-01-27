@@ -57,7 +57,7 @@ class Game {
         var w = document.width;
         var h = document.height;
         for(var i=0; i<numEnemies;i++)
-            this.enemies.push( new Enemy(Math.random()*w, Math.random()*h));
+            this.enemies.push( new Enemy(Math.random()*1000, Math.random()*2000));
         /*
         for(var i=0;i<this.objects.length;i++){
             this.objects[i].Init();
