@@ -42,11 +42,13 @@ class Object{
     };
 
     Update(){
+        /*
         if(this.elem)
         {
             this.elem.style.left = this.x;
             this.elem.style.top = this.y;
         }
+        */
     }
 };
 
