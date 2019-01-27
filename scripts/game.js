@@ -12,15 +12,17 @@ include('scripts/keyboard.js');
 include('scripts/player.js');
 
 console.log(NUM_LOADING);
-/*
+
 var LOADED = false;
+var COUNTER = 0;
 while(!LOADED)
 {
     setTimeout(function(){
-        if(loaded()) LOADED = True;
-    }, 250); 
+        COUNTER += 1;
+        if(loaded() || COUNTER > 100) LOADED = True;
+    }, 100); 
 };
-*/
+
 function Game() {
     this.objects = new Array();
     this.player = null;
