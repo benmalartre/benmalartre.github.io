@@ -26,7 +26,7 @@ class Object{
         
         if(this.elem)
         {
-            this.elem.style.x = this.x;
+            this.elem.style.left = this.x;
         }
         
     };
@@ -37,7 +37,7 @@ class Object{
         
         if(this.elem)
         {
-            this.elem.style.x = this.x;
+            this.elem.style.top = this.x;
         }
         
     };
