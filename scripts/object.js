@@ -23,6 +23,9 @@ class Object{
     Left() {
         console.log("Left : "+this.x);
         this.x -= 1;
+        if(this.elem){
+            this.elem.style.left = this.x+"px";
+        }
 
     };
     
