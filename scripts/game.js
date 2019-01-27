@@ -8,17 +8,22 @@ include('scripts/math.js');
 include('scripts/object.js');
 include('scripts/mouse.js');
 include('scripts/keyboard.js');
+include('scripts/player.js');
 
 console.log(NUM_LOADING);
 
 function Game() {
     this.objects = new Array();
+    this.player = new Player(0,0);
+    this.space_pressed = new KeyEvent('Space', callback)
 };
 
 Game.prototype.Init = function() {
     for(var i=0;i<this.objects.length;i++){
         this.objects[i].Init();
     }
+
+
     alert( "GAME LOADED ! START NOW");
 };
 
