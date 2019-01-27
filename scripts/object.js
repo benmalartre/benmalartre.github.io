@@ -21,18 +21,22 @@ class Object{
     }
 
     Left() {
+        console.log("Left : "+this.x);
         this.x -= 1;
     };
     
     Right() {
+        console.log("Right : "+this.x);
         this.x += 1;
     };
     
     Up() {
+        console.log("Up : "+this.y);
         this.y += 1;
     };
     
     Down() {
+        console.log("Down : "+this.y);
         this.y -= 1;
     };
 };

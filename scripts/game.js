@@ -17,13 +17,18 @@ class Game {
     constructor(){
         this.objects = new Array();
         this.player = null;
-        this.space_pressed = null;
+        this.events = new Array();
     }
 
     Init() {
         this.player = new Player(250,25);
-        console.log("CREATE PLAYER AT POS : "+this.player.x+", "+this.player.y);
-        this.space_pressed = new KeyEvent('Space', this.player, "Jump");
+
+        this.events.push(new KeyEvent('Space', this.player, "Jump"));
+        this.events.push(new KeyEvent('ArrowLeft', this.player, "Left"));
+        this.events.push(new KeyEvent('ArrowRight', this.player, "Right"));
+        this.events.push(new KeyEvent('ArrowUp', this.player, "Up"));
+        this.events.push(new KeyEvent('ArrowDown', this.player, "Down"));
+
         for(var i=0;i<this.objects.length;i++){
             this.objects[i].Init();
         }

@@ -12,30 +12,4 @@ document.addEventListener('keydown', function(event) {
         var keyEvent = KEY_EVENTS_MAP.get(event.code);
         keyEvent.object[keyEvent.callback]();
     }
-/*
-    switch(event.code){
-        case 'ArrowLeft':
-            console.log('LAFT');
-            break;
-        case 'ArrowRight':
-            console.log('RAGT');
-            break;
-        case 'ArrowUp':
-            console.log('AP');
-            break;
-        case 'ArrowDown':
-            console.log('DAWN');
-            break;
-        case 'Space':
-            console.log('JAMP!!!');
-            break;
-        default:
-            console.log('DEFALT ---> '+ event.code);
-            break;
-    }
-    
-    if (event.code == 'KeyZ' && (event.ctrlKey || event.metaKey)) {
-      alert('Undo!')
-    }
-    */
 });
