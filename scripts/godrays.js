@@ -25,6 +25,7 @@ function GetRandomColor(r,g,b,v){
 	var b1 = ClampColor(Math.floor(Math.random()*255*v+b));
 	var a1 = Math.random()*0.5+0.25;
 	var color = new BaseColor(r1,g1,b1,a1);
+
 	return color;
 };
 /*
