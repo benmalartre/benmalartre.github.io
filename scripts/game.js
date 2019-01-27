@@ -14,29 +14,26 @@ include('scripts/keyboard.js');
 
 console.log(NUM_LOADING);
 
-function Game(){
+function Game() {
     this.objects = new Array();
+};
 
-    this.Init = function(){
-        for(var i=0;i<this.objects.length;i++){
-            this.objects[i].Init();
-        }
-
+Game.prototype.Init = function() {
+    for(var i=0;i<this.objects.length;i++){
+        this.objects[i].Init();
     }
-    this.AddObject = function(object){
-        this.objects.push(object);
-    }
+};
 
-    this.Update = function(m_x,m_y){
-        for(var i=0;i<this.objects.length;i++){
-            this.objects[i].Update(m_x,m_y)
-        }
-
-    }
-    game = this;
-    return this;
+Game.prototype.AddObject = function(object) {
+    this.objects.push(object);
 }
-function InitGame(){
-    game.Init();
+
+Game.prototype.Update = function(){
+    for(var i=0;i<this.objects.length;i++){
+        this.objects[i].Update(m_x,m_y);
+    }
 }
+
+var game = new Game();
+game.Init();
 
