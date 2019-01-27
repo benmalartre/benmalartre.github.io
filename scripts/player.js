@@ -7,6 +7,10 @@ class Player extends Object{
         elem.style.color = "white";
         elem.innerHTML = "Hello";
         elem.style.position = "Absolute";
+        elem.style.padding = '10px';
+        elem.style.background = '#00ff00';
+        elem.style.display = 'block';
+        elem.style.zIndex = 99;
         
         document.getElementsByTagName('body')[0].appendChild(elem);
 
