@@ -1,13 +1,15 @@
 var KEY_EVENTS_MAP = new Map();
 
 function KeyEvent(key, callback){
-    this.key = key;
     this.callback = callback;
     KEY_EVENTS_MAP.set(key, this);
 };
 
 document.addEventListener('keydown', function(event) {
-    if(KEY_EVENTS_MAP.has(event.code )) KEY_EVENTS_MAP.get(event.code).callback();
+    if(KEY_EVENTS_MAP.has(event.code )) 
+    {
+        KEY_EVENTS_MAP.get(event.code).callback();
+    }
 /*
     switch(event.code){
         case 'ArrowLeft':

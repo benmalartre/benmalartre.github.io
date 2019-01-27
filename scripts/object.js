@@ -4,7 +4,7 @@ var OBJECT_TYPE = {
     BACKGROUND: 3
   };
 
-class Object {
+class Object{
     constructor(cls, x, y, elem){
         this.cls = cls;
         this.elem = elem;
@@ -19,7 +19,7 @@ class Object {
     
     Draw(){
     }
-    
+
     Left() {
         this.x -= 1;
     };
