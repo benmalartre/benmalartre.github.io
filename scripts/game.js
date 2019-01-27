@@ -18,10 +18,8 @@ while(!LOADED)
 {
     setTimeout(function(){
         if(loaded()) LOADED = True;
-    }, 100); 
+    }, 250); 
 };
-
-
 
 function Game() {
     this.objects = new Array();
@@ -30,7 +28,6 @@ function Game() {
 };
 
 Game.prototype.Init = function() {
-
 
     this.player = new Player(0,0);
     this.space_pressed = new KeyEvent('Space', this.player.jump);

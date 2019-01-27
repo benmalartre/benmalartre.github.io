@@ -21,6 +21,7 @@ function returnStatus( status ) {
 }
 
 var loaded = function(){
+    console.log("NUM LOADING : "+NUM_LOADING);
     return (NUM_LOADING == 0);
 }
 
