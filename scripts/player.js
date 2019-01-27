@@ -11,8 +11,8 @@ class Player extends Object{
         elem.style.background = '#00ff00';
         elem.style.display = 'block';
         elem.style.zIndex = 99;
-        elem.style.x = Math.random() * 120;
-        elem.style.y = Math.random() * 120;
+        elem.style.top = Math.random() * 120;
+        elem.style.top = Math.random() * 120;
         
         document.getElementById("GameContainer").appendChild(elem);
 
