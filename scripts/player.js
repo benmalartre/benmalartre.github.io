@@ -10,6 +10,7 @@ class Player extends Object{
         //this.jump_counter;
         console.log("Jump : ");
         console.log(this.jump_counter);
+        console.log("POSITION : "+this.x+", "+this.y);
     }
 }
 

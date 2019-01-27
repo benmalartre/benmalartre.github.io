@@ -7,7 +7,7 @@ function KeyEvent(key, callback){
 };
 
 document.addEventListener('keydown', function(event) {
-    if(KEY_EVENTS_MAP.has(event.code )) KEY_EVENTS_MAP.get(event.code).callback(KEY_EVENTS_MAP.get(event.code));
+    if(KEY_EVENTS_MAP.has(event.code )) KEY_EVENTS_MAP.get(event.code).callback();
 /*
     switch(event.code){
         case 'ArrowLeft':
