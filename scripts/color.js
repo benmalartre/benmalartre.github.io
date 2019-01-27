@@ -15,10 +15,10 @@ function GetColorString(color){
 	return 'rgba('+ color.r +','+ color.g +','+ color.b +','+color.a+')';
 };
 
-function GetRandomColor(r=1.0,g=1.0,b=1.0){
-	var r1 = ClampColor(Math.floor(Math.random()*255*v+r));
-	var g1 = ClampColor(Math.floor(Math.random()*255*v+g));
-	var b1 = ClampColor(Math.floor(Math.random()*255*v+b));
+function GetRandomColor(r=0.5,g=0.5,b=0.5, variance=1.0){
+	var r1 = ClampColor(Math.floor(Math.random()*255*variance+r));
+	var g1 = ClampColor(Math.floor(Math.random()*255*variance+g));
+	var b1 = ClampColor(Math.floor(Math.random()*255*variance+b));
 	var a1 = Math.random()*0.5+0.25;
 	var color = new BaseColor(r1,g1,b1,a1);
 
