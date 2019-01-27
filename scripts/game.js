@@ -31,11 +31,4 @@ Game.prototype.Update = function(){
     }
 }
 
-var game;
-function InitGame(){
-    game = new Game();
-    game.Init();
-}
-window.addEventListener('load', InitGame, false);
-
 
