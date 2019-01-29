@@ -1,7 +1,8 @@
 var OBJECT_TYPE = {
-    PLAYER: 1,
-    ENEMY: 2,
-    BACKGROUND: 3
+    OBJECT_PLAYER: 1,
+    OBJECT_ENEMY: 2,
+    OBJECT_GROUND: 3,
+    OBJECT_OBSTACLE: 4
   };
 
 class Object_t{
@@ -9,46 +10,47 @@ class Object_t{
         this.id = id
         this.cls = cls;
         this.elem = elem;
-        this.x = x;
-        this.y = y;
-        this.z = z;
+        this.entity = null;
+        this.position = new SAT.Vector(x, y);
+        this.Z = z;
+        this.collide = false;
     }
 
     SetPosition(x, y, z){
-        this.x = x;
-        this.y = y;
-        this.z = z;
+        this.position.x = x;
+        this.position.y = y;
+        this.Z = z;
     }
     
     Draw(){
     }
 
     Left() {
-        this.x -= 1;
-        if(this.elem)this.elem.style.left = this.x+'px';
+        this.force.x -= 1;
+        //if(this.elem)this.elem.style.left = this.position.x+'px';
     };
     
     Right() {
-        this.x += 1;
-        if(this.elem)this.elem.style.left = this.x+'px';
+        this.force.x += 1;
+        //if(this.elem)this.elem.style.left = this.position.x+'px';
     };
     
     Up() {
-        this.y += 1;
-        if(this.elem)this.elem.style.top = this.x+'py';
+        this.force.y -= 1;
+        //if(this.elem)this.elem.style.top = this.position.y+'py';
     };
     
     Down() {
-        this.y -= 1;
-        if(this.elem)this.elem.style.top = this.x+'py';
+        this.force.y += 1;
+        //if(this.elem)this.elem.style.top = this.position.y+'py';
     };
 
     Forward() {
-        this.z += 1;
+        this.Z += 1;
     };
     
     Backward() {
-        this.z -= 1;
+        this.Z -= 1;
     };
 
     Update(){
