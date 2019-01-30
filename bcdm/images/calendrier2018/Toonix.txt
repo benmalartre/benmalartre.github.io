@@ -1,3 +1,0 @@
-Toonix is a set of custom ICE nodes for NPR Rendering.
-It supports silhouette , boundaries , cluster, crease edges, intersection(wip),
-as well as lighting and shadows(wip), and generate on-the-fly polymesh geometry.
