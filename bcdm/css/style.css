@@ -1,0 +1,37 @@
+body{
+/*font-family:Arial;*/
+font-family: verdana;
+font-size:1em;
+color:white;
+}
+
+footer{
+	position:fixed;
+	height:5%;
+	bottom:0px;
+	width:100%;
+	left:0px;
+	/*font-family: 'Press Start 2P',cursive;*/
+	background: rgba(0,0,0,0.75);   /* Background color, change as required */
+	text-align:center;
+	padding-bottom:4px;
+	margin-bottom:4px;
+	padding:auto;
+	margin:auto;
+}
+#title{
+position:fixed;
+left:10%;
+width:80%;
+top:5%;
+z-index:1;
+}
+
+#background{
+position:fixed;
+width:100%;
+overflow:hidden;
+top:0px;
+left:0px;
+z-index:0;
+}

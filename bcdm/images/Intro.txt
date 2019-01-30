@@ -1,0 +1,8 @@
+Furax is a set of ICE compound for grooming hairs from polygon surface and volume.
+Furax was originaly develloped at Ellipsanime Studio and used on the TV series The Linkers and Boulle & Bill.
+It s composed of four objects: a polymesh emitter, a polymesh cage, a guide point cloud and a render point cloud.
+In the end only the render point cloud is used at rendering stage.
+We animate the hairs via simulation and/or rigging of the cage object.
+It s a solid but not accurate framework for animation of hairs , as they will be move per packet instead of per fiber.
+
+Special thanks to Ronald Van Vemden alias <a href="https://www.toonafish.nl/"> Toonafish </a> for the Donald Trump head model.

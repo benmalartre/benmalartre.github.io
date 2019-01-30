@@ -1,0 +1,53 @@
+.content
+{
+	border-radius:12px;		
+	position:relative;
+	width:100%;
+	height:96%; 			/* Menu bar size, change as required */
+	min-height:250px;
+	top:0px;
+	margin:auto;		      		/* Menu bar centered horizontally */
+	
+	z-index:3;
+
+	background:rgba(0,0,0,.75);
+	overflow-y: scroll;
+	/*border:yellow 2px solid;*/
+}
+
+p{
+	font-size:12px;
+	font-family:verdana;
+	font-weight:lighter;
+}
+.chapter{
+	display:block;
+	padding:12px;
+	margin:0px;
+}
+
+.paragraph{
+	display:block;
+	left:0px;
+	margin:5%;
+	padding:12px;
+	width:90%;
+	height:auto;
+	
+}
+
+.image{
+	/*float:right;*/
+
+	display:block;
+	margin:0 0;
+	max-width:720px;
+	border-radius:6px;
+}
+
+.text{
+	position:relative;
+	left:0px;
+	top:0px;
+	display:block;
+}
