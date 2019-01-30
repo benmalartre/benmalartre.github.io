@@ -1,0 +1,32 @@
+
+.description
+{
+	/*background: rgba(0,0,0,0.75); Background color, change as required */
+	background: rgb(220,220,220);
+	position:absolute;
+	top:10%;
+	right:0px;
+	height:80%;
+	width:40%;
+
+	overflow-y: auto;
+	/*margin:auto;		      		 Menu bar centered horizontally */
+	margin-left:0px;
+	padding-left:1%;
+	z-index:7;
+	font-size:0.666em;
+	color: black;
+}
+
+.video
+{
+	position:absolute;
+	width:60%;
+	height:80%;;
+	margin:auto;
+	top:10%;
+	left:0px;
+	outline:none;
+	background: rgba(0,0,0,0.5);
+}
+

@@ -2,7 +2,7 @@ class Active_t extends Object_t{
     constructor(type, x, y, z){
         var elem = document.createElement('div');
         
-        elem.style.position = 'absolute';
+        elem.style.position = 'relative';
         elem.style.display = 'block';
         elem.style.zIndex = 99;
 

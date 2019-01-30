@@ -1,0 +1,62 @@
+/* top-menu: menu's surrounding box (i.e. the menu bar) */
+#top-menu 
+{
+	font-family: 'Press Start 2P',cursive;
+	background: rgba(0,0,0,0.75);   /* Background color, change as required */
+	position:absolute;
+	width:100%; 			/* Menu bar size, change as required */
+	height:12%;
+	top:0px;
+	left:0px;
+	color:rgb(0,255,255);
+	z-index:13;
+	text-align:center;
+	vertical-align:bottom;
+	/*border:1px solid rgb(66,66,66);*/
+}
+
+/* Menu items are part of a Unordered List */
+#top-menu ul {
+	list-style:none;   /* No bullet s displayed in from of items */
+	
+	padding:10px	;
+	margin:auto;
+
+}
+
+/* Menu items are li elements of the Unordered List */
+#top-menu ul li {
+  display:inline; /* Menu options to display horizontally */
+}
+
+/* Menu items are also anchors within the li elements */
+#top-menu ul li a {
+  /*margin-right:0px;*/ /* Space between menu options */
+  padding:0px 20px; /* Padding for the option selection box */
+  margin:5px;
+  text-align:center; /* Text centered in the option selection box */
+  color:rgb(255,0,255);        /* Text color of the option selection box */
+  text-decoration:none; /* No underline for menu options */
+  border-radius:6px;
+	font-size:1.5em;
+ }
+
+/* Menu items colors when mouse over */
+#top-menu ul li a:hover,
+#top-menu ul li a.active:hover ,
+#top-menu ul li a.active
+ {
+	background:rgba(100,100,100,0.5);
+	color:rgb(255,255,255);
+	font-size:2em;
+}
+
+
+/* Active menu items colors 
+#top-menu ul li a.active
+{
+  background:rgba(50,50,50,.66);
+  color:rgb(255,255,255)
+  font-size:4em;
+}
+*/

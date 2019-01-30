@@ -45,6 +45,7 @@ function loadPassives(){
 function loadActives(){
     include('scripts/player.js');
     include('scripts/enemy.js');
+    include('scripts/pingu.js');
     include('scripts/world.js');
     include('scripts/integration.js');
 }
@@ -97,16 +98,16 @@ class Game_t {
     }
     
     Update(){
-        this.ground.Activate(this.player.position);
-        this.ground.Update();
+        //this.ground.Activate(this.player.position);
+        //this.ground.Update();
 
-        this.integrator.Step();
-        this.world.Collide();
+        //this.integrator.Step();
+        //this.world.Collide();
         
     }
 
     Init() {
-        this.player = new Player_t(250,0,0);
+        this.player = new Pingu_t(20,0.0);//Player_t(250,0,0);
         this.ground = new Ground_t(4096,256);
 
         this.objects.push(this.player);
@@ -141,7 +142,7 @@ class Game_t {
 
 var game;
 function UpdateGame(){
-    game.Update();
+    //game.Update();
 }
 function InitGame(){
     game = new Game_t();
