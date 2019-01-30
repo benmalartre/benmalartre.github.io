@@ -41,7 +41,8 @@ class World_t{
     };
 
     Collide(){
-        this.ground.Collide(this.hero, GRAVITY);
+        //this.ground.Collide(this.hero, GRAVITY);
+        this.ground.Raycast(this.hero );
         //collided = SAT.testCirclePolygon(this.hero.entity, this, this.response);
         /*
         for (var i = 0; i < this.loopCount; i++) {

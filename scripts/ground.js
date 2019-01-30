@@ -1,7 +1,8 @@
 const GROUND_PATCH_WIDTH = 2048;
-const GROUND_PATCH_HEIGHT = 12;
+const GROUND_PATCH_HEIGHT = 256;
 const GROUND_NUM_PATCHES = 1;
 const GROUND_DIVISION = 64;
+const GROUND_RANDOM_HEIGHT = 64;
 
 class GroundSlice_t{
     constructor(X, Y, W, H, H1, H2){
@@ -28,6 +29,17 @@ class GroundSlice_t{
         else context.fillStyle = 'rgba(0,255,0,64)';
         context.fill();
         context.stroke();
+    }
+
+    Raycast(x){
+        var ratio;
+        
+    
+        if((x - this.pos.x)<this.points[0].x) ratio = 1.0;
+        else if((x - this.pos.x) > this.points[1].x) ratio = 0.0;
+        else ratio = ((x - this.pos.x) - this.points[0].x) / (this.points[1].x - this.points[0].x);
+        console.log('PLAYER X : '+ratio);
+        return this.points[0].y * (1-ratio) + this.points[1].y * ratio;
     }
 
     Update(A, B, zoom=1.0, offsetx=0.0, offsety=0.0){
@@ -57,23 +69,23 @@ class GroundSlice_t{
 }
 
 class Ground_t extends Passive_t{
-    constructor(width, height){
+    constructor(){
         
-        super(OBJECT_TYPE.OBJECT_GROUND, 0,0,width, height);
+        super(OBJECT_TYPE.OBJECT_GROUND, 0,0,GROUND_PATCH_WIDTH, GROUND_PATCH_HEIGHT);
         this.overlay = document.createElement('canvas');
         this.overlay.style.position = 'absolute';
         this.overlay.style.display = 'inline-block';
         this.overlay.style.zIndex = 99;
-        this.overlay.width = width;
-        this.overlay.height = height;
+        this.overlay.width = GROUND_PATCH_WIDTH;
+        this.overlay.height = GROUND_PATCH_HEIGHT;
         this.ratio = 1.0;
-        this.sliceWidth = width / GROUND_DIVISION;
+        this.sliceWidth = GROUND_PATCH_WIDTH / GROUND_DIVISION;
         document.getElementById('GameContainer').appendChild(this.overlay);
 
         this.elem.style.border = '1px orange dotted';
         this.totalNumPoints = (GROUND_DIVISION+1) * GROUND_NUM_PATCHES;
-        this.width = width;
-        this.height = height; 
+        this.width = GROUND_PATCH_WIDTH;
+        this.height = GROUND_PATCH_HEIGHT; 
         this.zoom = 100;
         this.points = [];
         for (var i = 0; i < this.totalNumPoints; i++) { this.points.push(new SAT.Vector(0,0))}; 
@@ -90,14 +102,14 @@ class Ground_t extends Passive_t{
 
         this.sliceWidth = this.width / GROUND_DIVISION;
         this.points[0].x = 0;
-        this.points[0].y = Math.random() * 12 + this.height * 0.75;
+        this.points[0].y = Math.random() * GROUND_RANDOM_HEIGHT + this.height * 0.75;
         context.beginPath();
         context.moveTo(this.points[0].x, this.points[0].y);
             
         for(var i=1;i<this.totalNumPoints;i++)
         {
             this.points[i].x = i * this.sliceWidth;
-            this.points[i].y = Math.random() * 12 + this.height * 0.75;
+            this.points[i].y = Math.random() * GROUND_RANDOM_HEIGHT + this.height * 0.75;
             //context.bezierCurveTo(0, h1*10, 256, (h1+h2)*5+10, 512, h2*10);
             context.lineTo(this.points[i].x , this.points[i].y );
 
@@ -126,7 +138,7 @@ class Ground_t extends Passive_t{
 
         for(var i=0;i<this.slices.length;i++){
             this.slices[i].Deactivate();
-            if(playerPos.x  > (this.points[i].x - 32) && playerPos.x < ( this.points[i+1].x + 32)){
+            if(playerPos.x  > (this.points[i].x - 1) && playerPos.x < ( this.points[i+1].x + 1)){
                 this.actives.push(this.slices[i]);
                 this.slices[i].Activate();
                 
@@ -138,6 +150,17 @@ class Ground_t extends Passive_t{
                 
             }   
             */
+        }
+
+    }
+
+    Raycast(obj){
+
+        for(var i=0 ; i< this.actives.length;i++)
+        {
+            var y = this.actives[i].Raycast(obj.position.x);
+            obj.position.y = y;
+            obj.velocity.y = 0;
         }
     }
 
@@ -161,12 +184,10 @@ class Ground_t extends Passive_t{
                     obj.grounded = true;
                     obj.force.y *= -1;
                 }
-    
-                obj.force.sub(gravity);
-                obj.force.sub(response.overlapV);
-                obj.entity.pos.sub(response.overlapV);
-                    
-                
+
+                obj.force.sub(response.overlapN);
+                obj.entity.pos.sub(response.overlapN);
+
                 //obj.position.x -= response.overlapV.x;
                 //obj.position.y -= response.overlapV.y;
                 //
@@ -191,6 +212,7 @@ class Ground_t extends Passive_t{
                   }
                 */
             }
+            else obj.grounded = false;
 
         }
     }

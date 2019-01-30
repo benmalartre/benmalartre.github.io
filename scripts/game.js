@@ -51,10 +51,12 @@ function loadActives(){
 
 include('scripts/math.js');
 include('scripts/color.js');
+include('scripts/canvas.js');
 include('scripts/texture.js');
 include('scripts/object.js');
 include('scripts/mouse.js');
 include('scripts/keyboard.js');
+include('scripts/mask.js');
 include('scripts/passive.js', loadPassives);
 include('scripts/active.js', loadActives);
 
