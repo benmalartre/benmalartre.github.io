@@ -32,6 +32,7 @@ class Integrator_t{
                     this.objects[i].Accelerate(DT, this.gravity, this.wind);
                     this.objects[i].velocity.add(this.objects[i].acceleration);
                     this.objects[i].position.add(this.objects[i].velocity);
+                    this.objects[i].Left();
                     this.objects[i].Update();
                 }
                 break;

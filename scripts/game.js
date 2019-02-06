@@ -51,12 +51,17 @@ function loadActives(){
 }
 
 include('scripts/math.js');
+include('scripts/transform.js');
+include('scripts/point.js');
+include('scripts/file.js');
 include('scripts/color.js');
-include('scripts/canvas.js');
 include('scripts/texture.js');
 include('scripts/object.js');
+include('scripts/animation.js');
 include('scripts/mouse.js');
 include('scripts/keyboard.js');
+include('scripts/drawable.js');
+include('scripts/part.js');
 include('scripts/mask.js');
 include('scripts/passive.js', loadPassives);
 include('scripts/active.js', loadActives);
@@ -85,7 +90,8 @@ class Game_t {
         document.body.appendChild(this.view);
         //this.container.appendChild(this.view);
         
-
+        this.min_p = new SAT.Vector(32,0);
+        this.max_p = new SAT.Vector(256,0)
         this.world = null;
         this.objects = new Array();
         this.player = null;
@@ -93,6 +99,7 @@ class Game_t {
         this.ground = null;
         this.events = new Array();
         this.integrator = null;
+        this.T = new Date();
     }
 
     AddObject(obj) {
@@ -100,16 +107,23 @@ class Game_t {
     }
     
     Update(){
-        //this.ground.Activate(this.player.position);
-        //this.ground.Update();
+        this.ground.Activate(this.min_p, this.max_p);
+        this.ground.Update();
 
-        //this.integrator.Step();
-        //this.world.Collide();
+        this.integrator.Step();
+        this.world.Collide();
+        this.min_p.x = this.player.position.x - 64;
+        this.max_p.x = this.player.position.x + 64;
+
+        var t = this.T.getTime();
+        if(Math.sin(t*0.01)>0){
+
+        }
         
     }
 
     Init() {
-        this.player = new Pingu_t(20,0.0);//Player_t(250,0,0);
+        this.player = new Player_t(250,0,0);//new Pingu_t(20,0.0);
         this.ground = new Ground_t(4096,256);
 
         this.objects.push(this.player);
@@ -130,21 +144,19 @@ class Game_t {
             this.enemies.push(enemy );
             this.objects.push(enemy);
         }
-        /*
-        var h = Math.random(200);
-        var x = 0;
-        var wire = new Wire_t(x, h,800,h);
-        this.objects.push(wire);
-        */
+
         this.integrator = new Integrator_t(this.objects, "euler");
         this.world = new World_t(this.objects);
+        this.ground.Activate(this.min_p, this.max_p);
+        this.player.Z = this.ground.GetZeroZ(this.player);
+
     };
 
 };
 
 var game;
 function UpdateGame(){
-    //game.Update();
+    game.Update();
 }
 function InitGame(){
     game = new Game_t();

@@ -2,7 +2,8 @@ var OBJECT_TYPE = {
     OBJECT_PLAYER: 1,
     OBJECT_ENEMY: 2,
     OBJECT_GROUND: 3,
-    OBJECT_OBSTACLE: 4
+    OBJECT_OBSTACLE: 4,
+    OBJECT_PART: 5
   };
 
 class Object_t{
@@ -12,6 +13,9 @@ class Object_t{
         this.elem = elem;
         this.entity = null;
         this.position = new SAT.Vector(x, y);
+        this.rotation = 0.0;
+        this.scale = new SAT.Vector(1,1);
+        this.cog = new SAT.Vector(0,0);
         this.Z = z;
         this.collide = false;
     }
@@ -36,11 +40,13 @@ class Object_t{
     };
     
     Up() {
+        this.Z -=5;
         this.force.y -= 1;
         //if(this.elem)this.elem.style.top = this.position.y+'py';
     };
     
     Down() {
+        this.Z += 5;
         this.force.y += 1;
         //if(this.elem)this.elem.style.top = this.position.y+'py';
     };
