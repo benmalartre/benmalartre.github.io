@@ -1,5 +1,5 @@
 body {
-  background-color: rgba(1.0,1.0,1.0,0.5);
+  background-color: rgba(255, 255, 255, 0.5);
   font-family: Arial;
   font-size:16pt;
   position: fixed;
@@ -18,7 +18,7 @@ body {
   top: 0px;
   left: 0px;
   display: block;
-  background-color: rgb(36, 0, 0);
+  background-color: rgb(255, 255, 255);
 }
 
 #background{
@@ -33,7 +33,7 @@ ul
 }
 
 #roof{
-  background-color: rgb(179, 28, 28);
+  background-color: rgb(228, 222, 222);
 }
 
 #title{
@@ -44,7 +44,7 @@ ul
   padding: auto;
   text-align: center;
   letter-spacing: 0.5vw;
-  color: orange;
+  color: rgb(26, 25, 25);
   user-select: none;
 
 }
@@ -57,7 +57,6 @@ ul
   width: 76%;
   left:12%;
   bottom: 7%;
-	color: orange;
   font-size: 0.75em;
   color: rgb(240, 217, 205);
   letter-spacing: 0.5vw;
@@ -72,7 +71,7 @@ ul
   position:absolute;
   z-index:1;
   overflow: scroll;
-  background-color: orange;
+  background-color: rgb(126, 126, 126);
   -ms-overflow-style: none;  
   /*scrollbar-width: none;*/
 }
@@ -83,14 +82,14 @@ ul
 
 #infos{
   z-index:4;
-  background-color: rgb(179, 28, 28);
+  background-color: rgb(70, 70, 70);
   overflow: hidden;
   font-size: 0.75em;
 }
 
 #panel{
   z-index:1;
-  background-color: rgb(102, 20, 20);
+  background-color: rgb(54, 54, 54);
   overflow: hidden;
   font-size: 1em;
 }
@@ -98,7 +97,7 @@ ul
 /* The menu */
 #menu {
   z-index: 1; 
-  background-color: rgb(102, 20, 20);
+  background-color: rgb(37, 37, 37);
 }
 
 /* The navigation menu links */
