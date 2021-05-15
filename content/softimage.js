@@ -13,7 +13,7 @@ var elem = document.createElement('div');
 elem.style.position = 'relative';
 elem.style.width = '80px';
 elem.style.height = '60px';
-elem.style.background = 'black';
+elem.style.background = 'orange';
 container.appendChild(elem);
 
 for (var i = 1; i <= 64; i++) {
