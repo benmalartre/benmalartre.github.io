@@ -29,6 +29,7 @@ const GRID_TEMPLATE_HORIZONTAL = {
 }
 
 includeScript('/scripts/misc.js');
+includeScript('/scripts/combo.js');
 includeScript('/scripts/content.js');
 
 var app = null;
