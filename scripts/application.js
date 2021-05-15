@@ -207,7 +207,7 @@ Application_t.prototype.Initialize = function(){
 	if(elem){
 		this.content = new Content_t(elem);
 	}
-	MAKE_REQUEST('get', 'scripts/content/festival.js', null, 'text/script');
+	MAKE_REQUEST('get', 'scripts/home.js', null, 'text/script');
 
 	elem = document.querySelector('#panel');
 	if(elem){
