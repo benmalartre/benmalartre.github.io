@@ -1,46 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-	<meta charset="utf-8">
-	<title>benmalartre.github.io</title>
-	<!--<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />-->
-	<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+<html>
+<head>
+	<meta name="keywords" content="benmalartre,computer graphics,softimage,maya,usd,c++,python,cfx">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" href="/css/index.css" type="text/css" />
+	<link rel="stylesheet" href="/css/calendar.css" type="text/css" />
+	<script type="text/javascript" src="scripts/svg.js"></script>
+	<script type="text/javascript" src="scripts/include.js"></script>
+	<script type="text/javascript" src="scripts/menu.js"></script>
+	<!--<script type="text/javascript" src="scripts/application.js"></script>-->
 	
-	<link rel="stylesheet" href="css/style.css" />
-	<meta name="title" content="benmalartre computer graphics" />
-	<meta name="description" content="benmalartre computer graphics"/>
-	<meta name="keywords" content="C++, Python, JScript, Php, MySQL, PureBasic, Arduino"/>
+</head>
+<body onload='InitApp();'>
 
-	<script src="scripts/SAT-min.js"></script>
+<div class='grid-container' id='grid'>
+	<!--TITLE-->
+	<div id='roof'>
+	<div id='title'> Festival <strong>Michtô</strong> 2019 </div>
+	<div id='subtitle'> Programme et réservations en ligne </div>
+	</div>
+	<!-- LEFT MENU -->
+	<div id='menu'>
+		<a href='#' name='festival'>festival</a>
+		<a href='#' name='calendar'>calendrier</a>
+		<a href='#' name='show'>spectacles</a>
+		<a href='#' name='place'>plan</a>
+		<a href='#' name='contact'>contacts</a>
+		<a href='#' name='login'>login</a>
+		<a href='#' name='checkout'>panier</a>
+		<a href='#' name='svg'>SVG</a>
+	</div>
+	<!-- CONTENT -->
+	<div  id='content'></div>
+	<!-- INFOS-->
+	<div id='infos'></div>
+	<!-- PANEL -->
+	<div  id='panel' ></div>
+</div>
 
-	</head>
-	
-   <body style="background:rgb(100,100,100)">
-		<!--<div id="GameContainer" style="background:rgba(0,255,0,255)">-->
-			<script type="text/javascript" src="scripts/include.js"></script>
-			
-			<script type="text/javascript" src="scripts/game.js"></script>
+<script type='text/javascript'>
+if(IsLandscape())OnHorizontal()
+else OnVertical();
+</script>
 
-		<!--
-		<script type="text/javascript" src="scripts/size.js"></script>
-
-		<canvas id="godrays" class="background"></canvas>
-		<script type="text/javascript" src="scripts/manager.js"></script>
-		<script type="text/javascript" src="scripts/mouse.js"></script>
-		<script type="text/javascript" src="scripts/godrays.js"></script>
-		<script type="text/javascript" src="scripts/game.js"></script>
-		<script type="text/javascript">
-			var m = new Manager();
-			var size = GetWindowSize();
-
-			var godrays = new GodRays(3,256,256);
-			m.AddObject(godrays);
-			
-			setInterval(function(){m.Update(mouseX,mouseY)},1000/60);
-		</script>
-	
-		</div>-->
-
-	</body>
-	
+</body>
 </html>
+

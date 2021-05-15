@@ -1,7 +1,3 @@
-
-var IE = document.all?true:false
-if (!IE) document.captureEvents(Event.MOUSEMOVE)
-
 /*
 window.requestAnimFrame = (function(callback) {
 	return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||

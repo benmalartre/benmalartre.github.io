@@ -4,7 +4,7 @@ var OBJECT_TYPE = {
     OBJECT_GROUND: 3,
     OBJECT_OBSTACLE: 4,
     OBJECT_PART: 5
-  };
+};
 
 class Object_t{
     constructor(cls, x, y, z, elem, id){

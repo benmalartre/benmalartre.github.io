@@ -1,5 +1,5 @@
 var TIMESTAMP = (new Date().getTime());
-var NUM_LOADING = 0
+var NUM_SCRIPTS_LOADING = 0
 
 function fetchStatus( address ) {
     var client = new XMLHttpRequest();
@@ -21,32 +21,61 @@ function returnStatus( status ) {
 }
 
 var loaded = function(){
-    return (NUM_LOADING == 0);
+    return (NUM_SCRIPTS_LOADING == 0);
 }
 
-var include = function(url, callback){
- 
-    // on crée une balise<script type="text/javascript"></script>
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
+var includeScript = function(url, callback){
+  function incrementsScriptLoading(){
+    NUM_SCRIPTS_LOADING += 1;
+  }
+  
+  function decrementScriptsLoading(){
+    NUM_SCRIPTS_LOADING -= 1;
+  }
 
-    // On fait pointer la balise sur le script qu'on veut charger
-    // avec en prime un timestamp pour éviter les problèmes de cache
-    script.src = url + '?' + TIMESTAMP;
+  function postLoad(){
+    decrementScriptsLoading();
+    if(callback)callback();
+  }
+  incrementsScriptLoading();
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script .onload = callback;
+  // On fait pointer la balise sur le script qu'on veut charger
+  // avec en prime un timestamp pour éviter les problèmes de cache
+  script.src = url //+ '?' + TIMESTAMP;
+  document.head.appendChild(script);
+  script.onload = postLoad;
+  
 
-    if(callback){
-        script.onreadystatechange = callback;
+  decrementScriptsLoading
+  
+}
+
+function includeHTML() {
+  var z, i, elmnt, file, xhttp;
+  /* Loop through a collection of all HTML elements: */
+  z = document.getElementsByTagName("*");
+  for (i = 0; i < z.length; i++) {
+    elmnt = z[i];
+    /*search for elements with a certain atrribute:*/
+    file = elmnt.getAttribute("w3-include-html");
+    if (file) {
+      /* Make an HTTP request using the attribute value as the file name: */
+      xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4) {
+          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+          /* Remove the attribute, and call this function once more: */
+          elmnt.removeAttribute("w3-include-html");
+          includeHTML();
+        }
+      } 
+      xhttp.open("GET", file, true);
+      xhttp.send();
+      /* Exit the function: */
+      return;
     }
-    else{
-        NUM_LOADING += 1;
-        script.onreadystatechange = function decrementLoading(callback){
-            NUM_LOADING -= 1;
-        };
-    }
-    script.onload = script.onreadystatechange;
-
-    // On rajoute la balise script dans le head, ce qui démarre le téléchargement
-    document.getElementsByTagName('head')[0].appendChild(script);
-
-    
+  }
 }

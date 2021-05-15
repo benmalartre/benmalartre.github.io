@@ -68,7 +68,7 @@ class GroundSlice_t{
         var min_z = (this.points[0].y * (1-ratio) + this.points[1].y * ratio) - GROUND_SLICE_DEPTH * 0.5;
         var max_z = (this.points[0].y * (1-ratio) + this.points[1].y * ratio) + GROUND_SLICE_DEPTH * 0.5;
         
-        //if(z<min_z || z>max_z)return false;
+        if(z<min_z || z>max_z)return false;
         
         p.y = this.points[0].y * (1-ratio) + this.points[1].y * ratio + z;
         return true;

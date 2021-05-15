@@ -1,10 +1,6 @@
-const DEGTORAD = 0.0174532925;
-const RADTODEG = 57.295779513082323;
-const PI = 3.14;
-
-var ID = function (){
-  // Math.random should be unique because of its seeding algorithm.
-  // Convert it to base 36 (numbers + letters), and grab the first 9 characters
-  // after the decimal.
-  return '_' + Math.random().toString(36).substr(2, 9);
-};
+function distanceBetween(point1, point2) {
+  return Math.sqrt(Math.pow(point2.x - point1.x, 2) + Math.pow(point2.y - point1.y, 2));
+}
+function angleBetween(point1, point2) {
+  return Math.atan2( point2.x - point1.x, point2.y - point1.y );
+}
