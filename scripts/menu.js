@@ -2,7 +2,8 @@
 const MENU_ITEMS = {	'0':{name: 'softimage', label: 'Softimage', type:'text/script'},
 						'1':{name: 'maya',      label: 'Maya',      type:'text/script'},
 						'2':{name: 'usd',       label: 'USD',       type:'text/script'},
-						'3':{name: 'cpp',       label: 'C++',       type:'text/script'}};
+						'3':{name: 'cpp',       label: 'C++',       type:'text/script'},
+                        '4':{name: 'python',    label: 'Python',    type:'text/script'}};
 
 var NUM_MENU_ENTRIES = 0;				
 var MENU_NUM_CHAR = 1;
