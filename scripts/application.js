@@ -229,9 +229,6 @@ Application_t.prototype.Initialize = function(){
 	
 	window.addEventListener('resize', this.OnResize);
 	window.addEventListener('orientationchange', this.OnResize);
-
-	
-	StartGetDatas();
 }
 
 Application_t.prototype.SetContent = function(name){
