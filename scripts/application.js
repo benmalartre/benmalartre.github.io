@@ -223,8 +223,6 @@ Application_t.prototype.Initialize = function(){
 		this.infos = new Infos_t(elem, 0);
 	}
 
-	
-
 	this.OnResize();
 	
 	window.addEventListener('resize', this.OnResize);
