@@ -29,6 +29,7 @@ const GRID_TEMPLATE_HORIZONTAL = {
 }
 
 includeScript('/scripts/content.js');
+includeScript('/scripts/misc.js');
 
 var app = null;
 
@@ -234,7 +235,7 @@ Application_t.prototype.Initialize = function(){
 
 Application_t.prototype.SetContent = function(name){
 	var timestamp = Math.round(+new Date() / 1000);
-	MAKE_REQUEST('get', 'scripts/content/'+name+'.js', null, 'text/script');
+	MAKE_REQUEST('get', 'scripts/'+name+'.js', null, 'text/script');
 }
 
 Application_t.prototype.RefreshUI = function(){
