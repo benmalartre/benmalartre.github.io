@@ -26,7 +26,7 @@ img.style.position = 'absolute';
 img.style.left = '0px';
 img.style.top = '0px';
 
-//content.appendChild(img);
+content.appendChild(img);
 content.appendChild(date);
 content.appendChild(place);
 content.appendChild(enroll);
