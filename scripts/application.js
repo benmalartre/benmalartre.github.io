@@ -231,7 +231,7 @@ Application_t.prototype.Initialize = function(){
 
 Application_t.prototype.SetContent = function(name){
 	var timestamp = Math.round(+new Date() / 1000);
-	MAKE_REQUEST('get', 'scripts/'+name+'.js', null, 'text/script');
+	MAKE_REQUEST('get', 'contents/'+name+'.js', null, 'text/script');
 }
 
 Application_t.prototype.RefreshUI = function(){
