@@ -19,6 +19,7 @@ container.appendChild(elem);
 for (var i = 1; i <= 64; i++) {
     (function(index) {
         setTimeout(function() { 
+            console.log('FCK');
             elem.style.left = index*10; 
             elem.style.top = index*10;
         }, i * 250);
