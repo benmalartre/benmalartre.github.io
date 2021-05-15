@@ -28,6 +28,8 @@ const GRID_TEMPLATE_HORIZONTAL = {
 	'infos':{'left': '0px','top':'80%','width':'100%','height':'25%'}
 }
 
+includeScript('/scripts/content.js');
+
 var app = null;
 
 function SetGridItemCells(item, template, name){
