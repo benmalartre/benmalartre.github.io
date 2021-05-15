@@ -9,7 +9,7 @@ xhttp.onreadystatechange = function() {
     return false;
 };
 */
-alert('HOME SWEET HOME!';)
+alert('HOME SWEET HOME!');
 var content = document.createElement('div');
 content.style.textAlign = 'center';
 content.style.color = 'rgb(240, 217, 205)';

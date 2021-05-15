@@ -1,10 +1,3 @@
-// Detect if the browser is IE or not.
-// If it is not IE, we assume that the browser is NS.
-var IE = document.all?true:false
-
-// If NS -- that is, !IE -- then set up for mouse capture
-if (!IE) document.captureEvents(Event.MOUSEMOVE)
-
 // Set-up to use getMouseXY function onMouseMove
 document.onmousemove = getMouseXY;
 
