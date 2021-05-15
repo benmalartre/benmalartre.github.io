@@ -1,12 +1,8 @@
 "use strict";
-const MENU_ITEMS = {	'0':{name: 'festival', label: 'Festival', type:'text/script'},
-						'1':{name: 'calendar', label: 'Calendrier', type:'text/script'},
-						'2':{name: 'show', label: 'Spectacles', type:'text/script'},
-						'3':{name: 'place', label: 'Plan', type:'text/script'},
-						'4':{name: 'contact', label: 'Contacts', type:'text/script'},
-						'5':{name: 'login', label: 'Login', type:'text/html'},
-						'6':{name: 'checkout', label: 'Panier', type:'script'},
-						'7':{name: 'svg', label: 'SVG', type:'script'}};
+const MENU_ITEMS = {	'0':{name: 'softimage', label: 'Softimage', type:'text/script'},
+						'1':{name: 'maya', label: 'Maya', type:'text/script'},
+						'2':{name: 'usd', label: 'USD', type:'text/script'},
+						'3':{name: 'c++', label: 'C++', type:'text/script'}};
 
 var NUM_MENU_ENTRIES = 0;				
 var MENU_NUM_CHAR = 1;
@@ -16,6 +12,7 @@ for(var i in MENU_ITEMS){
 };
 
 function OnMenuClicked(name){
+    console.log('CLICKED : '+name);
 	app.SetContent(name);
 };
 
