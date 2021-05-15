@@ -25,7 +25,6 @@ img.style.position = 'absolute';
 img.style.left = '0px';
 img.style.top = '0px';
 
-var eye = new Eye_t(content, 0, 0, 128, 128);
 //content.appendChild(img);
 content.appendChild(date);
 content.appendChild(place);
