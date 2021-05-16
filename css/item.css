@@ -43,9 +43,9 @@ padding-top:5px;
   color:#fff;        /* Text color of the option selection box */
   text-decoration:none; /* No underline for menu options */
   border-radius:6px;
-	-webkit-transition: font-size 1s ease-in;
-	font-size:1em;
- }
+  transition: font-size 1s ease-in;
+  font-size:1em;
+}
 
 /* Menu items colors when mouse over */
 #item-menu ul li a:hover,
