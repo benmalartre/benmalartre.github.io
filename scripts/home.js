@@ -1,15 +1,4 @@
 
-/*
-var xhttp = new XMLHttpRequest();
-xhttp.onreadystatechange = function() {
-    
-    if(this.readyState == 4 && this.status == 200) {
-        app.infos.elem.innerHTML = this.responseText;
-    }
-    return false;
-};
-*/
-alert('HOME SWEET HOME!');
 var content = document.createElement('div');
 content.style.textAlign = 'center';
 content.style.color = 'rgb(240, 217, 205)';
