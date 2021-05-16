@@ -13,7 +13,6 @@ for(var i in MENU_ITEMS){
 };
 
 function OnMenuClicked(name){
-    console.log('CLICKED : '+name);
 	app.SetContent(name);
 };
 
