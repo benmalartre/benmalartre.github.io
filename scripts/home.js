@@ -4,11 +4,11 @@ content.style.textAlign = 'center';
 content.style.color = 'rgb(240, 217, 205)';
 
 var date = document.createElement('h1');
-date.textContent = "du 29 septembre au 28 octobre";
+date.textContent = "Hello I'm ben";
 var place = document.createElement('h2');
-place.textContent = "Maxéville / Nancy";
+place.textContent = "Character FX TD based in Paris, France";
 var enroll = document.createElement('h3');
-enroll.textContent = "réserver vos places dès maintenant";
+enroll.textContent = "Here are some of my research and development materials.";
 var img = new Image();
 img.src = ''
 img.style.position = 'absolute';
