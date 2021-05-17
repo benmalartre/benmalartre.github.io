@@ -1,7 +1,7 @@
 
 var content = document.createElement('div');
 content.style.textAlign = 'center';
-content.style.color = 'rgb(240, 217, 205)';
+content.style.color = 'rgb(0, 0, 0)';
 
 var date = document.createElement('h1');
 date.textContent = "Hello I'm ben";
