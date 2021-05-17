@@ -30,6 +30,7 @@ const GRID_TEMPLATE_HORIZONTAL = {
 
 includeScript('/scripts/combo.js');
 includeScript('/scripts/misc.js');
+includeScript('/scripts/menu.js');
 includeScript('/scripts/content.js');
 
 var app = null;
@@ -198,7 +199,7 @@ Application_t.prototype.OnResize = function(event){
 	}
 	document.width = width;
 	document.height = height;
-	OnMenuResize();
+	//OnMenuResize();
 }
 	
 Application_t.prototype.Initialize = function(){
@@ -243,16 +244,6 @@ Application_t.prototype.RefreshUI = function(){
 Application_t.prototype.Message = function(msg)
 {
 	app.SetContent('message');
-}
-
-function executeFunctionByName(functionName, context /*, args */) {
-	var args = arguments[2];
-	var namespaces = functionName.split(".");
-	var func = namespaces.pop();
-	for(var i = 0; i < namespaces.length; i++) {
-	  context = context[namespaces[i]];
-	}
-	return context[func].apply(context, args);
 }
 
 function InitApp(){

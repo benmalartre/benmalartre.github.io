@@ -45,7 +45,6 @@
   text-decoration:none; /* No underline for menu options */
   border-radius:6px;
   transition: font-size 0.1s ease-in;
-  font-size:1em;
  }
 
 /* Menu items colors when mouse over */
@@ -53,9 +52,8 @@
 #top-menu ul li a.active:hover ,
 #top-menu ul li a.active
  {
-	background:rgba(100,100,100,0.5);
-	color:rgb(255,255,255);
-	font-size:2em;
+	background:rgb(255,255,255);
+	color:rgb(0,0,0);
 }
 
 

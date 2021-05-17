@@ -1,4 +1,3 @@
-alert('BOUGE!!!');
 var container = document.createElement('div');
 container.style.position = 'fixed';
 container.style.width = '800px';
@@ -17,11 +16,8 @@ elem.style.background = 'orange';
 container.appendChild(elem);
 
 for (var i = 1; i <= 64; i++) {
-    (function(index) {
-        setTimeout(function() { 
-            console.log('FCK');
-            elem.style.left = index*10; 
-            elem.style.top = index*10;
-        }, i * 250);
-    })(i);
+    setTimeout(function(elem, t) { 
+        elem.style.left = t*10+'px'; 
+        elem.style.top = t*10+'px';
+    }.bind(this, elem, i), i*250);
 }
