@@ -31,7 +31,6 @@ const GRID_TEMPLATE_HORIZONTAL = {
 includeScript('/scripts/combo.js');
 includeScript('/scripts/misc.js');
 includeScript('/scripts/menu.js');
-includeScript('/scripts/content.js');
 
 var app = null;
 
@@ -89,31 +88,6 @@ function OnHorizontal(){
 	
 }
 
-function OnUserCreated(json){
-	app.content.elem.innerHTML = json;
-	app.RefreshUI();
-}
-
-function OnShowInfos(dateID=null){
-	var elem = document.querySelector("#infos");   
-	app.infos.SetShow(SHOW_ID);
-	app.infos.SetDates(SHOW_ID);
-	if(dateID){
-		app.infos.SetDate(dateID);
-		app.infos.OnChangeDate()
-	}
-	elem.style.display = 'block';
-	var pos = 100;
-	var id = setInterval(frame, 20);
-	function frame() {
-		if (pos == 75) {
-			clearInterval(id);
-		} else {
-			pos--; 
-			elem.style.top = pos + '%'; 
-		}
-	}
-}
 
 function OnHideInfos(){
 	var elem = document.querySelector("#infos");   
@@ -140,6 +114,7 @@ function Application_t(){
 	this.status = null;
 	this.mode = MODE_UNITIALIZED;
 	this.CURRENT_SHOW = null;
+  this.animated = new Array();
 }
 
 Application_t.prototype.ActivateMenu = function(active){
@@ -249,10 +224,12 @@ Application_t.prototype.Message = function(msg)
 function InitApp(){
 	app = new Application_t();
 	app.Initialize();
+  console("hey hey hey!!!");
 }
 
-
-
-
-
+window.requestAnimationFrame = 
+	window.requestAnimationFrame ||
+	window.webkitRequestAnimationFrame ||
+	window.mozRequestAnimationFrame	||
+	window.msRequestAnimationFrame;
 
