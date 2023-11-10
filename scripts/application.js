@@ -147,12 +147,6 @@ Application_t.prototype.Mount = function(elem){
 	document.body.appendChild(elem);
 }
 
-Application_t.prototype.SetUser = function(username){
-	var params = 'table=user&type=User&key=username&value='+username;
-	app.RefreshUI();
-	MAKE_REQUEST('post', 'read', params, null, OnUserChanged);
-}
-
 Application_t.prototype.OnResize = function(event){
 	var width = window.innerWidth;
 	var height = window.innerHeight;
