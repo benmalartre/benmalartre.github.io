@@ -76,7 +76,7 @@ function CellularAutomata(nbx,nby)
 	this.nbx = nbx;
 	this.nby = nby;
 	this.type = "automata";
-	this.canvas = document.getElementById('automata');
+	this.canvas = document.getElementById('canvas');
 	this.canvas.addEventListener('mousemove',MouseMoveEvent);
 	this.canvas.width = nbx;
 	this.canvas.height = nby;

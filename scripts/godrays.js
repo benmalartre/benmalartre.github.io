@@ -131,7 +131,7 @@ function drawRays(context,r){
 function GodRays(nb)
 {
 	this.type = "godrays";
-	this.canvas = document.getElementById('godrays');
+	this.canvas = document.getElementById('canvas');
 	this.canvas.width = window.innerWidth * 0.25;
 	this.canvas.height = window.innerHeight * 0.25;
 	this.context = this.canvas.getContext('2d');
