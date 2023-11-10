@@ -177,7 +177,6 @@ Application_t.prototype.OnResize = function(event){
 	
 Application_t.prototype.Initialize = function(){
   MAKE_REQUEST('get', 'scripts/home.js', null, 'text/script');
-  MAKE_REQUEST('get', 'scripts/content.js', null, 'text/script');
   
 	var elem = document.querySelector('#menu');
 	if(elem){
