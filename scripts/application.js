@@ -176,6 +176,9 @@ Application_t.prototype.OnResize = function(event){
 }
 	
 Application_t.prototype.Initialize = function(){
+  MAKE_REQUEST('get', 'scripts/home.js', null, 'text/script');
+  MAKE_REQUEST('get', 'scripts/content.js', null, 'text/script');
+  
 	var elem = document.querySelector('#menu');
 	if(elem){
 		this.menu = new Menu_t(elem);
@@ -185,8 +188,6 @@ Application_t.prototype.Initialize = function(){
 	if(elem){
 		this.content = new Content_t(elem);
 	}
-	MAKE_REQUEST('get', 'scripts/home.js', null, 'text/script');
-  MAKE_REQUEST('get', 'scripts/content.js', null, 'text/script');
 
 	elem = document.querySelector('#panel');
 	if(elem){
