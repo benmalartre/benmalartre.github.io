@@ -23,6 +23,7 @@
     <script type="text/javascript" src="scripts/mouse.js"></script>
     <script type="text/javascript" src="scripts/manager.js"></script>
     <script type="text/javascript" src="scripts/godrays.js"></script>
+    <script type="text/javascript" src="scripts/automata.js"></script>
     <script type="text/javascript">var m = new Manager();
 			var size = GetWindowSize();
 
@@ -33,14 +34,14 @@
 				var drum = new DrumMachine();
 				m.AddObject(drum);
 			}
-			var godrays = new GodRays(3,256,256);
-			m.AddObject(godrays);
+			//var godrays = new GodRays(3,256,256);
+			//m.AddObject(godrays);
 			//var flock = new Flock(666,size.width*0.25,size.height*0.25);
 			//m.AddObject(flock);
-			//var automata = new CellularAutomata(Math.floor(size.width/20),Math.floor(size.height/20));
-			//m.AddObject(automata);
+			var automata = new CellularAutomata(Math.floor(size.width/20),Math.floor(size.height/20));
+			m.AddObject(automata);
 			
-			
+			/*
 			var bubble = new TalkingBubble("Hello, my name is Benjamin Malartre...|"+
 			"I'm a 3D all-rounder and develloper...|"+
 			"I'm proficient in rigging, cloth, FXs and custom tools development...|"+
@@ -51,7 +52,7 @@
 			
 			//var bubble = new PoppingBubble(size.width,size.height);
 			m.AddObject(bubble);
-			
+			*/
 			
 			setInterval(function(){m.Update(mouseX,mouseY)},1000/60);</script></div><br />
 	</div>
