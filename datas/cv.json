@@ -1,0 +1,16 @@
+[
+    {
+        "studio": "Def2Shoot",
+        "start": "2005:06:01",
+        "end": "2007:08:31",
+        "role": "rigger, animator, generalist",
+        "tools": "softimage, jscript, c++"
+    },
+    {
+        "studio": "La Station Animation",
+        "start": "2005:06:01",
+        "end": "2007:08:31",
+        "role": "rigger, generalist",
+        "tools": "softimage, jscript, c++"
+    }
+]

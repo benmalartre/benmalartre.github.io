@@ -5,8 +5,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link rel="stylesheet" href="/css/index.css" type="text/css" />
+	<script type="text/javascript" src="scripts/three.min.js"></script>
 	<script type="text/javascript" src="scripts/include.js"></script>
 	<script type="text/javascript" src="scripts/application.js"></script>
+	<script type="text/javascript" src="scripts/webgl.js"></script>
 	
 </head>
 <body onload='InitApp();'>
@@ -16,6 +18,42 @@
 	<div id='roof'>
 		<div id='title'> benmalartre.github.io </div>
 		<div id='subtitle'> computer's graphics research & development </div>
+    <canvas id="canvas" class="background"></canvas>
+    <script type="text/javascript" src="scripts/audio.js"></script>
+    <script type="text/javascript" src="scripts/mouse.js"></script>
+    <script type="text/javascript" src="scripts/manager.js"></script>
+    <script type="text/javascript" src="scripts/godrays.js"></script>
+    <script type="text/javascript">var m = new Manager();
+			var size = GetWindowSize();
+
+			// Audio
+			if(audioInitialized){
+				var voicer = new Voicer(7,66);
+				m.AddObject(voicer);
+				var drum = new DrumMachine();
+				m.AddObject(drum);
+			}
+			var godrays = new GodRays(3,256,256);
+			m.AddObject(godrays);
+			//var flock = new Flock(666,size.width*0.25,size.height*0.25);
+			//m.AddObject(flock);
+			//var automata = new CellularAutomata(Math.floor(size.width/20),Math.floor(size.height/20));
+			//m.AddObject(automata);
+			
+			
+			var bubble = new TalkingBubble("Hello, my name is Benjamin Malartre...|"+
+			"I'm a 3D all-rounder and develloper...|"+
+			"I'm proficient in rigging, cloth, FXs and custom tools development...|"+
+			"I love problems solving and I'm an always learning kind of guy...|"+
+			"I work with Maya and Softimage as my main 3D softwares...|"+
+			"I code in C++, Python, JScript, PHP and PureBasic...|"+
+			"Here you can find some samples of my work...|",size.width*0.75,size.height*0.75);
+			
+			//var bubble = new PoppingBubble(size.width,size.height);
+			m.AddObject(bubble);
+			
+			
+			setInterval(function(){m.Update(mouseX,mouseY)},1000/60);</script></div><br />
 	</div>
 	<!-- LEFT MENU -->
 	<div id='menu'></div>
@@ -30,6 +68,8 @@
 <script type='text/javascript'>
 if(IsLandscape())OnHorizontal()
 else OnVertical();
+glInit();
+glAnimate();
 </script>
 
 </body>

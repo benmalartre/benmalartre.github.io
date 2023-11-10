@@ -4,5 +4,7 @@
     {"name": "maya",      "label": "Maya",      "type": "text/script"},
     {"name": "usd",       "label": "USD",       "type": "text/script"},
     {"name": "cpp",       "label": "C++",       "type": "text/script"},
-    {"name": "python",    "label": "Python",    "type": "text/script"}
+    {"name": "python",    "label": "Python",    "type": "text/script"},
+    {"name": "test",      "label": "Test",      "type": "text/script"},
+    {"name": "store",     "label": "Store",     "type": "text/script"}
 ]
