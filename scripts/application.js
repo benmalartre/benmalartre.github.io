@@ -85,9 +85,7 @@ function OnHorizontal(){
 	SetGridItemCells(panel, GRID_TEMPLATE_HORIZONTAL, 'panel');
 
 	infos.style.display = 'none';
-	
 }
-
 
 function OnHideInfos(){
 	var elem = document.querySelector("#infos");   
@@ -188,6 +186,7 @@ Application_t.prototype.Initialize = function(){
 		this.content = new Content_t(elem);
 	}
 	MAKE_REQUEST('get', 'scripts/home.js', null, 'text/script');
+  MAKE_REQUEST('get', 'scripts/content.js', null, 'text/script');
 
 	elem = document.querySelector('#panel');
 	if(elem){
