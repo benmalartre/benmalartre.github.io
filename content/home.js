@@ -1,23 +1,18 @@
-var xhttp = new XMLHttpRequest();
-xhttp.onreadystatechange = function() {
-    
-    if(this.readyState == xhttp.DONE && this.status == 200) {
-        contacts = JSON.parse(this.responseText);
-        app.content.Clear();
-        for(c in contacts['datas']){
-            var contact = contacts['datas'][c];
-            var result = document.createElement('div');
-            result.innerHTML += '<strong>'+contact['name']+' </strong>';
-            result.style.position = 'relative';
-            result.style.width ='100%';
-            result.style.background = 'purple';
-            result.innerHTML += contact['mail'];
-            
-            app.content.Mount(result);
-        }
-    }
-    return false;
-};
+MAKE_REQUEST('get', 'scripts/automata.js', null, 'text/script');
 
-xhttp.open("post", "read", true);
-xhttp.send("type=Contact&table=contact");
+let content = document.createElement('div');
+content.style.textAlign = 'center';
+content.style.color = 'rgb(0, 0, 0)';
+
+let canvas = document.createElement('canvas'); 
+canvas.id = "canvas";
+canvas.style.position = 'absolute';
+canvas.style.left = '0px';
+canvas.style.top = '0px';
+
+let automata = new CellularAutomata(64, 32);
+
+content.appendChild(canvas);
+
+app.content.Clear();
+app.content.Mount(content);

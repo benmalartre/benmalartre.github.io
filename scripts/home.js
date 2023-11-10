@@ -1,18 +1,24 @@
-MAKE_REQUEST('get', 'scripts/automata.js', null, 'text/script');
 
-let content = document.createElement('div');
+var content = document.createElement('div');
 content.style.textAlign = 'center';
 content.style.color = 'rgb(0, 0, 0)';
 
-let canvas = document.createElement('canvas'); 
-canvas.id = "canvas";
-canvas.style.position = 'absolute';
-canvas.style.left = '0px';
-canvas.style.top = '0px';
+var date = document.createElement('h1');
+date.textContent = "Hello I'm ben";
+var place = document.createElement('h2');
+place.textContent = "Character FX TD based in Paris, France";
+var enroll = document.createElement('h3');
+enroll.textContent = "Here are some of my research and development materials.";
+var img = new Image();
+img.src = ''
+img.style.position = 'absolute';
+img.style.left = '0px';
+img.style.top = '0px';
 
-let automata = new CellularAutomata(64, 32);
-
-content.appendChild(canvas);
+content.appendChild(img);
+content.appendChild(date);
+content.appendChild(place);
+content.appendChild(enroll);
 
 app.content.Clear();
 app.content.Mount(content);
