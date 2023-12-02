@@ -79,9 +79,8 @@ function includeHTML() {
   }
 }
 
-function readHTML(url) {
-  var X = new XMLHttpRequest();
-  X.open('GET', url, false);
-  X.send();
-  return X.responseText;
+async function readHTML(url) {
+  const response = await fetch(url);
+  const cv = await response.json();
+  console.log(cv);
 }
