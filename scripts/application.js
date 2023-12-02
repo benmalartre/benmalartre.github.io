@@ -217,9 +217,6 @@ Application_t.prototype.Message = function(msg)
 function InitApp(){
 	app = new Application_t();
 	app.Initialize();
-	  
-	let cv = readHTML('http://benmalartre.free.fr/pages/cv.php');
-	alert(cv);
 }
 
 window.requestAnimationFrame = 
