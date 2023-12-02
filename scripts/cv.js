@@ -29,7 +29,7 @@ function CVItem_t(name, parent, id, callback){
 	this.elem.parent = parent;
 
     this.elem.appendChild(this.place);
-	parent.appendChild(this.elem);
+    parent.elem.appendChild(this.elem);
 	
 }
 
@@ -45,7 +45,8 @@ CVItem_t.prototype.OnClick = function(event){
 function CV_t(parent) {
 	this.numEntries = 0;
 	this.items = new Array();
-	this.elem = parent;
+	this.elem = document.createElement('div');
+    this.elem.id = 'cv';
 	this.Active = -1;
 	loadJSON(this, buildCVCallback, 'datas/cv.json', true);
 };
