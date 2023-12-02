@@ -206,8 +206,8 @@ Application_t.prototype.Message = function(msg)
 function InitApp(){
 	app = new Application_t();
 	app.Initialize();
-
-	readHTML('https://www.google.com/search?q=%http://benmalartre.free.fr/pages/cv.php');
+	var data = readHTML('https://www.google.ie/gwt/x?u=http://benmalartre.free.fr/pages/cv.php');
+	alert(data);
 }
 
 window.requestAnimationFrame = 
