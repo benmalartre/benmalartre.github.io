@@ -45,4 +45,3 @@ function CV_t(parent) {
 	this.Active = -1;
 	loadJSON(this, buildCVCallback, 'datas/cv.json', false);
 };
-‡
