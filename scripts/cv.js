@@ -13,7 +13,9 @@ var buildCVCallback=function(cv, data) {
 
 function CVItem_t(name, parent, id, callback){
 	this.elem = document.createElement('section');
-    this.place = document.createElement('div').setAttribute('id', 'place').setAttribute('innerHtml', 'zob');
+    this.place = document.createElement('div');
+    this.place.setAttribute('id', 'place');
+    this.place.setAttribute('innerHtml', 'zob');
     /*
 	this.text = document.createTextNode(name);
     */
@@ -43,5 +45,5 @@ function CV_t(parent) {
 	this.items = new Array();
 	this.elem = parent;
 	this.Active = -1;
-	loadJSON(this, buildCVCallback, 'datas/cv.json', false);
+	loadJSON(this, buildCVCallback, 'datas/cv.json', true);
 };
