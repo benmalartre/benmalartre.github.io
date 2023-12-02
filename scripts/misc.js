@@ -27,7 +27,7 @@ function MAKE_REQUEST(method, url, args, type, callback) {
 
 //----------------------------------------------------------------------------
 // make asynchronous request
-function loadJSON(object, callback, url, asynchronous=false) {   
+function loadJSON(object, callback, url, asynchronous=true) {   
     var xobj = new XMLHttpRequest();
     xobj.overrideMimeType('application/json');
     xobj.open('GET', url, asynchronous);
