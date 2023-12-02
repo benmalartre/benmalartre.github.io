@@ -170,25 +170,10 @@ Application_t.prototype.OnResize = function(event){
 }
 	
 Application_t.prototype.Initialize = function(){  
-	var elem = document.querySelector('#menu');
-	if(!elem){
-		this.menu = new Menu_t(elem);
-	}
-
-	elem = document.querySelector('#content');
-	if(!elem){
-		this.content = new Content_t(elem);
-	}
-
-	elem = document.querySelector('#panel');
-	if(!elem){
-		this.panel = new Panel_t(elem);
-	}
-
-	elem = document.querySelector('#infos');
-	if(!elem){
-		this.infos = new Infos_t(elem, 0);
-	}
+	this.menu = new Menu_t(elem);
+	this.content = new Content_t(elem);
+	this.panel = new Panel_t(elem);
+	this.infos = new Infos_t(elem, 0);
 
 	MAKE_REQUEST('get', 'scripts/home.js', null, 'text/script');
 
