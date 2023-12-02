@@ -30,6 +30,7 @@ function CVItem_t(name, parent, id, callback){
 
     this.elem.appendChild(this.place);
     parent.elem.appendChild(this.elem);
+    alert(name);
 	
 }
 
@@ -46,7 +47,6 @@ function CV_t(parent) {
 	this.numEntries = 0;
 	this.items = new Array();
 	this.elem = document.createElement('div');
-    this.elem.id = 'cv';
-	this.Active = -1;
+    this.elem.id = 'content';
 	loadJSON(this, buildCVCallback, 'datas/cv.json', true);
 };
