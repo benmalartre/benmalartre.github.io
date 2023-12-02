@@ -1,16 +1,87 @@
 [
     {
-        "studio": "Def2Shoot",
-        "start": "2005:06:01",
-        "end": "2007:08:31",
-        "role": "rigger, animator, generalist",
-        "tools": "softimage, jscript, c++"
+        "studio": "Mikros Animation",
+        "location": "Paris, France",
+        "start": "2020:05:15",
+        "end": "2023:02:17",
+        "role": "Cfx Td",
+        "details": [
+            "Pipeline developpement, maintenance and support",
+            "Custom tools developpement, maintenance and support",
+            "Assets setup build, maintenance and troubleshooting",
+            "Technical supervision and support for a team of 30 artists"
+        ],
+        "projects": [
+            "The tiger's apprentices (animation feature)"
+        ],
+        "tools": "maya, nucleus, python, c++"
     },
     {
-        "studio": "La Station Animation",
-        "start": "2005:06:01",
-        "end": "2007:08:31",
-        "role": "rigger, generalist",
-        "tools": "softimage, jscript, c++"
+        "studio": "MillFilm",
+        "location": "Adelaide, Australia",
+        "start": "2019:10:01",
+        "end": "2020:01:31",
+        "role": "tech anim artist",
+        "details": [
+            "Shot work: simulation and post-simulation correction",
+            "Scripts writing to help daily tasks",
+            "Houdini first production usage"
+        ],
+        "projects": [
+            "Cats (vfx feature)", 
+            "Love & Monsters (vfx feature)"
+        ],
+        "tools": "maya, houdini, usd, python, c++"
+    },
+    {
+        "studio": "Mathematic",
+        "location": "Paris, France",
+        "start": "2019:06:01",
+        "end": "2020:07:15",
+        "role": "cfx td/artist",
+        "details": [
+            "Dedicated pipeline implementation",
+            "Shot work: simulation and post-simulation correction"
+        ],
+        "projects": [
+            "Sephora (vfx advertisment)", 
+            "RollerBall (animation advertisment)"
+        ],
+        "tools": "maya, nucleus, python, c++"
+    },
+    {
+        "studio": "Mikros Animation",
+        "location": "Paris, France",
+        "start": "2018:01:01",
+        "end": "2018:09:31",
+        "role": "cfx supervisor/td",
+        "details": [
+            "Supervision",
+            "Rig",
+            "Simulation", 
+            "Pipeline Development",
+            "Where i discover i'm not the best sup' ever :)"
+        ],
+        "projects": [
+            "Asterix & le secret de la potion magique (animation feature)"
+        ],
+        "tools": "maya, nucleus, python, c++"
+    },
+    {
+        "studio": "Mikros Animation",
+        "location": "Paris, France",
+        "start": "2016:12:10",
+        "end": "2017:12:31",
+        "role": "cfx td",
+        "details": [
+            "Pipeline developpement",
+            "Tools developpement",
+            "Technical support for the team",
+            "Trouble shooting and problem solving"
+        ],
+        "projects": [
+            "Sherlock Gnomes (animation feature)"
+        ],
+        "tools": "maya, nucleus, python, c++"
     }
 ]
