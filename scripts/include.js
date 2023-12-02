@@ -83,5 +83,8 @@ async function readHTML(url) {
   fetch(url)
     .then((response) => {
       return response.json();
-    });
+    })
+    .then((data) => {
+      document.write(data)
+    })
 }
