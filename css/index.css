@@ -1,11 +1,7 @@
-@font-face {
-	font-family: 'PixelFont';
-	src: url('../fonts/pixel.ttf');
-}
 
 body {
     background-color: rgb(255, 255, 255);
-    font-family: 'PixelFont', Arial, sans-serif;
+    font-family: 'Roboto', Arial, sans-serif;
     font-size:16pt;
     position: fixed;
     width:100%;
