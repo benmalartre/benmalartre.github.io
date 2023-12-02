@@ -79,6 +79,19 @@ function includeHTML() {
   }
 }
 
+function includeCSS(url) {
+  var css = document.getElementById('css');
+  if(!css) {
+    css = document.createElement('link');
+    css.id = 'css';
+    css.type = 'text/css';
+    css.rel = 'stylesheet';
+    css.media = 'screen,print';
+    document.getElementsByTagName( 'head' )[0].appendChild( css );
+  }
+  css.href = url;
+}
+
 async function readHTML(url) {
   fetch(url)
     .then((response) => {

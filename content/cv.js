@@ -5,7 +5,7 @@ function buildCV() {
     app.content.Mount(cv.elem);
 }
 
-
+includeCSS('css/cv.css');
 includeScript('scripts/cv.js', buildCV);
 
 

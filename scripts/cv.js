@@ -3,17 +3,14 @@
 var buildCVCallback=function(cv, data) {
     var descs = JSON.parse(data);
     let text = "<table border='1'>";
-    for (let x in descs) {
-    text += "<tr><td>" + descs[x].details + "</td></tr>";
-    }
+    
+    descs.forEach(function (desc, index) {
+        text += "<tr><td>" + desc.details + "</td></tr>";
+        
+    });
+
     text += "</table>";
     cv.elem.innerHTML = text;
-    /*
-    descs.forEach(function (desc, index) {
-
-
-    });
-    */
 }
 
 function CV_t(parent) {
