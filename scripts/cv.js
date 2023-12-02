@@ -3,8 +3,8 @@
 var buildCVCallback=function(cv, data) {
     var descs = JSON.parse(data);
     let text = "<table border='1'>";
-    for (let desc in descs) {
-    text += "<tr><td>" + desc.details + "</td></tr>";
+    for (let x in descs) {
+    text += "<tr><td>" + descs[x].details + "</td></tr>";
     }
     text += "</table>";
     cv.elem.innerHTML = text;
