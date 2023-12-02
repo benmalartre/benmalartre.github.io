@@ -78,3 +78,10 @@ function includeHTML() {
     }
   }
 }
+
+function readHTML(url) {
+  var X = new XMLHttpRequest();
+  X.open('GET', url, false);
+  X.send();
+  return X.responseText;
+}
