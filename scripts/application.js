@@ -173,22 +173,22 @@ Application_t.prototype.Initialize = function(){
   MAKE_REQUEST('get', 'scripts/home.js', null, 'text/script');
   
 	var elem = document.querySelector('#menu');
-	if(elem){
+	if(!elem){
 		this.menu = new Menu_t(elem);
 	}
 
 	elem = document.querySelector('#content');
-	if(elem){
+	if(!elem){
 		this.content = new Content_t(elem);
 	}
 
 	elem = document.querySelector('#panel');
-	if(elem){
+	if(!elem){
 		this.panel = new Panel_t(elem);
 	}
 
 	elem = document.querySelector('#infos');
-	if(elem){
+	if(!elem){
 		this.infos = new Infos_t(elem, 0);
 	}
 
