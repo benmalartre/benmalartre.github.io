@@ -95,7 +95,7 @@ function includeCSS(url) {
 }
 
 async function readHTML(url) {
-  fetch(url)
+  fetch(url, {mode: 'cors',headers: {'Access-Control-Allow-Origin':'*'}})
     .then((response) => {
       return response.json();
     })
