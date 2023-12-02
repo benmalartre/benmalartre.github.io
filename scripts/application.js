@@ -170,9 +170,13 @@ Application_t.prototype.OnResize = function(event){
 }
 	
 Application_t.prototype.Initialize = function(){  
+	var elem = document.querySelector('#menu');
 	this.menu = new Menu_t(elem);
+	elem = document.querySelector('#content');
 	this.content = new Content_t(elem);
+	elem = document.querySelector('#panel');
 	this.panel = new Panel_t(elem);
+	elem = document.querySelector('#infos');
 	this.infos = new Infos_t(elem, 0);
 
 	MAKE_REQUEST('get', 'scripts/home.js', null, 'text/script');
