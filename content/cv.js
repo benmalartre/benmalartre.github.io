@@ -1,3 +1,8 @@
-MAKE_REQUEST('get', 'scripts/cv.js', null, 'text/script');
+function buildCV() {
+    let cv = new CV_t(document);
+}
 
-let cv = new CV_t(document);
+
+includeScript('scripts/cv.js', buildCV);
+
+
