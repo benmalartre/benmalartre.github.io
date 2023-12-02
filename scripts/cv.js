@@ -4,8 +4,8 @@ var buildCVCallback=function(cv, data) {
 	var descs = JSON.parse(data);
 	console.log(descs);
 	descs.forEach(function (desc, index) {
-		var callback = desc['name'];
-		var item = new CVItem_t(desc['name'], cv, index, callback);
+		var callback = desc['key'];
+		var item = new CVItem_t(desc['key'], cv, index, callback);
 		cv.items.push(item);
 		cv.numEntries ++;
 	});

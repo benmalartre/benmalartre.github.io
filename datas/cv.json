@@ -1,5 +1,6 @@
 [
     {
+        "key": "Mik003",
         "studio": "Mikros Animation",
         "location": "Paris, France",
         "start": "2020:05:15",
@@ -17,6 +18,7 @@
         "tools": "maya, nucleus, python, c++"
     },
     {
+        "key": "Mil001",
         "studio": "MillFilm",
         "location": "Adelaide, Australia",
         "start": "2019:10:01",
@@ -34,6 +36,7 @@
         "tools": "maya, houdini, usd, python, c++"
     },
     {
+        "key": "Math001",
         "studio": "Mathematic",
         "location": "Paris, France",
         "start": "2019:06:01",
@@ -50,6 +53,7 @@
         "tools": "maya, nucleus, python, c++"
     },
     {
+        "key": "Mik002",
         "studio": "Mikros Animation",
         "location": "Paris, France",
         "start": "2018:01:01",
@@ -68,6 +72,7 @@
         "tools": "maya, nucleus, python, c++"
     },
     {
+        "key": "Mik001",
         "studio": "Mikros Animation",
         "location": "Paris, France",
         "start": "2016:12:10",
