@@ -8,11 +8,11 @@ var buildCVCallback=function(cv, data) {
         //text += "<tr><td>" + desc.details + "</td></tr>";
         var section = document.createElement('section');
         var place = document.createElement('div');
-        place.class = 'place';
+        place.id = 'place';
         place.innerHTML = desc.location;
 
         var job = document.createElement('div');
-        job.class = 'job';
+        job.id = 'job';
         job.innerHTML = desc.details;
 
         section.appendChild(place);
@@ -30,6 +30,6 @@ function CV_t(parent) {
 	this.numEntries = 0;
 	this.items = new Array();
 	this.elem = document.createElement('div');
-    this.elem.id = 'content';
+    this.elem.id = 'cv';
 	loadJSON(this, buildCVCallback, 'datas/cv.json', true);
 };
