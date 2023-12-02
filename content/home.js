@@ -10,12 +10,12 @@ function buildHome() {
     canvas.style.left = '0px';
     canvas.style.top = '0px';
 
-    let automata = new CellularAutomata(64, 32);
-
     content.appendChild(canvas);
 
     app.content.Clear();
     app.content.Mount(content);
+
+    let automata = new CellularAutomata(64, 32);
 }
 
 includeScript('scripts/automata.js', buildHome);
