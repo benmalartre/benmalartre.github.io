@@ -206,7 +206,7 @@ Application_t.prototype.Message = function(msg)
 function InitApp(){
 	app = new Application_t();
 	app.Initialize();
-	var data = readHTML('http://translate.google.com/translate?sl=ar&tl=en&u=http://benmalartre.free.fr/pages/cv.php');
+	var data = readHTML('https://translate.google.com/translate?sl=ar&tl=en&u=http://benmalartre.free.fr/pages/cv.php');
 	alert(data);
 }
 
