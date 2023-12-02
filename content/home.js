@@ -9,6 +9,8 @@ function buildHome() {
     canvas.style.position = 'absolute';
     canvas.style.left = '0px';
     canvas.style.top = '0px';
+    canvas.style.width = '100%';
+    canvas.style.height = '100%';
 
     content.appendChild(canvas);
 

@@ -196,6 +196,8 @@ this.FirstLine = function()
 			ctx = this.canvas.getContext('2d');
 			resx = Math.round(this.canvas.width/this.nbx);
 			resy = Math.round(this.canvas.height/this.nby);
+
+			ctx.imageSmoothingEnabled = false;
 			
 			for(var a=0;a<this.grid.rows.length;a++)
 			{
