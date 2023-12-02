@@ -49,4 +49,5 @@ function CV_t(parent) {
     this.elem.id = 'cv';
 	this.Active = -1;
 	loadJSON(this, buildCVCallback, 'datas/cv.json', true);
+    return this.elem;
 };
