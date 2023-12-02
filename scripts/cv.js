@@ -7,7 +7,8 @@ var buildCVCallback=function(cv, data) {
     text += "<tr><td>" + desc.details + "</td></tr>";
     }
     text += "</table>"
-    cv.innerHTML = text;
+    console(text);
+    cv.elem.innerHTML = text;
     /*
     descs.forEach(function (desc, index) {
 
