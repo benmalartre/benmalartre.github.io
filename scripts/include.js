@@ -80,8 +80,8 @@ function includeHTML() {
 }
 
 async function readHTML(url) {
-  const response = await fetch(url);
-  const cv = await response.json();
-  console.log(cv);
-  return cv;
+  fetch(url)
+    .then((response) => {
+      return response.json();
+    });
 }
