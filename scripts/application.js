@@ -169,9 +169,7 @@ Application_t.prototype.OnResize = function(event){
 	//OnMenuResize();
 }
 	
-Application_t.prototype.Initialize = function(){
-  MAKE_REQUEST('get', 'scripts/home.js', null, 'text/script');
-  
+Application_t.prototype.Initialize = function(){  
 	var elem = document.querySelector('#menu');
 	if(!elem){
 		this.menu = new Menu_t(elem);
@@ -191,6 +189,8 @@ Application_t.prototype.Initialize = function(){
 	if(!elem){
 		this.infos = new Infos_t(elem, 0);
 	}
+
+	MAKE_REQUEST('get', 'scripts/home.js', null, 'text/script');
 
 	this.OnResize();
 	

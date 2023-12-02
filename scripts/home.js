@@ -20,6 +20,6 @@ content.appendChild(date);
 content.appendChild(place);
 content.appendChild(enroll);
 
-if(app.content)app.content.Clear();
+app.content.Clear();
 app.content.Mount(content);
 
