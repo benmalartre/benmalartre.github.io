@@ -37,7 +37,9 @@ var includeScript = function(url, callback){
     decrementScriptsLoading();
     if(callback)callback();
   }
+
   incrementsScriptLoading();
+  
   var script = document.createElement('script');
   script.type = 'text/javascript';
   script .onload = callback;
