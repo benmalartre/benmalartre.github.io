@@ -27,8 +27,10 @@ function CVItem_t(name, parent, id, callback){
 	this.elem.menu_id = id;
 	this.elem.callback = callback;
 	this.elem.parent = parent;
-	parent.elem.appendChild(this.elem);
-	this.elem.appendChild(this.place);
+
+    this.elem.appendChild(this.place);
+	parent.appendChild(this.elem);
+	
 }
 
 CVItem_t.prototype.OnClick = function(event){
