@@ -44,7 +44,7 @@ function Menu_t(parent) {
 	this.items = new Array();
 	this.elem = parent;
 	this.Active = -1;
-	loadJSON(this, buildMenuCallback, 'datas/menu.json', false);
+	loadJSON(this, buildMenuCallback, 'datas/menu.json', true);
 };
 
 Menu_t.prototype.OnMenuResize = function() {
