@@ -34,6 +34,12 @@ function Content_t(elem){
     */
 };
 
+Content_t.prototype.Update = function() {
+    console.log("content update...");
+    console.log(this.data);
+    this.data.Update();
+}
+
 Content_t.prototype.OnMouseDown = function(ev){
     DRAG = true;
     if(ev.type === 'touchstart'){

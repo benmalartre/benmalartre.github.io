@@ -189,7 +189,7 @@ Application_t.prototype.Initialize = function(){
 }
 
 Application_t.prototype.Update = function(){  
-	this.content.data.Update();
+	this.content.Update();
 }
 
 Application_t.prototype.SetContent = function(name){
