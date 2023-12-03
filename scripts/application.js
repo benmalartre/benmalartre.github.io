@@ -187,6 +187,11 @@ Application_t.prototype.Initialize = function(){
 	window.addEventListener('orientationchange', this.OnResize);
 }
 
+Application_t.prototype.Update = function(){  
+	content = document.querySelector('#content');
+	this.content.data.Update();
+}
+
 Application_t.prototype.SetContent = function(name){
 	var timestamp = Math.round(+new Date() / 1000);
 	MAKE_REQUEST('get', 'content/'+name+'.js', null, 'text/script');
@@ -206,8 +211,11 @@ Application_t.prototype.Message = function(msg)
 function InitApp(){
 	app = new Application_t();
 	app.Initialize();
-	var data = readHTML('https://translate.google.com/translate?sl=ar&tl=en&u=http://benmalartre.free.fr/pages/cv.php');
-	alert(data);
+}
+
+function UpdateApp() {
+	console.log("update app...");
+	app.Update();
 }
 
 window.requestAnimationFrame = 
@@ -215,4 +223,6 @@ window.requestAnimationFrame =
 	window.webkitRequestAnimationFrame ||
 	window.mozRequestAnimationFrame	||
 	window.msRequestAnimationFrame;
+
+requestAnimationFrame(UpdateApp)
 
