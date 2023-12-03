@@ -35,7 +35,6 @@ function Content_t(elem){
 };
 
 Content_t.prototype.Update = function() {
-    console.log("content update...");
     if(this.data)this.data.Update();
 }
 

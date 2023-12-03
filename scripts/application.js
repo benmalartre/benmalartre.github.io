@@ -188,8 +188,7 @@ Application_t.prototype.Initialize = function(){
 	window.addEventListener('orientationchange', this.OnResize);
 }
 
-Application_t.prototype.Update = function(){  
-	console.log("application update...");
+Application_t.prototype.Update = function() {  
 	this.content.Update();
 }
 
