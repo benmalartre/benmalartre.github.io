@@ -32,7 +32,7 @@ includeScript('/scripts/combo.js');
 includeScript('/scripts/misc.js');
 includeScript('/scripts/menu.js');
 
-var app = null;
+let app = null;
 
 function SetGridItemCells(item, template, name){
 	item.style.position = 'absolute';
@@ -112,7 +112,7 @@ function Application_t(){
 	this.status = null;
 	this.mode = MODE_UNITIALIZED;
 	this.CURRENT_SHOW = null;
-  this.animated = new Array();
+  	this.animated = new Array();
 }
 
 Application_t.prototype.ActivateMenu = function(active){
