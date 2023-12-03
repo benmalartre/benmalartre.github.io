@@ -204,11 +204,6 @@ Application_t.prototype.RefreshUI = function(){
 	app.ActivateMenu(true);
 }
 
-Application_t.prototype.Message = function(msg)
-{
-	app.SetContent('message');
-}
-
 function UpdateApp() {
 	app.Update();
 	requestAnimationFrame(UpdateApp);
