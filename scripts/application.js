@@ -210,12 +210,15 @@ Application_t.prototype.Message = function(msg)
 }
 
 function InitApp(){
+	console.log("init app...");
 	app = new Application_t();
 	app.Initialize();
+	console.log(app);
 }
 
 function UpdateApp() {
 	console.log("update app...");
+	console.log(app);
 	app.Update();
 }
 
