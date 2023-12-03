@@ -32,7 +32,7 @@ includeScript('/scripts/combo.js');
 includeScript('/scripts/misc.js');
 includeScript('/scripts/menu.js');
 
-let app = null;
+var app = null;
 
 function SetGridItemCells(item, template, name){
 	item.style.position = 'absolute';
