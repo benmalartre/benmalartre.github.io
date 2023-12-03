@@ -92,6 +92,10 @@ Content_t.prototype.Mount = function(elem){
     this.elem.left = '0px';
 };
 
+Content_t.prototype.SetData = function(data){
+    this.data = data;
+};
+
 Content_t.prototype.Scroll = function(newX, newY){
     this.parentElement.scrollLeft = newX;
     this.parentElement.scrollTop = newY;
