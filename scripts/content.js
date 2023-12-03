@@ -35,9 +35,7 @@ function Content_t(elem){
 };
 
 Content_t.prototype.Update = function() {
-    console.log("content update...");
-    console.log(this.data);
-    this.data.Update();
+    if(this.data)this.data.Update();
 }
 
 Content_t.prototype.OnMouseDown = function(ev){
@@ -99,7 +97,6 @@ Content_t.prototype.Mount = function(elem){
 };
 
 Content_t.prototype.SetData = function(data){
-    console.log("set data : " + data);
     this.data = data;
 };
 

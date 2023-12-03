@@ -1,6 +1,5 @@
 
 function buildHome() {
-    console.log("build home...");
     let content = document.createElement('div');
     content.style.textAlign = 'center';
     content.style.color = 'rgb(0, 0, 0)';
@@ -27,7 +26,6 @@ function buildHome() {
     app.content.Clear();
     app.content.Mount(content);
     let automata = new CellularAutomata(64, 32);
-    console.log("automata : " + automata);
     app.content.SetData(automata);
 }
 
