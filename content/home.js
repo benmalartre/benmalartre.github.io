@@ -26,7 +26,7 @@ function buildHome() {
     app.content.Clear();
     app.content.Mount(content);
 
-    content.data = new CellularAutomata(64, 32);
+    app.content.data = new CellularAutomata(64, 32);
 }
 
 includeScript('scripts/automata.js', buildHome);

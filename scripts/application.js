@@ -189,7 +189,6 @@ Application_t.prototype.Initialize = function(){
 }
 
 Application_t.prototype.Update = function(){  
-	content = document.querySelector('#content');
 	this.content.data.Update();
 }
 
