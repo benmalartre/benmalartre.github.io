@@ -22,6 +22,7 @@ function Content_t(elem){
     elem.appendChild(this.elem);
 
     this.drag = false;
+    this.data = null;
     /*
     elem.addEventListener('mousedown', this.OnMouseDown);
     elem.addEventListener('mousemove', this.OnMouseMove);
