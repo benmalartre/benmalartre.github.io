@@ -209,24 +209,25 @@ Application_t.prototype.Message = function(msg)
 	app.SetContent('message');
 }
 
-function InitApp(){
-	console.log("init app...");
-	app = new Application_t();
-	app.Initialize();
-	console.log(app);
-}
-
 function UpdateApp() {
 	console.log("update app...");
 	console.log(app);
 	app.Update();
 }
 
+function InitApp(){
+	console.log("init app...");
+	app = new Application_t();
+	app.Initialize();
+	console.log(app);
+	requestAnimationFrame(UpdateApp);
+}
+
+
+
 window.requestAnimationFrame = 
 	window.requestAnimationFrame ||
 	window.webkitRequestAnimationFrame ||
 	window.mozRequestAnimationFrame	||
 	window.msRequestAnimationFrame;
-
-requestAnimationFrame(UpdateApp)
 
