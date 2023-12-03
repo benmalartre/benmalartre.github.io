@@ -189,6 +189,7 @@ Application_t.prototype.Initialize = function(){
 }
 
 Application_t.prototype.Update = function(){  
+	console.log("application update...");
 	this.content.Update();
 }
 
@@ -217,8 +218,6 @@ function InitApp(){
 	app.Initialize();
 	requestAnimationFrame(UpdateApp);
 }
-
-
 
 window.requestAnimationFrame = 
 	window.requestAnimationFrame ||
