@@ -48,7 +48,6 @@ Combo_t.prototype.SetItems = function(items, defaultValue){
 
 Combo_t.prototype.SetValue = function(dateID){
     for(var i in this.selector.items){
-        console.log(this.selector.items[i].value+', '+dateID);
         if(this.selector.items[i].value = dateID){
             this.selector.textContent = this.selector.items[i].label;
             this.selector.value = this.selector.items[i].value;

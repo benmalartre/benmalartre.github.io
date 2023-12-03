@@ -221,7 +221,7 @@ function CellularAutomata(nbx,nby)
 		}
 	}
 	
-	this.Update = function(mx,my){
+	this.Update = function(){
 		this.counter++;
 		if(this.counter%5 == 0){
 			var col = new BaseColor(200,200,200,0);

@@ -2,7 +2,6 @@
 
 var buildMenuCallback=function(menu, data) {
 	var descs = JSON.parse(data);
-	console.log(descs);
 	descs.forEach(function (desc, index) {
 		var callback = desc['name'];
 		var item = new MenuItem_t(desc['name'], menu, index, callback);
