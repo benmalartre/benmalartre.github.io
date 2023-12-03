@@ -211,6 +211,7 @@ Application_t.prototype.Message = function(msg)
 
 function UpdateApp() {
 	app.Update();
+	requestAnimationFrame(UpdateApp);
 }
 
 function InitApp(){
