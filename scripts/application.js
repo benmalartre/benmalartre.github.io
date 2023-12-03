@@ -113,6 +113,7 @@ function Application_t(){
 	this.mode = MODE_UNITIALIZED;
 	this.CURRENT_SHOW = null;
   	this.animated = new Array();
+	return this;
 }
 
 Application_t.prototype.ActivateMenu = function(active){
