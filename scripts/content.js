@@ -99,6 +99,7 @@ Content_t.prototype.Mount = function(elem){
 };
 
 Content_t.prototype.SetData = function(data){
+    console.log("set data : " + data);
     this.data = data;
 };
 

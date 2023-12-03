@@ -131,7 +131,7 @@ function CellularAutomata(nbx,nby)
 		else if(!a && !b && !c) return false;
 	}
 
-this.FirstLine = function()
+	this.FirstLine = function()
 	{
 		var row = this.grid.rows[0];
 		for(var x=0;x<this.nbx;x++)
@@ -297,11 +297,7 @@ this.FirstLine = function()
 		this.Draw();
 	
 	}
-	
-	
-	
-	
-	
+
 	this.FirstLine();
 	this.UpdateOnce();
 	this.Draw();	
