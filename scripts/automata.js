@@ -148,6 +148,7 @@ function CellularAutomata(nbx,nby)
 			this.color.r = Math.random()*155;
 			this.color.g = Math.random()*155;
 			this.color.b = Math.random()*155;
+			console.log("chooser : " + this.choose);
 		}
 		var row = this.grid.rows[this.nby-2];
 		var last = this.grid.rows[this.nby-1];
@@ -235,14 +236,12 @@ function CellularAutomata(nbx,nby)
 
 				for(var c=0;c<this.nbx;c++)
 				{
-					
 					row.cells[c].color = next.cells[c].color
 					row.cells[c].alive = next.cells[c].alive;
 					col.r = row.cells[c].color.r;
 					col.g = row.cells[c].color.g;
 					col.b = row.cells[c].color.b;
 					row.cells[c].sColor = GetColorString(col);
-					
 				}
 			}
 			

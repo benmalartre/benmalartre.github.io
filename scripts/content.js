@@ -23,19 +23,9 @@ function Content_t(elem){
 
     this.drag = false;
     this.data = null;
-    /*
-    elem.addEventListener('mousedown', this.OnMouseDown);
-    elem.addEventListener('mousemove', this.OnMouseMove);
-    elem.addEventListener('mouseup', this.OnMouseUp);
-
-    elem.addEventListener('touchstart', this.OnMouseDown);
-    elem.addEventListener('touchmove', this.OnMouseMove);
-    elem.addEventListener('touchend', this.OnMouseUp);
-    */
 };
 
 Content_t.prototype.Update = function() {
-
     if(this.data)this.data.Update();
 }
 
