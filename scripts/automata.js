@@ -90,7 +90,7 @@ function CellularAutomata(nbx,nby)
 	console.log("RULE USED : " + this.rule)
 	
 	this.color = new BaseColor(this.r,this.g,this.b,this.v);
-	this.grid = new Grid(this.nbx,this.nby,this.color);
+	this.grid = new Grid(this.nbx + 2,this.nby,this.color);
 
 	this.Init = function(){}
 
@@ -135,7 +135,7 @@ function CellularAutomata(nbx,nby)
 	this.FirstLine = function()
 	{
 		var row = this.grid.rows[0];
-		for(var x=0;x<this.nbx;x++)
+		for(var x=1;x<this.nbx+1;x++)
 		{
 			row.cells[x].alive = GetRandomAlive(50);
 			row.cells[x].color = GetRandomColor(this.color.r,this.color.g,this.color.b,this.color.v);
@@ -154,12 +154,10 @@ function CellularAutomata(nbx,nby)
 		var last = this.grid.rows[this.nby-1];
 		var left, right, alive;
 		
-		for(var x=0;x<this.nbx;x++)
+		for(var x=1;x<this.nbx+1;x++)
 		{
 			left = x-1;
 			right = x+1;
-			if(left<0)left = this.nbx-1;
-			if(right>(this.nbx-1))right = 0;
 
 			var a = row.cells[left].alive;
 			var b = row.cells[x].alive;
@@ -232,7 +230,7 @@ function CellularAutomata(nbx,nby)
 				next = this.grid.rows[r+1];
 				var b = (1-r*1/this.nby)*255;
 
-				for(var c=0;c<this.nbx;c++)
+				for(var c=0;c<this.nbx+2;c++)
 				{
 					row.cells[c].color = next.cells[c].color
 					row.cells[c].alive = next.cells[c].alive;
@@ -255,12 +253,10 @@ function CellularAutomata(nbx,nby)
 			last = this.grid.rows[y];
 			row = this.grid.rows[y-1];
 
-			for(var x=0;x<this.nbx;x++)
+			for(var x=1;x<this.nbx+1;x++)
 			{
 				left = x-1;
 				right = x+1;
-				if(left<0)left = this.nbx-1;
-				if(right>(this.nbx-1))right = 0;
 				
 				var a = row.cells[left].alive;
 				var b = row.cells[x].alive;
