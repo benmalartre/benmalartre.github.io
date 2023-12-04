@@ -40,7 +40,8 @@ function GetRandomGrey(c,v)
 	
 function Cell(color)
 {
-	this.color = GetColorString(GetRandomGrey(color.r,color.v));
+	this.color = GetRandomGrey(color.r,color.v);
+	this.sColor = GetColorString(this.color);
 	this.alive = GetRandomAlive(66);
 }
 
@@ -195,7 +196,7 @@ function CellularAutomata(nbx,nby)
 				{
 					var cell = row.cells[b];
 					if(cell.alive){
-						ctx.fillStyle = cell.color;
+						ctx.fillStyle = cell.sColor;
 					}
 					else ctx.fillStyle = 'black';
 					ctx.fillRect(cx,cy,1,1);
@@ -211,7 +212,6 @@ function CellularAutomata(nbx,nby)
 		this.counter++;
 		if(this.counter%5 == 0){
 			var col = new BaseColor(200,200,200,0);
-			var black = new BaseColor(0,0,0,0);
 	
 			for(var r = 0;r<this.nby-1;r++)
 			{
@@ -226,7 +226,7 @@ function CellularAutomata(nbx,nby)
 					col.r = row.cells[c].color.r;
 					col.g = row.cells[c].color.g;
 					col.b = row.cells[c].color.b;
-					row.cells[c].color = GetColorString(col);
+					row.cells[c].sColor = GetColorString(col);
 				}
 			}
 			
