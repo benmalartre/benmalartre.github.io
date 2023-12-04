@@ -34,7 +34,7 @@ function GetRandomColor(r,g,b,v)
 
 function GetRandomGrey(c,v)
 {
-	var c = ClampColor(Math.floor(Math.random()*255*v+r));
+	var c = ClampColor(Math.floor(Math.random()*255*v+c));
 	return new BaseColor(c,c,c,0);
 };
 	
