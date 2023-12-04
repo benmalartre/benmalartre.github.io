@@ -75,7 +75,7 @@ function CellularAutomata(nbx,nby)
 {
 	this.nbx = nbx;
 	this.nby = nby;
-	this.type = "automata";
+	this.type = 'automata';
 	this.canvas = document.getElementById('canvas');
 	this.canvas.addEventListener('mousemove',MouseMoveEvent);
 	this.canvas.width = nbx;
@@ -144,12 +144,12 @@ function CellularAutomata(nbx,nby)
 	this.LastLine = function()
 	{
 		if(this.counter%200==0){
-			this.choose =(this.choose+1)%3;
+			//this.choose =(this.choose+1)%3;
 			this.color.r = Math.random()*155;
 			this.color.g = Math.random()*155;
 			this.color.b = Math.random()*155;
-			console.log("chooser : " + this.choose);
 		}
+		
 		var row = this.grid.rows[this.nby-2];
 		var last = this.grid.rows[this.nby-1];
 		var left, right, alive;
@@ -166,7 +166,6 @@ function CellularAutomata(nbx,nby)
 			var b = row.cells[x].alive;
 			var c = row.cells[right].alive;
 
-			
 			alive = last.cells[x].alive;
 			switch(this.choose)
 			{
@@ -252,13 +251,10 @@ function CellularAutomata(nbx,nby)
 	
 	this.UpdateOnce = function()
 	{
-		var col = new BaseColor(200,200,200,0);
-		var black = new BaseColor(0,0,0,0);
 		for(var y = 1;y<this.nby;y++)
 		{
 			last = this.grid.rows[y];
 			row = this.grid.rows[y-1];
-			//var b = (1-r*1/this.nby)*255;
 
 			for(var x=0;x<this.nbx;x++)
 			{
