@@ -29,27 +29,18 @@ function GetRandomColor(r,g,b,v)
 	var r = ClampColor(Math.floor(Math.random()*255*v+r));
 	var g = ClampColor(Math.floor(Math.random()*255*v+g));
 	var b = ClampColor(Math.floor(Math.random()*255*v+b));
-	var color = new BaseColor(r,g,b,0);
-	return color;
+	return new BaseColor(r,g,b,0);
 };
 
 function GetRandomGrey(c,v)
 {
-	var x = ClampColor(Math.floor(Math.random()*255*v+c));
-	var grey = new BaseColor(x,x,x,0);
-	return grey;
-};
-
-function GetRandomGrey()
-{
-	var r = Math.random()*255;
-	var color = new BaseColor(r,r,r,255);
-	return color;
+	var c = ClampColor(Math.floor(Math.random()*255*v+r));
+	return new BaseColor(c,c,c,0);
 };
 	
-function Cell(color,pattern)
+function Cell(color)
 {
-	this.color = GetColorString(GetRandomGrey(color.r, color.v));
+	this.color = GetColorString(GetRandomGrey(color.r,color.v));
 	this.alive = GetRandomAlive(66);
 }
 
@@ -86,12 +77,12 @@ function CellularAutomata(nbx,nby)
 	this.canvas.addEventListener('mousemove',MouseMoveEvent);
 	this.canvas.width = nbx;
 	this.canvas.height = nby;
+
 	this.counter = 0;
 
 	this.rule = Math.floor(Math.random()*3);
-	
 	var c = Math.random()*55;
-	this.color = new BaseColor(c, c, c, 0.5);
+	this.color = new BaseColor(c,c,c,0.5);
 	this.grid = new Grid(this.nbx + 2,this.nby,this.color);
 
 	this.Init = function(){}
@@ -275,7 +266,7 @@ function CellularAutomata(nbx,nby)
 				}
 				
 				last.cells[x].alive = alive;
-				last.cells[x].color = GetRandomColor(this.color.r,this.color.g,this.color.b,this.color.v);
+				last.cells[x].color = GetRandomGrey(this.color.r, this.color.v);
 				
 			}
 		}
