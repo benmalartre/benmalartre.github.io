@@ -25,7 +25,7 @@ function buildHome() {
 
     app.content.Clear();
     app.content.Mount(content);
-    let automata = new CellularAutomata(256, 128);
+    let automata = new CellularAutomata(128, 64);
     app.content.SetData(automata);
 }
 

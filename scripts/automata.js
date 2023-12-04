@@ -144,6 +144,7 @@ function CellularAutomata(nbx,nby)
 	this.LastLine = function()
 	{
 		if(this.counter%200==0){
+			this.rule = Math.floor(Math.random()*3);
 			this.color.r = Math.random()*155;
 			this.color.g = Math.random()*155;
 			this.color.b = Math.random()*155;
@@ -206,9 +207,6 @@ function CellularAutomata(nbx,nby)
 					}
 					else ctx.fillStyle = 'black';
 					ctx.fillRect(cx,cy,1,1);
-					// audio data
-					
-					//ctx.FillRect(cx,cy,rgba(this.audioDatas[(a*row.cells.length+b)%1024],0,0,1));
 					cx += resx;
 				}
 				cy +=resy;
