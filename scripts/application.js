@@ -15,20 +15,15 @@ var APP_MODE = MODE_HOME;
 const GRID_TEMPLATE_VERTICAL = {
 	'roof':{'left': '0px','top':'0px','width':'100%','height':'10%' },
 	'menu':{'left': '0px','top':'10%','width':'100%','height':'5%' },
-	'content':{'left': '0px','top':'15%','width':'100%','height':'84%'},
-	'panel':{'left': '0px','top':'0%','width':'0%','height':'0%' },
-	'infos':{'left': '0px','top':'84%','width':'100%','height':'25%'}
+	'content':{'left': '0px','top':'15%','width':'100%','height':'85%'}
 }
 
 const GRID_TEMPLATE_HORIZONTAL = {
 	'roof':{'left': '0px','top':'0px','width':'100%','height':'10%' },
 	'menu':{'left': '0px','top':'10%','width':'12%','height':'90%' },
-	'content':{'left': '12%','top':'10%','width':'68%','height':'90%'},
-	'panel':{'left': '80%','top':'10%','width':'20%','height':'90%' },
-	'infos':{'left': '0px','top':'80%','width':'100%','height':'25%'}
+	'content':{'left': '12%','top':'10%','width':'68%','height':'90%'}
 }
 
-includeScript('/scripts/combo.js');
 includeScript('/scripts/misc.js');
 includeScript('/scripts/menu.js');
 
