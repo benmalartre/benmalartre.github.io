@@ -50,16 +50,6 @@ function OnVertical(){
 
 	var content = document.querySelector('#content')
 	SetGridItemCells(content, GRID_TEMPLATE_VERTICAL, 'content');
-
-	var infos = document.querySelector('#infos');
-	SetGridItemCells(infos, GRID_TEMPLATE_VERTICAL, 'infos');
-
-	var panel = document.querySelector('#panel');
-	panel.style.display = 'none';
-	SetGridItemCells(panel, GRID_TEMPLATE_VERTICAL, 'panel');
-
-	infos.style.display = 'none';
-	
 }
 
 function OnHorizontal(){
@@ -71,43 +61,14 @@ function OnHorizontal(){
 
 	var content = document.querySelector('#content')
 	SetGridItemCells(content, GRID_TEMPLATE_HORIZONTAL, 'content');
-
-	var infos = document.querySelector('#infos');
-	SetGridItemCells(infos, GRID_TEMPLATE_HORIZONTAL, 'infos');
-
-	var panel = document.querySelector('#panel');
-	panel.style.display = 'block';
-	SetGridItemCells(panel, GRID_TEMPLATE_HORIZONTAL, 'panel');
-
-	infos.style.display = 'none';
-}
-
-function OnHideInfos(){
-	var elem = document.querySelector("#infos");   
-	var pos = 75;
-	var id = setInterval(frame, 20);
-	function frame() {
-		if (pos == 100) {
-			clearInterval(id);
-		} else {
-			pos++; 
-			elem.style.top = pos + '%'; 
-		}
-	}
 }
 
 function Application_t(){
 	this.user = null;
 	this.login = null;
 	this.menu = null;
-	this.infos = null;
-	this.panel = null;
-	this.userid = -1;
 	this.content = null;
 	this.status = null;
-	this.mode = MODE_UNITIALIZED;
-	this.CURRENT_SHOW = null;
-  	this.animated = new Array();
 	return this;
 }
 
@@ -170,10 +131,6 @@ Application_t.prototype.Initialize = function(){
 	this.menu = new Menu_t(elem);
 	elem = document.querySelector('#content');
 	this.content = new Content_t(elem);
-	elem = document.querySelector('#panel');
-	this.panel = new Panel_t(elem);
-	elem = document.querySelector('#infos');
-	this.infos = new Infos_t(elem, 0);
 
 	MAKE_REQUEST('get', 'scripts/home.js', null, 'text/script');
 
