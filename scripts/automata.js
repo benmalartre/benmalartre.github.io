@@ -158,8 +158,8 @@ function CellularAutomata(nbx,nby)
 		{
 			left = x-1;
 			right = x+1;
-			if(left<0)left = x;
-			if(right>(this.nbx-1))right = x;
+			if(left<0)left = this.nbx-1;
+			if(right>(this.nbx-1))right = 0;
 			
 			var a = row.cells[left].alive;
 			var b = row.cells[x].alive;
