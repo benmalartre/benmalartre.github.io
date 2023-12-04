@@ -82,7 +82,7 @@ ul {
 
 /* The menu */
 #menu {
-    font-size:8pt;
+    font-size:16pt;
     z-index: 1; 
     background-color: rgba(0, 180, 0, 255);
 }
