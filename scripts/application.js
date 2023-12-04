@@ -21,7 +21,7 @@ const GRID_TEMPLATE_VERTICAL = {
 const GRID_TEMPLATE_HORIZONTAL = {
 	'roof':{'left': '0px','top':'0px','width':'100%','height':'10%' },
 	'menu':{'left': '0px','top':'10%','width':'12%','height':'90%' },
-	'content':{'left': '12%','top':'10%','width':'68%','height':'90%'}
+	'content':{'left': '12%','top':'10%','width':'90%','height':'90%'}
 }
 
 includeScript('/scripts/misc.js');
