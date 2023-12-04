@@ -160,7 +160,7 @@ function CellularAutomata(nbx,nby)
 			right = x+1;
 			if(left<0)left = this.nbx-1;
 			if(right>(this.nbx-1))right = 0;
-			
+
 			var a = row.cells[left].alive;
 			var b = row.cells[x].alive;
 			var c = row.cells[right].alive;
@@ -266,7 +266,6 @@ function CellularAutomata(nbx,nby)
 				var b = row.cells[x].alive;
 				var c = row.cells[right].alive;
 
-				
 				alive = last.cells[x].alive;
 				switch(this.rule)
 				{
