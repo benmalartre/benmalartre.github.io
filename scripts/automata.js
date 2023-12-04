@@ -86,7 +86,8 @@ function CellularAutomata(nbx,nby)
 	this.v = 0.5;
 	this.counter = 0;
 
-	this.choose = Math.floor(Math.random()*3);
+	this.rule = Math.floor(Math.random()*3);
+	console.log("RULE USED : " + this.rule)
 	
 	this.color = new BaseColor(this.r,this.g,this.b,this.v);
 	this.grid = new Grid(this.nbx,this.nby,this.color);
@@ -144,7 +145,7 @@ function CellularAutomata(nbx,nby)
 	this.LastLine = function()
 	{
 		if(this.counter%200==0){
-			//this.choose =(this.choose+1)%3;
+			//this.rule =(this.rule+1)%3;
 			this.color.r = Math.random()*155;
 			this.color.g = Math.random()*155;
 			this.color.b = Math.random()*155;
@@ -167,7 +168,7 @@ function CellularAutomata(nbx,nby)
 			var c = row.cells[right].alive;
 
 			alive = last.cells[x].alive;
-			switch(this.choose)
+			switch(this.rule)
 			{
 				case 0:
 					alive = this.Rule90(a,b,c);
@@ -269,7 +270,7 @@ function CellularAutomata(nbx,nby)
 
 				
 				alive = last.cells[x].alive;
-				switch(this.choose)
+				switch(this.rule)
 				{
 					case 0:
 						alive = this.Rule90(a,b,c);
