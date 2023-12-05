@@ -1,0 +1,43 @@
+/* top-menu: menu's surrounding box (i.e. the menu bar) */
+
+#projects{
+
+	border-radius:12px;
+	background:rgb(255,255,255);
+	width:90%; 			/* Menu bar size, change as required */
+	top:0px;
+	margin:auto;		      		/* Menu bar centered horizontally */
+	margin-left:2%;
+	margin-top:2%;
+	/*border:1px yellow solid;*/
+	padding-left:2%;
+	padding-top:2%;
+	padding-bottom:2%;
+	/*overflow-y:auto;*/
+}
+
+section{
+
+	display:block;
+}
+
+a
+{
+	text-decoration:none;
+}
+
+#thumb
+{
+	position:relative;
+	top:0px;
+	
+	width:30%;
+	right:0px;
+	z-index:7;
+	overflow:hidden;
+}
+
+a{
+	color:rgb(66,66,0);
+	text-decoration:underline;
+}
