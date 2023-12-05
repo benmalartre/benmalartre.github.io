@@ -26,10 +26,10 @@ function MenuItem_t(name, parent, id, callback){
 }
 
 MenuItem_t.prototype.OnClick = function(event){
-	console.log("on click fuck!!");
+	console.log(this);
 	var menuItem = event.target;
-	console.log("menu item : " + menuItem);
-	menuItem.classList.toggle('active');
+	console.log("menu item : " + this.elem);
+	this.elem.classList.toggle('active');
 	APP_MODE = event.target.menu_id;
 	app.SetContent(menuItem.name);
 };
@@ -40,4 +40,5 @@ function Menu_t(parent) {
 	this.items = new Array();
 	this.elem = parent;
 	loadJSON(this, buildMenuCallback, 'datas/menu.json', true);
+	this.active = this.items[0];
 };
