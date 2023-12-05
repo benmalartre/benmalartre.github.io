@@ -12,12 +12,9 @@
 }
 
 section{
+    color: white;
     background:rgb(25,25,25);
 	display:block;
-}
-
-text{
-    color: white;
 }
 
 #thumb
