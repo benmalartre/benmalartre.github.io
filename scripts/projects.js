@@ -25,6 +25,12 @@ var buildProjectsCallback=function(projects, data) {
 
         var thumb = document.createElement('img');
         thumb.src = desc.thumb;
+        thumb.width = '256px';
+
+        var github = document.createElement('img');
+        github.src = '../images/github-mark.png';
+        github.width = '48px';
+        github.height = '48px';
 
         var link = document.createElement('a');
         link.title = desc.url;
@@ -35,7 +41,8 @@ var buildProjectsCallback=function(projects, data) {
         project.appendChild(name);
         project.appendChild(description);
         project.appendChild(thumb);
-        project.appendChild(link)
+        project.appendChild(github);
+        project.appendChild(link);
 
         projects.elem.appendChild(project);
 
