@@ -128,7 +128,9 @@ Application_t.prototype.Initialize = function(){
 	elem = document.querySelector('#content');
 	this.content = new Content_t(elem);
 
-	MAKE_REQUEST('get', 'scripts/home.js', null, 'text/script');
+	let automata = new CellularAutomata(128, 64);
+    this.content.Mount(automata);
+
 
 	this.OnResize();
 	
