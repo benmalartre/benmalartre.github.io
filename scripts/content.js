@@ -30,7 +30,7 @@ Content_t.prototype.Clear = function(){
 Content_t.prototype.Mount = function(content){   
     this.elem.appendChild(content.elem);
     this.elem.style.width = content.elem.offsetWidth;
-    this.elem.style.wheightidth = content.elem.offsetHeight;
+    this.elem.style.height = content.elem.offsetHeight;
     this.elem.top = '0px';
     this.elem.left = '0px';
     this.objects.push(content);
