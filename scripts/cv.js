@@ -32,4 +32,5 @@ function CV_t(parent) {
 	this.elem = document.createElement('div');
     this.elem.id = 'cv';
 	loadJSON(this, buildCVCallback, 'datas/cv.json', true);
+    return this;
 };
