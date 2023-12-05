@@ -1,5 +1,5 @@
 function buildCV() {
-    let cv = new CV_t(document);
+    let cv = new CV_t();
 
     app.content.Clear();
     app.content.Mount(cv);

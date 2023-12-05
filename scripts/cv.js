@@ -26,7 +26,7 @@ var buildCVCallback=function(cv, data) {
     //cv.elem.innerHTML = text;
 }
 
-function CV_t(parent) {
+function CV_t() {
 	this.numEntries = 0;
 	this.items = new Array();
 	this.elem = document.createElement('div');
