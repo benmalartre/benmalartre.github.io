@@ -154,15 +154,9 @@ Application_t.prototype.RefreshUI = function(){
 	app.ActivateMenu(true);
 }
 
-function UpdateApp() {
-	app.Update();
-	requestAnimationFrame(UpdateApp);
-}
-
 function InitApp(){
 	app = new Application_t();
 	app.Initialize();
-	requestAnimationFrame(UpdateApp);
 }
 
 window.requestAnimationFrame = 

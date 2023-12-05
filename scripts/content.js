@@ -19,6 +19,7 @@ Content_t.prototype.Update = function() {
     for(var i=0; i < this.objects.length; i++) {
         this.objects[i].Update();
     }
+    requestAnimationFrame(this.Update);
 }
 
 Content_t.prototype.Clear = function(){
@@ -35,4 +36,6 @@ Content_t.prototype.Mount = function(content){
     this.elem.style.width = '100%';
     this.elem.style.height = '100%';
     this.objects.push(content);
+
+    requestAnimationFrame(this.Update);
 };
