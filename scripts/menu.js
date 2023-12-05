@@ -27,6 +27,7 @@ function MenuItem_t(name, parent, id, callback){
 }
 
 MenuItem_t.prototype.OnClick = function(event){
+	console.log("on click fuck!!");
 	var menuItem = event.target;
 	this.elem.classList.toggle('active');
 	APP_MODE = event.target.menu_id;
