@@ -9,7 +9,6 @@ var buildMenuCallback=function(menu, data) {
 		menu.numEntries ++;
 		menu.numChars += desc['label'].length + 1;
 	});
-	menu.OnMenuResize();
 }
 
 function MenuItem_t(name, parent, id, callback){
