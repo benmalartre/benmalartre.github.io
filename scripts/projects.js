@@ -27,14 +27,15 @@ var buildProjectsCallback=function(projects, data) {
         thumb.src = desc.thumb;
 
         var link = document.createElement('a');
-        var url = document.createTextNode(desc.name);
-        link.appendChild(url);
         link.title = desc.url;
         link.href = desc.url;
-
-        section.appendChild(name);
-        section.appendChild(description);
-        section.appendChild(thumb);
+        var url = document.createTextNode(desc.name);
+        link.appendChild(url);
+        
+        project.appendChild(name);
+        project.appendChild(description);
+        project.appendChild(thumb);
+        project.appendChild(link)
 
         projects.elem.appendChild(project);
 
