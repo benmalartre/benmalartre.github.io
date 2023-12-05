@@ -16,7 +16,6 @@ function MenuItem_t(name, parent, id, callback){
 	this.text = document.createTextNode(name);
 	this.elem.setAttribute('name', name);
 	this.elem.setAttribute('href', '#');
-	this.elem.classList.add('active');
 	this.elem.addEventListener('click', this.OnClick);
 	this.elem.menu_id = id;
 	this.elem.callback = callback;
@@ -26,10 +25,8 @@ function MenuItem_t(name, parent, id, callback){
 }
 
 MenuItem_t.prototype.OnClick = function(event){
-	console.log(this);
 	var menuItem = event.target;
-	this.classList.toggle('active');
-	APP_MODE = event.target.menu_id;
+	APP_MODE = menuItem.menu_id;
 	app.SetContent(menuItem.name);
 };
 

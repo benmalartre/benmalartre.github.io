@@ -120,7 +120,6 @@ Application_t.prototype.OnResize = function(event){
 	}
 	document.width = width;
 	document.height = height;
-	//OnMenuResize();
 }
 	
 Application_t.prototype.Initialize = function(){  
