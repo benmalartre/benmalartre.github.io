@@ -45,24 +45,3 @@ function Menu_t(parent) {
 	this.Active = -1;
 	loadJSON(this, buildMenuCallback, 'datas/menu.json', true);
 };
-
-Menu_t.prototype.OnMenuResize = function() {
-	/*
-	var menu = document.querySelector('#menu');
-	var a = menu.querySelectorAll('a');
-	if(menu.offsetWidth>menu.offsetHeight){
-		var s = menu.offsetWidth / this.numChars;
-		for(var i=0;i<a.length;i++){
-			a[i].style.display = 'inline';
-			a[i].style.fontSize = 2*s+'px';
-		}
-	}
-	else{
-		var s = menu.offsetWidth / (this.numChars / this.numEntries);
-		for(var i=0;i<a.length;i++){
-			a[i].style.display = 'block';
-			a[i].style.fontSize = s+'px';
-		}
-	}
-	*/
-};
