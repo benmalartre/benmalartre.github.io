@@ -28,8 +28,7 @@ function MenuItem_t(name, parent, id, callback){
 MenuItem_t.prototype.OnClick = function(event){
 	console.log(this);
 	var menuItem = event.target;
-	console.log("menu item : " + this.elem);
-	this.elem.classList.toggle('active');
+	this.classList.toggle('active');
 	APP_MODE = event.target.menu_id;
 	app.SetContent(menuItem.name);
 };
