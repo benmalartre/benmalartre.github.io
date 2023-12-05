@@ -17,7 +17,7 @@ function MenuItem_t(name, parent, id, callback){
 	this.elem.setAttribute('name', name);
 	this.elem.setAttribute('href', '#');
 	this.elem.classList.add('active');
-	this.elem.addEventListener('click', this.OnClick, false);
+	this.elem.addEventListener('click', this.OnClick);
 	this.elem.menu_id = id;
 	this.elem.callback = callback;
 	this.elem.parent = parent;
