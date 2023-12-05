@@ -29,11 +29,10 @@ Content_t.prototype.Clear = function(){
 
 Content_t.prototype.Mount = function(content){   
     this.elem.appendChild(content.elem);
-    this.elem.style.width = content.elem.offsetWidth;
-    this.elem.style.height = content.elem.offsetHeight;
-    this.elem.top = '0px';
-    this.elem.left = '0px';
-    this.elem.width = '100%';
-    this.elem.height = '100%';
+    this.elem.style.position = 'relative';
+    this.elem.style.top = '0px';
+    this.elem.style.left = '0px';
+    this.elem.style.width = '100%';
+    this.elem.style.height = '100%';
     this.objects.push(content);
 };
