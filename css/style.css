@@ -71,7 +71,7 @@ ul {
     position:absolute;
     z-index:1;
     overflow: scroll;
-    background-color: rgb(255, 0, 255);
+    background-color: black;
     -ms-overflow-style: none;  
     /*scrollbar-width: none;*/
 }
@@ -91,7 +91,7 @@ ul {
 #menu a {
     position: relative;
     text-decoration: none;
-    color: rgb(255, 255, 255);
+    color: white;
     display: block;
     padding-right: 0.25em;
     padding-left: 0.25em;
