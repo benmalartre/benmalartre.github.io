@@ -98,6 +98,7 @@ function CellularAutomata(nbx,nby)
 	this.canvas.addEventListener('mousemove',MouseMoveEvent);
 	this.canvas.width = nbx;
 	this.canvas.height = nby;
+	this.elem.appendChild(this.canvas);
 
 	this.counter = 0;
 
