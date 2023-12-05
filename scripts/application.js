@@ -100,10 +100,6 @@ Application_t.prototype.Home = function(){
 	xhttp.send();
 }
 
-Application_t.prototype.Mount = function(elem){
-	document.body.appendChild(elem);
-}
-
 Application_t.prototype.OnResize = function(event){
 	var width = window.innerWidth;
 	var height = window.innerHeight;
