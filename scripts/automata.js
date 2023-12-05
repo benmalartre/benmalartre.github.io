@@ -74,7 +74,27 @@ function CellularAutomata(nbx,nby)
 	this.nbx = nbx;
 	this.nby = nby;
 	this.type = 'automata';
-	this.canvas = document.getElementById('canvas');
+	this.elem = document.createElement('div');
+    this.elem.style.textAlign = 'center';
+    this.elem.style.color = 'rgb(0, 0, 0)';
+
+    this.canvas = document.createElement('canvas'); 
+    this.canvas.id = "canvas";
+    this.canvas.style.position = 'absolute';
+    this.canvas.style.left = '0px';
+    this.canvas.style.top = '0px';
+    this.canvas.style.width = '100%';
+    this.canvas.style.height = '100%';
+
+    this.canvas.style.imageRendering = "optimizeSpeed";             /* Legal fallback */
+	this.canvas.style.imageRendering = "-moz-crisp-edges";          /* Firefox        */
+	this.canvas.style.imageRendering = "-o-crisp-edges";            /* Opera          */
+	this.canvas.style.imageRendering = "-webkit-optimize-contrast"; /* Safari         */
+	this.canvas.style.imageRendering = "optimize-contrast";         /* CSS3 Proposed  */
+	this.canvas.style.imageRendering = "crisp-edges";               /* CSS4 Proposed  */
+	this.canvas.style.imageRendering = "pixelated";                 /* CSS4 Proposed  */
+	this.canvas.style.msInterpolationMode = "nearest-neighbor";     /* IE8+           */
+
 	this.canvas.addEventListener('mousemove',MouseMoveEvent);
 	this.canvas.width = nbx;
 	this.canvas.height = nby;

@@ -27,7 +27,7 @@ Content_t.prototype.Clear = function(){
     }
 };
 
-Content_t.prototype.Mount = function(object){
+Content_t.prototype.Mount = function(object){   
     this.elem.appendChild(object.elem);
     this.elem.style.width = elem.offsetWidth;
     this.elem.style.wheightidth = elem.offsetHeight;
