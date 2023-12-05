@@ -28,14 +28,8 @@ function MenuItem_t(name, parent, id, callback){
 
 MenuItem_t.prototype.OnClick = function(event){
 	var menuItem = event.target;
-	menuItem.classList.toggle('active');
-	var menuParent = menuItem.parent;
-	var id = event.target.menu_id;
-	APP_MODE = id;
-
-	if(menuItem.id != menuParent.active) {
-		menuParent.active = menuItem.id;
-	}
+	//menuItem.classList.toggle('active');
+	APP_MODE = event.target.menu_id;
 	app.SetContent(menuItem.name);
 };
 
@@ -44,6 +38,5 @@ function Menu_t(parent) {
 	this.numEntries = 0;
 	this.items = new Array();
 	this.elem = parent;
-	this.Active = -1;
 	loadJSON(this, buildMenuCallback, 'datas/menu.json', true);
 };
