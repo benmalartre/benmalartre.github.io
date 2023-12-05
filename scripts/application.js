@@ -26,6 +26,7 @@ const GRID_TEMPLATE_HORIZONTAL = {
 
 includeScript('/scripts/misc.js');
 includeScript('/scripts/menu.js');
+includeScript('/scripts/automata.js');
 
 var app = null;
 
