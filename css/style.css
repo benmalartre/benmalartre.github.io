@@ -106,7 +106,7 @@ ul {
 }
 #menu a:active {
     color: black;
-    background-color: white;
+    background-color: greenyellow;
 }
   
 @media all and (orientation:landscape) {
