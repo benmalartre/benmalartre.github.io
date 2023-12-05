@@ -1,0 +1,30 @@
+[
+    {
+        "name": "toonix",      
+        "label": "Toonix",      
+        "description": "Toonix is a set of custom C++ ICE Nodes to generate Toon Lines, it supports Silhouette Detection, Boundary Detection,Intersection Detection(WIP) Crease Detection, Edge Cluster Detection, as well as experimental light and shadow approximation. It outputs on-the-fly polymesh geometry.",
+        "thumb": "../images/softimage/toonix.jpg",
+        "url": "https://github.com/benmalartre/Toonix"
+    },
+    {
+        "name": "voronoi",      
+        "label": "Voronoi",      
+        "description": "Voronoi is a softimage plugin to shatter 3D objects",
+        "thumb": "../images/softimage/voronoi.jpg",
+        "url": "https://github.com/benmalartre/RIPSoftimage/tree/master/Application/Plugins/Voronoi"
+    },
+    {
+        "name": "usd_read",      
+        "label": "Usd Read",      
+        "description": "A softimage plugin to read usd and display it in the viewport",
+        "thumb": "../images/softimage/usd_read.jpg",
+        "url": "https://github.com/benmalartre/RIPSoftimage/tree/master/Application/Plugins/UsdRead"
+    },
+    {
+        "name": "usd_write",      
+        "label": "Usd Write",      
+        "description": "A softimage plugin to export scene to usd file format",
+        "thumb": "../images/softimage/usd_write.jpg",
+        "url": "https://github.com/benmalartre/RIPSoftimage/tree/master/Application/Plugins/UsdWrite"
+    }
+]
