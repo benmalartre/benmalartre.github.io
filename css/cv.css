@@ -71,7 +71,7 @@ a
 }
 #job
 {
-background:rgba(100,155,155,0.666);
+	background:rgba(100,155,155,0.666);
 	font-size:14px;
 	display:inline-block;
 	position:relative;
@@ -85,7 +85,7 @@ background:rgba(100,155,155,0.666);
 
 #projects
 {
-background:rgba(55,155,155,0.666);
+	background:rgba(55,155,155,0.666);
 	display:inline-block;
 	font-size:12px;
 	position:relative;
