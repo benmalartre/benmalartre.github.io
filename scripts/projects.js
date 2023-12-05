@@ -29,8 +29,8 @@ var buildProjectsCallback=function(projects, data) {
 
         var github = document.createElement('img');
         github.src = '../images/github-mark.png';
-        github.width = '48';
-        github.height = '48';
+        github.width = '32';
+        github.height = '32';
 
         var link = document.createElement('a');
         link.title = desc.url;
