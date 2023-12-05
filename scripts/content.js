@@ -33,5 +33,7 @@ Content_t.prototype.Mount = function(content){
     this.elem.style.height = content.elem.offsetHeight;
     this.elem.top = '0px';
     this.elem.left = '0px';
+    this.elem.width = '100%';
+    this.elem.height = '100%';
     this.objects.push(content);
 };
