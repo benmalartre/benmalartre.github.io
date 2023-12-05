@@ -103,7 +103,7 @@ function CellularAutomata(nbx,nby)
 	this.counter = 0;
 
 	this.rule = Math.floor(Math.random()*3);
-	var c = Math.random()*55;
+	var c = Math.random()*128;
 	this.color = new BaseColor(c,c,c,0.5);
 	this.grid = new Grid(this.nbx + 2,this.nby,this.color);
 
