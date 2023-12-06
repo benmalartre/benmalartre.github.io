@@ -220,23 +220,21 @@ function CellularAutomata(nbx,nby)
 	
 	this.Update = function(){
 		this.counter++;
-		console.log("update...");
 		var col = new BaseColor(200,200,200,0);
 
-		for(var r = 0;r<this.nby;r++)
+		for(var r = 1;r<this.nby;r++)
 		{
-			row = this.grid.rows[r];
-			next = this.grid.rows[r+1];
-			var b = (1-r*1/this.nby)*255;
+			current = this.grid.rows[r];
+			previous = this.grid.rows[r-1];
 
 			for(var c=0;c<this.nbx+2;c++)
 			{
-				row.cells[c].color = next.cells[c].color
-				row.cells[c].alive = next.cells[c].alive;
-				col.r = row.cells[c].color.r;
-				col.g = row.cells[c].color.g;
-				col.b = row.cells[c].color.b;
-				row.cells[c].sColor = GetColorString(col);
+				previous.cells[c].color = current.cells[c].color
+				previous.cells[c].alive = current.cells[c].alive;
+				col.r = current.cells[c].color.r;
+				col.g = current.cells[c].color.g;
+				col.b = current.cells[c].color.b;
+				previous.cells[c].sColor = GetColorString(col);
 			}
 		}
 		
