@@ -13,14 +13,13 @@ function Content_t(parent){
     parent.appendChild(this.elem);
 
     this.objects = new Array();
-    this.pause = false;
+
+    requestAnimationFrame(() => this.Update());
 };
 
-Content_t.prototype.Update = function() {
-    if(!this.objects.length || this.pause) return;
-
+Content_t.prototype.Update = function() { 
     for(var i=0; i < this.objects.length; i++) {
-        this.objects[i].Update();
+        if(this.objects[i].needUpdate)this.objects[i].Update();
     }
     requestAnimationFrame(() => this.Update());
 }
@@ -41,9 +40,4 @@ Content_t.prototype.Mount = function(content){
     this.elem.style.width = '100%';
     this.elem.style.height = '100%';
     this.objects.push(content);
-
-    if(content.needAnimationRequest) {
-        requestAnimationFrame(() => this.Update());
-        this.pause = false;
-    }
 };
