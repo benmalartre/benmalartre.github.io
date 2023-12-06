@@ -16,6 +16,7 @@ function Content_t(parent){
 };
 
 Content_t.prototype.Update = function() {
+    if(this.objects.length === 0) return;
     for(var i=0; i < this.objects.length; i++) {
         this.objects[i].Update();
     }
