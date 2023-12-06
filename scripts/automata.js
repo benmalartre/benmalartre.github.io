@@ -257,3 +257,4 @@ function CellularAutomata(nbx,nby)
 	this.Draw();	
 	return this;
 }
+
