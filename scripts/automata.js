@@ -7,13 +7,6 @@ function ClampColor(c)
 	else return c;
 };
 
-function BaseColor(r,g,b,v)
-{
-	this.r = r;
-	this.g = g;
-	this.b = b;
-	this.v = v;
-}
 function GetRandomAlive(perc)
 {
 	r = Math.random() * 100;
@@ -29,7 +22,7 @@ function GetRandomColor(r,g,b,v)
 	var r = ClampColor(Math.floor(Math.random()*255*v+r));
 	var g = ClampColor(Math.floor(Math.random()*255*v+g));
 	var b = ClampColor(Math.floor(Math.random()*255*v+b));
-	return new BaseColor(r,g,b,0);
+	return new {BaseColor}(r,g,b,0);
 };
 
 function GetRandomGrey(c,v)
@@ -37,6 +30,14 @@ function GetRandomGrey(c,v)
 	var c = ClampColor(Math.floor(Math.random()*255*v+c));
 	return new BaseColor(c,c,c,0);
 };
+
+function BaseColor(r,g,b,v)
+{
+	this.r = r;
+	this.g = g;
+	this.b = b;
+	this.v = v;
+}
 	
 function Cell(color)
 {
@@ -63,15 +64,9 @@ function Grid(x,y,color)
 	}
 }
 
-function MouseMoveEvent(event)
-{
-	canvas_x = event.pageX;
-	canvas_y = event.pageY;
-}
-
 function CellularAutomata(nbx,nby)
 {
-	this.needAnimationRequest = true;
+	this.needUpdate = true;
 	this.nbx = nbx;
 	this.nby = nby;
 	this.type = 'automata';
@@ -148,52 +143,46 @@ function CellularAutomata(nbx,nby)
 		else if(!a && !b && !c) return false;
 	}
 
-	this.FirstLine = function()
+	this.Line = function(index, rule)
 	{
-		var row = this.grid.rows[0];
-		for(var x=0;x<this.nbx+2;x++)
-		{
-			row.cells[x].alive = GetRandomAlive(50);
-			row.cells[x].color = GetRandomGrey(this.color.r,this.color.v);
-		}
-	}
-	
-	this.LastLine = function()
-	{
-		if(this.counter%200==0){
-			this.rule = Math.floor(Math.random()*3);
-			this.color.r = this.color.g = this.color.b = Math.random()*220;
-		}
-		
-		var row = this.grid.rows[this.nby-2];
-		var last = this.grid.rows[this.nby-1];
-		var left, right, alive;
-		
-		for(var x=1;x<this.nbx+1;x++)
-		{
-			left = x-1;
-			right = x+1;
-
-			var a = row.cells[left].alive;
-			var b = row.cells[x].alive;
-			var c = row.cells[right].alive;
-
-			alive = last.cells[x].alive;
-			switch(this.rule)
+		if(!index) {
+			var row = this.grid.rows[0];
+			for(var x=0;x<this.nbx+2;x++)
 			{
-				case 0:
-					alive = this.Rule90(a,b,c);
-					break;
-				case 1:
-					alive = this.Rule105(a,b,c);
-					break;
-				case 2:
-					alive = this.Rule110(a,b,c);
-					break;
+				row.cells[x].alive = GetRandomAlive(50);
+				row.cells[x].color = GetRandomGrey(this.color.r,this.color.v);
 			}
+		} else {
+			var current = this.grid.rows[index];
+			var previous = this.grid.rows[index-1];
+			var left, right, alive;
 			
-			last.cells[x].alive = alive;
-			last.cells[x].color = GetRandomGrey(this.color.r, this.color.v);
+			for(var x=1;x<this.nbx+1;x++)
+			{
+				left = x-1;
+				right = x+1;
+
+				var a = previous.cells[left].alive;
+				var b = previous.cells[x].alive;
+				var c = previous.cells[right].alive;
+
+				alive = current.cells[x].alive;
+				switch(rule)
+				{
+					case 0:
+						alive = this.Rule90(a,b,c);
+						break;
+					case 1:
+						alive = this.Rule105(a,b,c);
+						break;
+					case 2:
+						alive = this.Rule110(a,b,c);
+						break;
+				}
+				
+				current.cells[x].alive = alive;
+				current.cells[x].color = GetRandomGrey(this.color.r, this.color.v);
+			}
 		}
 	}
 
@@ -252,53 +241,19 @@ function CellularAutomata(nbx,nby)
 				}
 			}
 			
-			this.LastLine();
+			this.Line(this.nby-1);
 			this.Draw();
 		}
 	}
 	
 	this.UpdateOnce = function()
 	{
-		for(var y = 1;y<this.nby;y++)
-		{
-			last = this.grid.rows[y];
-			row = this.grid.rows[y-1];
-
-			for(var x=1;x<this.nbx+1;x++)
-			{
-				left = x-1;
-				right = x+1;
-				
-				var a = row.cells[left].alive;
-				var b = row.cells[x].alive;
-				var c = row.cells[right].alive;
-
-				alive = last.cells[x].alive;
-				switch(this.rule)
-				{
-					case 0:
-						alive = this.Rule90(a,b,c);
-						break;
-					case 1:
-						alive = this.Rule105(a,b,c);
-						break;
-					case 2:
-						alive = this.Rule110(a,b,c);
-						break;
-				}
-				
-				last.cells[x].alive = alive;
-				last.cells[x].color = GetRandomGrey(this.color.r, this.color.v);
-				
-			}
-		}
-		
-		this.LastLine();
+		for(var y = 0;y<this.nby;y++)
+			this.Line(y, this.rule);
 		this.Draw();
 	
 	}
 
-	this.FirstLine();
 	this.UpdateOnce();
 	this.Draw();	
 	return this;
