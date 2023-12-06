@@ -157,7 +157,7 @@ function CellularAutomata(nbx,nby)
 			var previous = this.grid.rows[idx-1];
 			var left, right, alive;
 			
-			for(var x=1;x<this.nbx+2;x++)
+			for(var x=1;x<this.nbx+1;x++)
 			{
 				left = x-1;
 				right = x+1;
