@@ -220,29 +220,28 @@ function CellularAutomata(nbx,nby)
 	
 	this.Update = function(){
 		this.counter++;
-		if(this.counter%5 == 0){
-			var col = new BaseColor(200,200,200,0);
-	
-			for(var r = 0;r<this.nby;r++)
-			{
-				row = this.grid.rows[r];
-				next = this.grid.rows[r+1];
-				var b = (1-r*1/this.nby)*255;
+		console.log("update...");
+		var col = new BaseColor(200,200,200,0);
 
-				for(var c=0;c<this.nbx+2;c++)
-				{
-					row.cells[c].color = next.cells[c].color
-					row.cells[c].alive = next.cells[c].alive;
-					col.r = row.cells[c].color.r;
-					col.g = row.cells[c].color.g;
-					col.b = row.cells[c].color.b;
-					row.cells[c].sColor = GetColorString(col);
-				}
+		for(var r = 0;r<this.nby;r++)
+		{
+			row = this.grid.rows[r];
+			next = this.grid.rows[r+1];
+			var b = (1-r*1/this.nby)*255;
+
+			for(var c=0;c<this.nbx+2;c++)
+			{
+				row.cells[c].color = next.cells[c].color
+				row.cells[c].alive = next.cells[c].alive;
+				col.r = row.cells[c].color.r;
+				col.g = row.cells[c].color.g;
+				col.b = row.cells[c].color.b;
+				row.cells[c].sColor = GetColorString(col);
 			}
-			
-			this.Line(this.nby-1);
-			this.Draw();
 		}
+		
+		this.Line(this.nby-1);
+		this.Draw();
 	}
 	
 	this.UpdateOnce = function()
