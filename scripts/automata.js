@@ -91,7 +91,6 @@ function CellularAutomata(nbx,nby)
 	this.canvas.style.imageRendering = "pixelated";                 /* CSS4 Proposed  */
 	this.canvas.style.msInterpolationMode = "nearest-neighbor";     /* IE8+           */
 
-	this.canvas.addEventListener('mousemove',MouseMoveEvent);
 	this.canvas.width = nbx;
 	this.canvas.height = nby;
 	this.elem.appendChild(this.canvas);
