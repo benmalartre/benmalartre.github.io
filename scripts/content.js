@@ -26,6 +26,7 @@ Content_t.prototype.Clear = function(){
     for(var i=this.elem.childNodes.length-1;i>=0;i--){
         this.elem.removeChild(this.elem.childNodes[i]);
     }
+    this.objects = new Array();
 };
 
 Content_t.prototype.Mount = function(content){   

@@ -20,6 +20,7 @@ function MenuItem_t(name, parent, id, callback){
 	this.elem.menu_id = id;
 	this.elem.callback = callback;
 	this.elem.parent = parent;
+	this.elem.classList.add('active');
 	parent.elem.appendChild(this.elem);
 	this.elem.appendChild(this.text);
 }
@@ -28,6 +29,8 @@ MenuItem_t.prototype.OnClick = function(event){
 	var menuItem = event.target;
 	APP_MODE = menuItem.menu_id;
 	app.SetContent(menuItem.name);
+	console.log(menuItem);
+	menuItem.classList.toggle('active');
 };
 
 function Menu_t(parent) {
