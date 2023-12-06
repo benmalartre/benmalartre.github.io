@@ -203,7 +203,7 @@ function CellularAutomata(nbx,nby)
 			for(var a=0;a<this.grid.rows.length;a++)
 			{
 				row = this.grid.rows[a];
-				for(var b=0;b<row.cells.length;b++)
+				for(var b=1;b<row.cells.length-1;b++)
 				{
 					var cell = row.cells[b];
 					if(cell.alive){
