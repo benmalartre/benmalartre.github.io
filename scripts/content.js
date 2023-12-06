@@ -19,7 +19,7 @@ function Content_t(parent){
 
 Content_t.prototype.Update = function() { 
     for(var i=0; i < this.objects.length; i++) {
-        if(this.objects[i].needUpdate)this.objects[i].Update();
+        /*if(this.objects[i].needUpdate)*/this.objects[i].Update();
     }
     requestAnimationFrame(() => this.Update());
 }
