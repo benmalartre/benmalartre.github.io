@@ -223,7 +223,7 @@ function CellularAutomata(nbx,nby)
 		if(this.counter%5 == 0){
 			var col = new BaseColor(200,200,200,0);
 	
-			for(var r = 0;r<this.nby-1;r++)
+			for(var r = 0;r<this.nby;r++)
 			{
 				row = this.grid.rows[r];
 				next = this.grid.rows[r+1];
