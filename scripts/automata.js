@@ -238,7 +238,7 @@ function CellularAutomata(nbx,nby)
 			}
 		}
 		
-		this.Line(this.nby-1);
+		this.Line(this.nby-1, this.rule);
 		this.Draw();
 	}
 	
