@@ -144,7 +144,7 @@ function CellularAutomata(nbx,nby)
 
 	this.Line = function(index, rule)
 	{
-		if(!index) {
+		if(index === 0) {
 			var row = this.grid.rows[0];
 			for(var x=0;x<this.nbx+2;x++)
 			{
