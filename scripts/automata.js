@@ -71,6 +71,7 @@ function MouseMoveEvent(event)
 
 function CellularAutomata(nbx,nby)
 {
+	this.needAnimationRequest = true;
 	this.nbx = nbx;
 	this.nby = nby;
 	this.type = 'automata';

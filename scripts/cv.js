@@ -31,6 +31,7 @@ function CV_t() {
 	this.items = new Array();
 	this.elem = document.createElement('div');
     this.elem.id = 'cv';
+    this.needAnimationRequest = false;
 	loadJSON(this, buildCVCallback, 'datas/cv.json', true);
 
     this.Update = function(){};

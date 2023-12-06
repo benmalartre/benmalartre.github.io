@@ -13,10 +13,12 @@ function Content_t(parent){
     parent.appendChild(this.elem);
 
     this.objects = new Array();
+    this.pause = false;
 };
 
 Content_t.prototype.Update = function() {
-    if(this.objects.length === 0) return;
+    if(!this.objects.length || this.pause) return;
+
     for(var i=0; i < this.objects.length; i++) {
         this.objects[i].Update();
     }
@@ -28,6 +30,7 @@ Content_t.prototype.Clear = function(){
         this.elem.removeChild(this.elem.childNodes[i]);
     }
     this.objects = new Array();
+    this.pause = true;
 };
 
 Content_t.prototype.Mount = function(content){   
@@ -39,5 +42,8 @@ Content_t.prototype.Mount = function(content){
     this.elem.style.height = '100%';
     this.objects.push(content);
 
-    requestAnimationFrame(() => this.Update());
+    if(content.needAnimationRequest) {
+        requestAnimationFrame(() => this.Update());
+        this.pause = false;
+    }
 };

@@ -59,6 +59,7 @@ function Projects_t() {
     this.elem.id = 'projects';
 	loadJSON(this, buildProjectsCallback, 'datas/softimage.json', true);
 
+    this.needAnimationRequest = false;
     this.Update = function(){};
     return this;
 };
