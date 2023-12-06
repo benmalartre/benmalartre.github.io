@@ -102,6 +102,11 @@ ul {
 /* When you mouse over the navigation links, change their color */
 #menu a:hover {
     color: black;
+    background-color: green;
+}
+
+#menu a:active {
+    color: black;
     background-color: greenyellow;
 }
 
