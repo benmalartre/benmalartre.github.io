@@ -156,7 +156,7 @@ function CellularAutomata(nbx,nby)
 			var previous = this.grid.rows[index-1];
 			var left, right, alive;
 			
-			for(var x=1;x<this.nbx+1;x++)
+			for(var x=0;x<this.nbx+1;x++)
 			{
 				left = x-1;
 				right = x+1;
@@ -238,7 +238,7 @@ function CellularAutomata(nbx,nby)
 			}
 		}
 		
-		this.Line(this.nby-1, this.rule);
+		this.Line(this.nby-1);
 		this.Draw();
 	}
 	
