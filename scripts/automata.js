@@ -142,9 +142,9 @@ function CellularAutomata(nbx,nby)
 		else if(!a && !b && !c) return false;
 	}
 
-	this.Line = function(index, rule)
+	this.Line = function(idx, rule)
 	{
-		if(index === 0) {
+		if(idx === 0) {
 			var row = this.grid.rows[0];
 			for(var x=0;x<this.nbx+2;x++)
 			{
@@ -152,8 +152,8 @@ function CellularAutomata(nbx,nby)
 				row.cells[x].color = GetRandomGrey(this.color.r,this.color.v);
 			}
 		} else {
-			var current = this.grid.rows[index];
-			var previous = this.grid.rows[index-1];
+			var current = this.grid.rows[idx];
+			var previous = this.grid.rows[idx-1];
 			var left, right, alive;
 			
 			for(var x=0;x<this.nbx+1;x++)
