@@ -26,7 +26,7 @@ Content_t.prototype.Update = function() {
     let elapsed = this.now - this.then;
 
     if (elapsed > this.speedMs) {
-        this.then = this.now - elapsed;
+        this.then = this.now;
 
         for(var i=0; i < this.objects.length; i++) {
         /*if(this.objects[i].needUpdate)*/this.objects[i].Update();
