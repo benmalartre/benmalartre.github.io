@@ -23,7 +23,7 @@ function Content_t(parent){
 Content_t.prototype.Update = function() { 
     // calc elapsed time since last loop
     this.now = Date.now();
-    let elapsed = now - then;
+    let elapsed = this.now - this.then;
 
     if (elapsed > this.speedMs) {
         this.then = this.now - elapsed;
