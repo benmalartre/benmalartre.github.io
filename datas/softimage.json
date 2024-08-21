@@ -10,14 +10,14 @@
         "name": "voronoi",      
         "label": "Voronoi",      
         "description": "Voronoi is a softimage C++ plugin to shatter 3D objects",
-        "thumb": "../images/softimage/Toonix.PNG",
+        "thumb": "../images/softimage/Voronoi.PNG",
         "url": "https://github.com/benmalartre/RIPSoftimage/tree/master/Application/Plugins/Voronoi"
     },
     {
         "name": "usd_read",      
         "label": "Usd Read",      
         "description": "UsdRead is a softimage C++ plugin to read usd file and display it in the viewport inside a custom primitive",
-        "thumb": "../images/softimage/Toonix.PNG",
+        "thumb": "../images/softimage/UsdRead.PNG",
         "url": "https://github.com/benmalartre/RIPSoftimage/tree/master/Application/Plugins/UsdRead"
     },
     {
