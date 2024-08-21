@@ -13,7 +13,7 @@ function Content_t(parent){
     parent.appendChild(this.elem);
 
     this.objects = new Array();
-    this.speedMs = 1000;
+    this.speedMs = 250;
     this.then = 0;
     this.now = 0;
 
