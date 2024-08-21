@@ -13,14 +13,26 @@ function Content_t(parent){
     parent.appendChild(this.elem);
 
     this.objects = new Array();
+    this.speedMs = 1000;
+    this.then = 0;
+    this.now = 0;
 
     requestAnimationFrame(() => this.Update());
 };
 
 Content_t.prototype.Update = function() { 
-    for(var i=0; i < this.objects.length; i++) {
+    // calc elapsed time since last loop
+    this.now = Date.now();
+    let elapsed = now - then;
+
+    if (elapsed > this.speedMs) {
+        this.then = this.now - elapsed;
+
+        for(var i=0; i < this.objects.length; i++) {
         /*if(this.objects[i].needUpdate)*/this.objects[i].Update();
+      }
     }
+
     requestAnimationFrame(() => this.Update());
 }
 
