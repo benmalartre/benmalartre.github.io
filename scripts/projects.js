@@ -40,9 +40,6 @@ var buildProjectsCallback=function(projects, data) {
         projects.elem.appendChild(project);
 
     });
-
-    //text += "</table>";
-    //cv.elem.innerHTML = text;
 }
 
 function Projects_t(name) {
