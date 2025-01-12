@@ -20,7 +20,6 @@ function MenuItem_t(name, parent, id, callback){
 	this.elem.menu_id = id;
 	this.elem.callback = callback;
 	this.elem.parent = parent;
-	this.elem.classList.add('active');
 	parent.elem.appendChild(this.elem);
 	this.elem.appendChild(this.text);
 }
@@ -29,7 +28,9 @@ MenuItem_t.prototype.OnClick = function(event){
 	var menuItem = event.target;
 	APP_MODE = menuItem.menu_id;
 	app.SetContent(menuItem.name);
-	menuItem.classList.toggle('active');
+	menuItem.parent.active.style.backgroundColor = "transparent";
+	menuItem.parent.active = menuItem;
+	menuItem.style.backgroundColor = "greenyellow";
 };
 
 function Menu_t(parent) {
@@ -39,4 +40,5 @@ function Menu_t(parent) {
 	this.elem = parent;
 	loadJSON(this, buildMenuCallback, 'datas/menu.json', true);
 	this.active = this.items[0];
+	this.active.style.backgroundColor = "greenyellow";
 };
