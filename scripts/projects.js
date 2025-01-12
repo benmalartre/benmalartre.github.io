@@ -15,7 +15,7 @@ var buildProjectsCallback=function(projects, data) {
 
         var thumb = document.createElement('img');
         thumb.src = desc.thumb;
-        thumb.width = '512';
+        thumb.width = '400';
 
         project.appendChild(name);
         project.appendChild(description);
