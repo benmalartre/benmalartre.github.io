@@ -21,7 +21,6 @@ function MenuItem_t(name, parent, id, callback){
 	this.elem.parent = parent;
 	parent.elem.appendChild(this.elem);
 	this.elem.appendChild(this.text);
-	return this;
 }
 
 MenuItem_t.prototype.OnClick = function(event){
@@ -36,7 +35,7 @@ MenuItem_t.prototype.OnClick = function(event){
 function Menu_t(parent) {
 	this.numChars = 0;
 	this.numEntries = 0;
-	this.items = new Array();
+	this.items = [];
 	this.elem = parent;
 	loadJSON(this, buildMenuCallback, 'datas/menu.json', true);
 	this.active = this.items[0].elem;
