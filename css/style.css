@@ -99,11 +99,6 @@ ul {
     padding-bottom: 0.25em;
 }
 
-/* When you mouse over the navigation links, change their color */
-#menu a:hover {
-    color: black;
-}
-
 @media all and (orientation:landscape) {
     #menu a {display: block;}
 }
