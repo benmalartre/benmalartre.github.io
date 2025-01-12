@@ -26,7 +26,7 @@ MenuItem_t.prototype.OnClick = function(event){
 	APP_MODE = menuItem.menu_id;
 	app.SetContent(menuItem.name);
 	menuItem.parent.active.elem.style.backgroundColor = "transparent";
-	menuItem.parent.active = menuItem;
+	menuItem.parent.active = JSON.parse(menuItem);
 	menuItem.parent.active.elem.style.backgroundColor = "greenyellow";
 };
 
