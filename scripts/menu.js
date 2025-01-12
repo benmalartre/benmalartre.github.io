@@ -4,9 +4,8 @@ var buildMenuCallback=function(menu, data) {
 	var descs = JSON.parse(data);
 	descs.forEach(function (desc, index) {
 		var callback = desc['name'];
-		var item = new MenuItem_t(desc['name'], menu, index, callback);
-		menu.items.push(item);
-		menu.numEntries ++;
+		menu.items.push(new MenuItem_t(desc['name'], menu, index, callback));
+		menu.numEntries++;
 		menu.numChars += desc['label'].length + 1;
 	});
 }
@@ -28,8 +27,8 @@ MenuItem_t.prototype.OnClick = function(event){
 	var menuItem = event.target;
 	APP_MODE = menuItem.menu_id;
 	app.SetContent(menuItem.name);
-	menuItem.parent.active.elem.style.backgroundColor = "transparent";
-	menuItem.parent.active = menuItem;
+	menuItem.parent.active.style.backgroundColor = "transparent";
+	menuItem.parent.active = menuItem.elem;
 	menuItem.elem.style.backgroundColor = "greenyellow";
 };
 
@@ -39,6 +38,6 @@ function Menu_t(parent) {
 	this.items = new Array();
 	this.elem = parent;
 	loadJSON(this, buildMenuCallback, 'datas/menu.json', true);
-	this.active = this.items[0];
-	this.active.elem.style.backgroundColor = "greenyellow";
+	this.active = this.items[0].elem;
+	this.active.style.backgroundColor = "greenyellow";
 };
