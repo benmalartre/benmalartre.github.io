@@ -2,12 +2,10 @@
 
 var buildMenuCallback=function(menu, data) {
 	var descs = JSON.parse(data);
-	var items = [];
 	descs.forEach(function (desc, index) {
 		var callback = desc['name'];
-		items.push(new MenuItem_t(desc['name'], menu, index, callback));
+		menu.items.push(new MenuItem_t(desc['name'], menu, index, callback));
 	});
-	return items;
 }
 
 function MenuItem_t(name, parent, id, callback){
@@ -35,7 +33,8 @@ MenuItem_t.prototype.OnClick = function(event){
 function Menu_t(parent) {
 	this.items = [];
 	this.elem = parent;
-	this.items = loadJSON(this, buildMenuCallback, 'datas/menu.json', true);
+	this.items = new Array();
+	loadJSON(this, buildMenuCallback, 'datas/menu.json', true);
 	this.active = this.items[0];
 	this.active.elem.style.backgroundColor = "greenyellow";
 };
