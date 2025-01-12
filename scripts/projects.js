@@ -52,12 +52,12 @@ var buildProjectsCallback=function(projects, data) {
     //cv.elem.innerHTML = text;
 }
 
-function Projects_t() {
+function Projects_t(name) {
 	this.numEntries = 0;
 	this.items = new Array();
 	this.elem = document.createElement('div');
     this.elem.id = 'projects';
-	loadJSON(this, buildProjectsCallback, 'datas/softimage.json', true);
+	loadJSON(this, buildProjectsCallback, 'datas/'+name+'.json', true);
 
     this.needUpdate = false;
     this.Update = function(){};

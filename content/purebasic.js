@@ -1,5 +1,5 @@
 function buildProjects() {
-    let projects = new Projects_t();
+    let projects = new Projects_t("purebasic");
 
     app.content.Clear();
     app.content.Mount(projects);
