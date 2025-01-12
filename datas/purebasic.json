@@ -1,0 +1,44 @@
+[
+    {
+        "name": "shadows",      
+        "label": "ShadowMap",      
+        "description": "openGL shadow map demo",
+        "thumb": "../images/purebasic/shadows.png",
+        "url": "https://github.com/benmalartre/Noodle/blob/master/src/test/TestShadow.pbi"
+    },
+    {
+        "name": "ssao",      
+        "label": "SSAO",      
+        "description": "OpenGL screen space ambient occusion demo",
+        "thumb": "../images/purebasic/ssao.png",
+        "url": "https://github.com/benmalartre/Noodle/blob/master/src/test/TestSSAO.pbi"
+    },
+	{
+        "name": "instances",      
+        "label": "OpenGL instances",      
+        "description": "OpenGL instancing demo",
+        "thumb": "../images/purebasic/instances.png",
+        "url": "https://github.com/benmalartre/Noodle/blob/master/src/test/TestInstances.pbi"
+    },
+	{
+        "name": "fibonacci",      
+        "label": "Fibonacci",      
+        "description": "Fibonacci and golden ratio demo",
+        "thumb": "../images/purebasic/fibonacci.png",
+        "url": "https://github.com/benmalartre/Noodle/blob/master/src/test/TestFibonacci.pbi"
+    },
+	{
+        "name": "delaunay",      
+        "label": "Delaunay Triangulation",      
+        "description": "Delaunay triangulation demo",
+        "thumb": "../images/purebasic/delaunay.png",
+        "url": "https://github.com/benmalartre/Noodle/blob/master/src/test/TestFibonacci.pbi"
+    },
+	{
+        "name": "sdf",      
+        "label": "Polygonize Signed Distance Field",      
+        "description": "Signed Distance Field Polygonizer",
+        "thumb": "../images/purebasic/sdf.png",
+        "url": "https://github.com/benmalartre/Noodle/blob/master/src/test/TestPolygonizer.pbi"
+    },
+]
