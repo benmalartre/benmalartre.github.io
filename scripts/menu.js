@@ -29,7 +29,6 @@ MenuItem_t.prototype.OnClick = function(event){
 	var menuItem = event.target;
 	APP_MODE = menuItem.menu_id;
 	app.SetContent(menuItem.name);
-	console.log(menuItem);
 	menuItem.classList.toggle('active');
 };
 
