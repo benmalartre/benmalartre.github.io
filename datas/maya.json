@@ -4,20 +4,20 @@
         "label": "Wrap Deformer",      
         "description": "Multi-threaded wrap deformer for maya with rebind capabilities and custom octree for faster bind. Developped at Mikros Animation and  used on several feature films.",
         "thumb": "../images/maya/wrap.png",
-        "url": "NDA"
+        "url": ""
     },
     {
         "name": "collide",      
         "label": "Collision Deformer",      
         "description": "Multi-threaded collision deformer for maya. Developped at Mikros Animation and  used on several feature films.",
         "thumb": "../images/maya/collide.png",
-        "url": "NDA"
+        "url": ""
     },
     {
         "name": "wire",      
         "label": "Wire Deformer",      
         "description": "Multi-threaded wire deformer for maya. Developped at Mikros Animation and  used on several feature films.",
         "thumb": "../images/maya/wire.png",
-        "url": "NDA"
+        "url": ""
     }
 ]

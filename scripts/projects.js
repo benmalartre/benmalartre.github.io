@@ -17,22 +17,25 @@ var buildProjectsCallback=function(projects, data) {
         thumb.src = desc.thumb;
         thumb.width = '256';
 
-        var github = document.createElement('img');
-        github.src = '../images/github-mark.png';
-        github.width = '32';
-        github.height = '32';
-
-        var link = document.createElement('a');
-        link.title = desc.url;
-        link.href = desc.url;
-        var url = document.createTextNode(desc.name);
-        link.appendChild(url);
-        
         project.appendChild(name);
         project.appendChild(description);
         project.appendChild(thumb);
-        project.appendChild(github);
-        project.appendChild(link);
+
+        if(desc.url) {
+            var github = document.createElement('img');
+            github.src = '../images/github-mark.png';
+            github.width = '32';
+            github.height = '32';
+
+            var link = document.createElement('a');
+            link.title = desc.url;
+            link.href = desc.url;
+            var url = document.createTextNode(desc.name);
+            link.appendChild(url);
+
+            project.appendChild(github);
+            project.appendChild(link);
+        }
 
         projects.elem.appendChild(project);
 
