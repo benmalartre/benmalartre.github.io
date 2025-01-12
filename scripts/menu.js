@@ -27,7 +27,7 @@ MenuItem_t.prototype.OnClick = function(event){
 	app.SetContent(menuItem.name);
 	menuItem.parent.active.elem.style.backgroundColor = "transparent";
 	menuItem.parent.active = menuItem;
-	menuItem.elem.style.backgroundColor = "greenyellow";
+	menuItem.parent.active.elem.style.backgroundColor = "greenyellow";
 };
 
 function Menu_t(parent) {
