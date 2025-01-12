@@ -102,7 +102,6 @@ ul {
 /* When you mouse over the navigation links, change their color */
 #menu a:hover {
     color: black;
-    background-color: greenyellow;
 }
 
 @media all and (orientation:landscape) {
