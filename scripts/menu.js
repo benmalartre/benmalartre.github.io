@@ -22,12 +22,12 @@ function MenuItem_t(name, parent, id, callback){
 }
 
 MenuItem_t.prototype.OnClick = function(event){
-	var menuItem = event.target;
-	APP_MODE = menuItem.menu_id;
-	app.SetContent(menuItem.name);
-	menuItem.parent.active.style.backgroundColor = "transparent";
-	menuItem.parent.active = menuItem.elem;
-	menuItem.parent.active.style.backgroundColor = "greenyellow";
+	var elem = event.target;
+	APP_MODE = elem.menu_id;
+	app.SetContent(elem.name);
+	elem.parent.active.style.backgroundColor = "transparent";
+	elem.parent.active = elem;
+	elem.style.backgroundColor = "greenyellow";
 };
 
 function Menu_t(parent) {
