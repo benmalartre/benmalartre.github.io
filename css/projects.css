@@ -14,7 +14,7 @@
 section{
     color: black;
     background:white;
-	display:block;
+	display:inline-block;
     border-radius: 8px;
     margin: 12px;
 }
