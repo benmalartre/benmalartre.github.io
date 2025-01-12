@@ -2,7 +2,7 @@
     {
         "name": "toonix",      
         "label": "Toonix",      
-        "description": "Toonix is a set of custom C++ ICE Nodes to generate Toon Lines, it supports Silhouette Detection, Boundary Detection,Intersection Detection(WIP) Crease Detection, Edge Cluster Detection, as well as experimental light and shadow approximation. It outputs on-the-fly polymesh geometry.",
+        "description": "Toonix is a set of custom C++ ICE Nodes to generate Toon Lines.\nIt supports Silhouette Detection, Boundary Detection,Intersection Detection(WIP) Crease Detection, Edge Cluster Detection, as well as experimental light and shadow approximation.\nIt outputs on-the-fly polymesh geometry.",
         "thumb": "../images/softimage/Toonix.png",
         "url": "https://github.com/benmalartre/Toonix"
     },
