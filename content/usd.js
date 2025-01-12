@@ -1,4 +1,9 @@
+function buildProjects() {
+    let projects = new Projects_t("usd");
 
+    app.content.Clear();
+    app.content.Mount(projects);
+}
 
-app.content.Clear();
-MAKE_REQUEST('post', 'read', 'type=Show&table=spectacle', null, CreateShowList);
+includeCSS('css/projects.css');
+includeScript('scripts/projects.js', buildProjects);
