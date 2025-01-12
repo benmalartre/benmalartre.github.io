@@ -2,7 +2,7 @@
     {
         "name": "wrap",      
         "label": "Wrap Deformer",      
-        "description": "Multi-threaded wrap deformer (C++) for maya with rebind capabilities and custom octree for faster bind.\nDevelopped at Mikros Animation and  used on several feature films.",
+        "description": "Multi-threaded wrap deformer (C++) for maya with rebind capabilities, tangential smooth algorythm and custom octree for faster bind.\nDevelopped at Mikros Animation and  used on several feature films.",
         "thumb": "../images/maya/wrap.png",
         "url": ""
     },
