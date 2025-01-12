@@ -1,0 +1,9 @@
+[
+    {
+        "name": "jivaro",      
+        "label": "Jivaro",      
+        "description": "Experimental OpenUSD based standalone application using glfw3 and imgui",
+        "thumb": "../images/usd/jivaro.gif",
+        "url": "https://github.com/benmalartre/Jivaro"
+    }
+]

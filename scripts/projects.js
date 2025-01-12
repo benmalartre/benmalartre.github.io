@@ -2,7 +2,6 @@
 
 var buildProjectsCallback=function(projects, data) {
     var descs = JSON.parse(data);
-    //let text = "<table border='1'>";
     
     descs.forEach(function (desc, index) {
 

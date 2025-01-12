@@ -2,10 +2,8 @@
 
 var buildCVCallback=function(cv, data) {
     var descs = JSON.parse(data);
-    //let text = "<table border='1'>";
     
     descs.forEach(function (desc, index) {
-        //text += "<tr><td>" + desc.details + "</td></tr>";
         var section = document.createElement('section');
         var place = document.createElement('div');
         place.id = 'place';
@@ -21,9 +19,6 @@ var buildCVCallback=function(cv, data) {
         cv.elem.appendChild(section);
 
     });
-
-    //text += "</table>";
-    //cv.elem.innerHTML = text;
 }
 
 function CV_t() {
