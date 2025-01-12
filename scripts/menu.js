@@ -25,9 +25,9 @@ MenuItem_t.prototype.OnClick = function(event){
 	var menuItem = event.target;
 	APP_MODE = menuItem.menu_id;
 	app.SetContent(menuItem.name);
-	menuItem.parent.active.elem.style.backgroundColor = "transparent";
-	menuItem.parent.active = JSON.parse(menuItem);
-	menuItem.parent.active.elem.style.backgroundColor = "greenyellow";
+	menuItem.parent.active.style.backgroundColor = "transparent";
+	menuItem.parent.active = menuItem.elem;
+	menuItem.parent.active.style.backgroundColor = "greenyellow";
 };
 
 function Menu_t(parent) {
@@ -35,6 +35,6 @@ function Menu_t(parent) {
 	this.elem = parent;
 	this.items = new Array();
 	loadJSON(this, buildMenuCallback, 'datas/menu.json', false);
-	this.active = this.items[0];
-	this.active.elem.style.backgroundColor = "greenyellow";
+	this.active = this.items[0].elem;
+	this.active.style.backgroundColor = "greenyellow";
 };
