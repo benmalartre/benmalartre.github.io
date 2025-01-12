@@ -30,7 +30,7 @@ MenuItem_t.prototype.OnClick = function(event){
 	app.SetContent(menuItem.name);
 	menuItem.parent.active.style.backgroundColor = "transparent";
 	menuItem.parent.active = menuItem;
-	menuItem.style.backgroundColor = "greenyellow";
+	menuItem.elem.style.backgroundColor = "greenyellow";
 };
 
 function Menu_t(parent) {
@@ -40,5 +40,5 @@ function Menu_t(parent) {
 	this.elem = parent;
 	loadJSON(this, buildMenuCallback, 'datas/menu.json', true);
 	this.active = this.items[0];
-	this.active.style.backgroundColor = "greenyellow";
+	this.active.elem.style.backgroundColor = "greenyellow";
 };
