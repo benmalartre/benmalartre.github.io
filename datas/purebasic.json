@@ -40,5 +40,5 @@
         "description": "Signed Distance Field Polygonizer",
         "thumb": "../images/purebasic/sdf.png",
         "url": "https://github.com/benmalartre/Noodle/blob/master/src/test/TestPolygonizer.pbi"
-    },
+    }
 ]
