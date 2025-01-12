@@ -1,8 +1,8 @@
 [
     {
         "name": "shadows",      
-        "label": "ShadowMap",      
-        "description": "openGL shadow map demo",
+        "label": "Shadows",      
+        "description": "OpenGL shadow map demo",
         "thumb": "../images/purebasic/shadows.png",
         "url": "https://github.com/benmalartre/Noodle/blob/master/src/test/TestShadow.pbi"
     },
@@ -14,8 +14,8 @@
         "url": "https://github.com/benmalartre/Noodle/blob/master/src/test/TestSSAO.pbi"
     },
 	{
-        "name": "instances",      
-        "label": "OpenGL instances",      
+        "name": "instancing",      
+        "label": "Instancing",      
         "description": "OpenGL instancing demo",
         "thumb": "../images/purebasic/instances.png",
         "url": "https://github.com/benmalartre/Noodle/blob/master/src/test/TestInstances.pbi"
@@ -29,14 +29,14 @@
     },
 	{
         "name": "delaunay",      
-        "label": "Delaunay Triangulation",      
+        "label": "Delaunay",      
         "description": "Delaunay triangulation demo",
         "thumb": "../images/purebasic/delaunay.png",
         "url": "https://github.com/benmalartre/Noodle/blob/master/src/test/TestFibonacci.pbi"
     },
 	{
         "name": "sdf",      
-        "label": "Polygonize Signed Distance Field",      
+        "label": "Sdf",      
         "description": "Signed Distance Field Polygonizer",
         "thumb": "../images/purebasic/sdf.png",
         "url": "https://github.com/benmalartre/Noodle/blob/master/src/test/TestPolygonizer.pbi"
