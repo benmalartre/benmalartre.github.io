@@ -139,7 +139,7 @@ function loadJSON(object, callback, url, asynchronous=true) {
     xobj.open('GET', url, asynchronous);
     xobj.onreadystatechange = function () {
         if (xobj.readyState == 4 && xobj.status == '200') {
-            callback(object, xobj.responseText);
+            return callback(object, xobj.responseText);
         }
     };
     xobj.send(null);  
