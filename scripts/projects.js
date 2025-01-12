@@ -6,16 +6,6 @@ var buildProjectsCallback=function(projects, data) {
     
     descs.forEach(function (desc, index) {
 
-        /*
-
-        "name": "toonix",      
-        "label": "Toonix",      
-        "description": "Toonix is a set of custom C++ ICE Nodes to generate Toon Lines, it supports Silhouette Detection, Boundary Detection,Intersection Detection(WIP) Crease Detection, Edge Cluster Detection, as well as experimental light and shadow approximation. It outputs on-the-fly polymesh geometry.",
-        "thumb": "../images/softimage/toonix.jpg",
-        "url": "https://github.com/benmalartre/Toonix"
-
-        */
-        //text += "<tr><td>" + desc.details + "</td></tr>";
         var project = document.createElement('section');
         var name = document.createElement('h1');
         name.innerHTML = desc.label;
