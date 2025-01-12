@@ -14,9 +14,10 @@
 section{
     color: black;
     background:white;
-	display:inline-block;
+	display:block;
+	width:96%;
     border-radius: 8px;
-    margin: 12px;
+    margin: 2%;
 }
 
 #thumb
