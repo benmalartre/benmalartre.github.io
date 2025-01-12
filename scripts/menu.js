@@ -21,6 +21,7 @@ function MenuItem_t(name, parent, id, callback){
 	this.elem.parent = parent;
 	parent.elem.appendChild(this.elem);
 	this.elem.appendChild(this.text);
+	return this;
 }
 
 MenuItem_t.prototype.OnClick = function(event){
