@@ -34,7 +34,7 @@ function Menu_t(parent) {
 	this.items = [];
 	this.elem = parent;
 	this.items = new Array();
-	loadJSON(this, buildMenuCallback, 'datas/menu.json', true);
+	loadJSON(this, buildMenuCallback, 'datas/menu.json', false);
 	this.active = this.items[0];
 	this.active.elem.style.backgroundColor = "greenyellow";
 };
