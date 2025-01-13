@@ -12,5 +12,19 @@
         "description": "OpenUsd plugin for contour detection and mesh line generation (C++)",
         "thumb": "../images/usd/npr.jpg",
         "url": "https://github.com/benmalartre/Jivaro/tree/develop/plugins/usdNpr"
+    },
+    {
+        "name": "usd_read",      
+        "label": "Usd Read",      
+        "description": "UsdRead is a softimage C++ plugin to read usd file and display it in the viewport inside a custom primitive",
+        "thumb": "../images/softimage/UsdRead.png",
+        "url": "https://github.com/benmalartre/RIPSoftimage/tree/master/Application/Plugins/UsdRead"
+    },
+    {
+        "name": "usd_write",      
+        "label": "Usd Write",      
+        "description": "A softimage C++ plugin to export the current softimage scene to the usd file format",
+        "thumb": "../images/softimage/Toonix.png",
+        "url": "https://github.com/benmalartre/RIPSoftimage/tree/master/Application/Plugins/UsdWrite"
     }
 ]
