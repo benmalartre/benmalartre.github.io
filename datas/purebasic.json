@@ -18,7 +18,7 @@
         "label": "Instancing",      
         "description": "OpenGL instancing demo",
         "thumb": "../images/purebasic/instances.png",
-        "url": "https://github.com/benmalartre/Noodle/blob/master/src/test/TestInstances.pbi"
+        "url": "https://github.com/benmalartre/Noodle/blob/master/src/test/TestInstanceCloud.pbi"
     },
 	{
         "name": "fibonacci",      
