@@ -16,7 +16,7 @@
     {
         "name": "usd_read",      
         "label": "Usd Read",      
-        "description": "UsdRead is a softimage C++ plugin to read usd file and display it in the viewport inside a custom primitive",
+        "description": "A softimage C++ plugin to read usd file and display it in the viewport inside a custom primitive",
         "thumb": "../images/softimage/UsdRead.png",
         "url": "https://github.com/benmalartre/RIPSoftimage/tree/master/Application/Plugins/UsdRead"
     },
