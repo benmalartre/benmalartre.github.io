@@ -2,8 +2,17 @@
     {
         "name": "jivaro",      
         "label": "Jivaro",      
-        "description": "Experimental OpenUSD based standalone application using glfw3 and imgui",
+        "description": "Experimental OpenUSD based standalone application using glfw3 and imgui (C++)",
         "thumb": "../images/usd/jivaro.gif",
         "url": "https://github.com/benmalartre/Jivaro"
+    },
+    {
+        "name": "npr",      
+        "label": "Usd Toon Line",      
+        "description": "Open Usd plugin for contour detection and mesh line generation (C++)",
+        "thumb": "../images/usd/npr.jpg",
+        "url": "https://github.com/benmalartre/Jivaro/tree/develop/plugins/usdNpr"
     }
+    
+
 ]
