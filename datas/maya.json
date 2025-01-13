@@ -10,7 +10,7 @@
         "name": "collide",      
         "label": "Collision Deformer",      
         "description": "Multi-threaded collision deformer (C++) for maya\nDevelopped at Mikros Animation and  used on several feature films.",
-        "thumb": "../images/maya/collide.png",
+        "thumb": "../images/maya/collide.gif",
         "url": ""
     },
     {
