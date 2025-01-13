@@ -23,7 +23,7 @@
     {
         "name": "muxdemux",      
         "label": "Curve Multiplex-Demultiplex",      
-        "description": "Custom maya nodes (C++) to aggregate/separate a bunch of curves.\nDevelopped at Mikros Animation and  used on several feature films.",
+        "description": "Custom maya nodes (C++) to aggregate/separate a bunch of curves.\nWith this node we only ONE curve to rig and animate, while rendering thousands.\nDevelopped at Mikros Animation and  used on several feature films.",
         "thumb": "../images/maya/muxdemux.jpg",
         "url": ""
     },
