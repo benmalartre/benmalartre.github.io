@@ -3,7 +3,7 @@
         "name": "wrap",      
         "label": "Wrap Deformer",      
         "description": "Multi-threaded wrap deformer (C++) for maya with rebind capabilities, tangential smooth algorithm and custom octree for faster bind.\nDevelopped at Mikros Animation and  used on several feature films.",
-        "thumb": "../images/maya/wrap.png",
+        "thumb": "../images/maya/wrap.gif",
         "url": ""
     },
     {
@@ -24,14 +24,14 @@
         "name": "muxdemux",      
         "label": "Curve Multiplex-Demultiplex",      
         "description": "Custom maya nodes (C++) to aggregate/separate a bunch of curves.\nDevelopped at Mikros Animation and  used on several feature films.",
-        "thumb": "../images/maya/muxdemux.png",
+        "thumb": "../images/maya/muxdemux.jpg",
         "url": ""
     },
     {
         "name": "drawer",      
         "label": "OpenGL Drawer",      
         "description": "Set of commands and node for visual debug.\nDraw points, line, triangles, matrix and text in the viewport.\nUnvaluable when prototyping a node.\nDevelopped at Mikros Animation and  used on several feature films.",
-        "thumb": "../images/maya/wire.png",
+        "thumb": "../images/maya/drawer.png",
         "url": ""
     }
 ]
