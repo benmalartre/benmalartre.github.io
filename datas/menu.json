@@ -1,7 +1,7 @@
 [
     {"name": "home",      "label": "Home",      "type": "text/script"},
-    {"name": "softimage", "label": "Softimage", "type": "text/script"},
+    {"name": "usd",       "label": "USD",       "type": "text/script"},
     {"name": "maya",      "label": "Maya",      "type": "text/script"},
-    {"name": "purebasic", "label": "PureBasic", "type": "text/script"},
-    {"name": "usd",       "label": "USD",       "type": "text/script"}
+    {"name": "softimage", "label": "Softimage", "type": "text/script"},
+    {"name": "purebasic", "label": "PureBasic", "type": "text/script"}
 ]

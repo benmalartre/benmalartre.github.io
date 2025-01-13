@@ -21,6 +21,13 @@
         "url": ""
     },
     {
+        "name": "muxdemux",      
+        "label": "Curve Multiplex-Demultiplex",      
+        "description": "Custom maya nodes (C++) to aggregate/separate a bunch of curves.\nDevelopped at Mikros Animation and  used on several feature films.",
+        "thumb": "../images/maya/muxdemux.png",
+        "url": ""
+    },
+    {
         "name": "drawer",      
         "label": "OpenGL Drawer",      
         "description": "Set of commands and node for visual debug.\nDraw points, line, triangles, matrix and text in the viewport.\nUnvaluable when prototyping a node.\nDevelopped at Mikros Animation and  used on several feature films.",
