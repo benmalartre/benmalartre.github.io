@@ -30,7 +30,7 @@
     {
         "name": "drawer",      
         "label": "OpenGL Drawer",      
-        "description": "Set of commands and node for visual debug.\nDraw points, line, triangles, matrix and text in the viewport.\nUnvaluable when prototyping a node.\nDevelopped at Mikros Animation and  used while prototyping above nodes.",
+        "description": "Set of commands and node for visual debug (C++).\nDraw points, line, triangles, matrix and text in the viewport.\nUnvaluable when prototyping a node.\nDevelopped at Mikros Animation and  used while prototyping above nodes.",
         "thumb": "../images/maya/drawer.png",
         "url": ""
     }
