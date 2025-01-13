@@ -11,7 +11,7 @@
         "label": "NPR",      
         "description": "OpenUsd plugin for contour detection and mesh line generation (C++)",
         "thumb": "../images/usd/npr.jpg",
-        "url": "https://github.com/benmalartre/Jivaro/tree/develop/plugins/usdNpr"
+        "url": "https://github.com/benmalartre/Jivaro/tree/develop/plugins/usdNpr, https://github.com/benmalartre/Jivaro/tree/develop/plugins/usdNprImaging"
     },
     {
         "name": "usd_read",      
