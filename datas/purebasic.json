@@ -32,7 +32,7 @@
         "label": "Delaunay",      
         "description": "Delaunay triangulation demo",
         "thumb": "../images/purebasic/delaunay.png",
-        "url": "https://github.com/benmalartre/Noodle/blob/master/src/test/TestFibonacci.pbi"
+        "url": "https://github.com/benmalartre/Noodle/blob/master/src/test/TestDelaunay.pbi"
     },
 	{
         "name": "sdf",      
