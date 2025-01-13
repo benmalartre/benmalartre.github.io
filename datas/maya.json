@@ -17,7 +17,7 @@
         "name": "wire",      
         "label": "Wire Deformer",      
         "description": "Multi-threaded wire deformer (C++) for maya.\nDevelopped at Mikros Animation and  used on several feature films.",
-        "thumb": "../images/maya/wire.png",
+        "thumb": "../images/maya/wire.jpg",
         "url": ""
     },
     {
