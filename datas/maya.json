@@ -2,35 +2,35 @@
     {
         "name": "wrap",      
         "label": "Wrap Deformer",      
-        "description": "Multi-threaded wrap deformer (C++) for maya with rebind capabilities, tangential smooth algorithm and custom octree for faster bind.\nDevelopped at Mikros Animation and  used on several feature films.",
+        "description": "Multi-threaded wrap deformer (C++) for maya with rebind capabilities, tangential smooth algorithm and custom octree for faster bind.\nDeveloped at Mikros Animation and  used on several feature films.",
         "thumb": "../images/maya/wrap.gif",
         "url": ""
     },
     {
         "name": "collide",      
         "label": "Collision Deformer",      
-        "description": "Multi-threaded collision deformer (C++) for maya\nDevelopped at Mikros Animation and  used on several feature films.",
+        "description": "Multi-threaded collision deformer (C++) for maya\nDeveloped at Mikros Animation and  used on several feature films.",
         "thumb": "../images/maya/collide.gif",
         "url": ""
     },
     {
         "name": "wire",      
         "label": "Wire Deformer",      
-        "description": "Multi-threaded wire deformer (C++) for maya.\nDevelopped at Mikros Animation and  used on several feature films.",
+        "description": "Multi-threaded wire deformer (C++) for maya.\nDeveloped at Mikros Animation and  used on several feature films.",
         "thumb": "../images/maya/wire.jpg",
         "url": ""
     },
     {
         "name": "muxdemux",      
         "label": "Curve Multiplex-Demultiplex",      
-        "description": "Custom maya nodes (C++) to aggregate/separate a bunch of curves.\nWith this node we only ONE curve to rig and animate, while rendering thousands.\nDevelopped at Mikros Animation and  used on several feature films.",
+        "description": "Custom maya nodes (C++) to aggregate/separate a bunch of curves.\nWith this node we only ONE curve to rig and animate, while rendering thousands.\nDeveloped at Mikros Animation and  used on several feature films.",
         "thumb": "../images/maya/muxdemux.jpg",
         "url": ""
     },
     {
         "name": "drawer",      
         "label": "OpenGL Drawer",      
-        "description": "Set of commands and node for visual debug (C++).\nDraw points, line, triangles, matrix and text in the viewport.\nUnvaluable when prototyping a node.\nDevelopped at Mikros Animation and  used while prototyping above nodes.",
+        "description": "Set of commands and node for visual debug (C++).\nDraw points, line, triangles, matrix and text in the viewport.\nUnvaluable when prototyping a node.\nDeveloped at Mikros Animation and  used while prototyping above nodes.",
         "thumb": "../images/maya/drawer.png",
         "url": ""
     }
