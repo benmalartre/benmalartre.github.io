@@ -8,11 +8,9 @@
     },
     {
         "name": "npr",      
-        "label": "Usd Toon Line",      
+        "label": "NPR",      
         "description": "Open Usd plugin for contour detection and mesh line generation (C++)",
         "thumb": "../images/usd/npr.jpg",
         "url": "https://github.com/benmalartre/Jivaro/tree/develop/plugins/usdNpr"
     }
-    
-
 ]
