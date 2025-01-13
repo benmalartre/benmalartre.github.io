@@ -37,8 +37,15 @@
 	{
         "name": "sdf",      
         "label": "Sdf",      
-        "description": "Signed Distance Field Polygonizer",
+        "description": "Signed Distance Field Polygonizer demo",
         "thumb": "../images/purebasic/sdf.png",
         "url": "https://github.com/benmalartre/Noodle/blob/master/src/test/TestPolygonizer.pbi"
+    },
+	{
+        "name": "covariance",      
+        "label": "Covariance",      
+        "description": "Best plane fitting from a point cloud demo",
+        "thumb": "../images/purebasic/covariance.png",
+        "url": "https://github.com/benmalartre/Noodle/blob/master/src/test/TestCovariance.pbi"
     }
 ]
