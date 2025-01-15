@@ -73,7 +73,6 @@ ul {
     overflow: scroll;
     background-color: black;
     -ms-overflow-style: none;  
-    margin-left: 24px;
     /*scrollbar-width: none;*/
 }
   

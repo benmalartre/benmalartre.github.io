@@ -51,5 +51,6 @@ Content_t.prototype.Mount = function(content){
     this.elem.style.left = '0px';
     this.elem.style.width = '100%';
     this.elem.style.height = '100%';
+    this.elem.style.paddingLeft = '24px';
     this.objects.push(content);
 };
