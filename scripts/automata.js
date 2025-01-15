@@ -1,12 +1,12 @@
 // Cellular Automata attempt
 //------------------------------------------
-function BaseColor(r,g,b,v)
+function ClampColor(c)
 {
-	this.r = r;
-	this.g = g;
-	this.b = b;
-	this.v = v;
-}
+	if(c<0)return 0;
+	else if(c>255)return 255;
+	else return c;
+};
+
 function GetRandomAlive(perc)
 {
 	r = Math.random() * 100;
@@ -19,23 +19,29 @@ function GetColorString(color)
 
 function GetRandomColor(r,g,b,v)
 {
-	var r = Math.min(Math.max(0, (Math.floor(Math.random()*255*v+r))), 255);
-	var g = Math.min(Math.max(0, (Math.floor(Math.random()*255*v+g))), 255);
-	var b = Math.min(Math.max(0, (Math.floor(Math.random()*255*v+b))), 255);
-	var color = new BaseColor(r,g,b,0);
-	return color;
+	var r = ClampColor(Math.floor(Math.random()*255*v+r));
+	var g = ClampColor(Math.floor(Math.random()*255*v+g));
+	var b = ClampColor(Math.floor(Math.random()*255*v+b));
+	return new {BaseColor}(r,g,b,0);
 };
 
-function GetRandomGrey()
+function GetRandomGrey(c,v)
 {
-	var r = Math.random()*255;
-	var color = new BaseColor(r,r,r,255);
-	return color;
+	var c = ClampColor(Math.floor(Math.random()*255*v+c));
+	return new BaseColor(c,c,c,0);
 };
-	
-function Cell(color,pattern)
+
+function BaseColor(r,g,b,v)
 {
-	this.color = GetRandomColor(color.r,color.g,color.b,color.v);
+	this.r = r;
+	this.g = g;
+	this.b = b;
+	this.v = v;
+}
+	
+function Cell(color)
+{
+	this.color = GetRandomGrey(color.r,color.v);
 	this.sColor = GetColorString(this.color);
 	this.alive = GetRandomAlive(66);
 }
@@ -58,31 +64,43 @@ function Grid(x,y,color)
 	}
 }
 
-function MouseMoveEvent(event)
-{
-	canvas_x = event.pageX;
-	canvas_y = event.pageY;
-}
-
 function CellularAutomata(nbx,nby)
 {
+	this.needUpdate = true;
 	this.nbx = nbx;
 	this.nby = nby;
-	this.type = "automata";
-	this.canvas = document.getElementById('canvas');
-	this.canvas.addEventListener('mousemove',MouseMoveEvent);
+	this.type = 'automata';
+	this.elem = document.createElement('div');
+    this.elem.style.textAlign = 'center';
+    this.elem.style.color = 'rgb(0, 0, 0)';
+
+    this.canvas = document.createElement('canvas'); 
+    this.canvas.id = "canvas";
+    this.canvas.style.position = 'absolute';
+    this.canvas.style.left = '0px';
+    this.canvas.style.top = '0px';
+    this.canvas.style.width = '100%';
+    this.canvas.style.height = '100%';
+
+    this.canvas.style.imageRendering = "optimizeSpeed";             /* Legal fallback */
+	this.canvas.style.imageRendering = "-moz-crisp-edges";          /* Firefox        */
+	this.canvas.style.imageRendering = "-o-crisp-edges";            /* Opera          */
+	this.canvas.style.imageRendering = "-webkit-optimize-contrast"; /* Safari         */
+	this.canvas.style.imageRendering = "optimize-contrast";         /* CSS3 Proposed  */
+	this.canvas.style.imageRendering = "crisp-edges";               /* CSS4 Proposed  */
+	this.canvas.style.imageRendering = "pixelated";                 /* CSS4 Proposed  */
+	this.canvas.style.msInterpolationMode = "nearest-neighbor";     /* IE8+           */
+
 	this.canvas.width = nbx;
 	this.canvas.height = nby;
-	this.r = Math.random()*55;
-	this.g = Math.random()*55;
-	this.b = Math.random()*55;
-	this.v = 0.5;
+	this.elem.appendChild(this.canvas);
+
 	this.counter = 0;
 
-	this.choose = Math.floor(Math.random()*3);
-	
-	this.color = new BaseColor(this.r,this.g,this.b,this.v);
-	this.grid = new Grid(this.nbx,this.nby,this.color);
+	this.rule = Math.floor(Math.random()*3);
+	var c = Math.random()*200;
+	this.color = new BaseColor(c,c,c,0.5);
+	this.grid = new Grid(this.nbx + 2,this.nby,this.color);
 
 	this.Init = function(){}
 
@@ -124,57 +142,46 @@ function CellularAutomata(nbx,nby)
 		else if(!a && !b && !c) return false;
 	}
 
-this.FirstLine = function()
+	this.Line = function(idx, rule)
 	{
-		var row = this.grid.rows[0];
-		for(var x=0;x<this.nbx;x++)
-		{
-			row.cells[x].alive = GetRandomAlive(50);
-			row.cells[x].color = GetRandomColor(this.color.r,this.color.g,this.color.b,this.color.v);
-		}
-	}
-	
-	this.LastLine = function()
-	{
-		if(this.counter%200==0){
-			this.choose =(this.choose+1)%3;
-			this.color.r = Math.random()*155;
-			this.color.g = Math.random()*155;
-			this.color.b = Math.random()*155;
-		}
-		var row = this.grid.rows[this.nby-2];
-		var last = this.grid.rows[this.nby-1];
-		var left, right, alive;
-		
-		for(var x=0;x<this.nbx;x++)
-		{
-
-			left = x-1;
-			right = x+1;
-			if(left<0)left = this.nbx-1;
-			if(right>(this.nbx-1))right = 0;
-			
-			var a = row.cells[left].alive;
-			var b = row.cells[x].alive;
-			var c = row.cells[right].alive;
-
-			
-			alive = last.cells[x].alive;
-			switch(this.choose)
+		if(!idx) {
+			var row = this.grid.rows[0];
+			for(var x=0;x<this.nbx+2;x++)
 			{
-				case 0:
-					alive = this.Rule90(a,b,c);
-					break;
-				case 1:
-					alive = this.Rule105(a,b,c);
-					break;
-				case 2:
-					alive = this.Rule110(a,b,c);
-					break;
+				row.cells[x].alive = GetRandomAlive(50);
+				row.cells[x].color = GetRandomGrey(this.color.r,this.color.v);
 			}
+		} else {
+			var current = this.grid.rows[idx];
+			var previous = this.grid.rows[idx-1];
+			var left, right, alive;
 			
-			last.cells[x].alive = alive;
-			last.cells[x].color = GetRandomColor(this.color.r,this.color.g,this.color.b,this.color.v);
+			for(var x=1;x<this.nbx+1;x++)
+			{
+				left = x-1;
+				right = x+1;
+
+				var a = previous.cells[left].alive;
+				var b = previous.cells[x].alive;
+				var c = previous.cells[right].alive;
+
+				alive = current.cells[x].alive;
+				switch(rule)
+				{
+					case 0:
+						alive = this.Rule90(a,b,c);
+						break;
+					case 1:
+						alive = this.Rule105(a,b,c);
+						break;
+					case 2:
+						alive = this.Rule110(a,b,c);
+						break;
+				}
+				
+				current.cells[x].alive = alive;
+				current.cells[x].color = GetRandomGrey(this.color.r, this.color.v);
+			}
 		}
 	}
 
@@ -189,11 +196,13 @@ this.FirstLine = function()
 			ctx = this.canvas.getContext('2d');
 			resx = Math.round(this.canvas.width/this.nbx);
 			resy = Math.round(this.canvas.height/this.nby);
+
+			ctx.imageSmoothingEnabled = false;
 			
 			for(var a=0;a<this.grid.rows.length;a++)
 			{
 				row = this.grid.rows[a];
-				for(var b=0;b<row.cells.length;b++)
+				for(var b=1;b<row.cells.length-1;b++)
 				{
 					var cell = row.cells[b];
 					if(cell.alive){
@@ -201,9 +210,6 @@ this.FirstLine = function()
 					}
 					else ctx.fillStyle = 'black';
 					ctx.fillRect(cx,cy,1,1);
-					// audio data
-					
-					//ctx.FillRect(cx,cy,rgba(this.audioDatas[(a*row.cells.length+b)%1024],0,0,1));
 					cx += resx;
 				}
 				cy +=resy;
@@ -212,85 +218,40 @@ this.FirstLine = function()
 		}
 	}
 	
-	this.Update = function(mx,my){
+	this.Update = function(){
 		this.counter++;
-		if(this.counter%5 == 0){
-			var col = new BaseColor(200,200,200,0);
-			var black = new BaseColor(0,0,0,0);
-	
-			for(var r = 0;r<this.nby-1;r++)
-			{
-				row = this.grid.rows[r];
-				next = this.grid.rows[r+1];
-				var b = (1-r*1/this.nby)*255;
+		var col = new BaseColor(200,200,200,0);
 
-				for(var c=0;c<this.nbx;c++)
-				{
-					
-					row.cells[c].color = next.cells[c].color
-					row.cells[c].alive = next.cells[c].alive;
-					col.r = row.cells[c].color.r;
-					col.g = row.cells[c].color.g;
-					col.b = row.cells[c].color.b;
-					row.cells[c].sColor = GetColorString(col);
-					
-				}
+		for(var r = 1;r<this.nby;r++)
+		{
+			current = this.grid.rows[r];
+			previous = this.grid.rows[r-1];
+
+			for(var c=0;c<this.nbx+2;c++)
+			{
+				previous.cells[c].color = current.cells[c].color
+				previous.cells[c].alive = current.cells[c].alive;
+				col.r = current.cells[c].color.r;
+				col.g = current.cells[c].color.g;
+				col.b = current.cells[c].color.b;
+				previous.cells[c].sColor = GetColorString(col);
 			}
-			
-			this.LastLine();
-			this.Draw();
 		}
+		
+		this.Line(this.nby-1, this.rule);
+		this.Draw();
 	}
 	
 	this.UpdateOnce = function()
 	{
-		var col = new BaseColor(200,200,200,0);
-		var black = new BaseColor(0,0,0,0);
-		for(var y = 1;y<this.nby;y++)
-		{
-			last = this.grid.rows[y];
-			row = this.grid.rows[y-1];
-			//var b = (1-r*1/this.nby)*255;
-
-			for(var x=0;x<this.nbx;x++)
-			{
-				left = x-1;
-				right = x+1;
-				if(left<0)left = this.nbx-1;
-				if(right>(this.nbx-1))right = 0;
-				
-				var a = row.cells[left].alive;
-				var b = row.cells[x].alive;
-				var c = row.cells[right].alive;
-
-				
-				alive = last.cells[x].alive;
-				switch(this.choose)
-				{
-					case 0:
-						alive = this.Rule90(a,b,c);
-						break;
-					case 1:
-						alive = this.Rule105(a,b,c);
-						break;
-					case 2:
-						alive = this.Rule110(a,b,c);
-						break;
-				}
-				
-				last.cells[x].alive = alive;
-				last.cells[x].color = GetRandomColor(this.color.r,this.color.g,this.color.b,this.color.v);
-				
-			}
-		}
-		
-		this.LastLine();
+		for(var y = 0;y<this.nby;y++)
+			this.Line(y, this.rule);
 		this.Draw();
 	
 	}
 
-	this.FirstLine();
 	this.UpdateOnce();
 	this.Draw();	
 	return this;
 }
+
