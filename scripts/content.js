@@ -10,6 +10,7 @@ function Content_t(parent){
     this.elem.style.width = '100%';
     this.elem.style.height = '100%';
     this.elem.style.touchAction = 'none';
+    this.elem.style.paddingLeft = '24px';
     parent.appendChild(this.elem);
 
     this.objects = new Array();
@@ -51,6 +52,5 @@ Content_t.prototype.Mount = function(content){
     this.elem.style.left = '0px';
     this.elem.style.width = '100%';
     this.elem.style.height = '100%';
-    this.elem.style.paddingLeft = '24px';
     this.objects.push(content);
 };
