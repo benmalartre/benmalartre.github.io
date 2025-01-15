@@ -12,12 +12,12 @@ var buildProjectsCallback=function(projects, data) {
 
         var description = document.createElement('div');
         description.innerHTML = desc.description;
-        description.style.paddingLeft = '16px';
+        description.style.paddingLeft = '12px';
 
         var thumb = document.createElement('img');
         thumb.src = desc.thumb;
         thumb.width = '320';
-        thumb.style.paddingLeft = '20px';
+        thumb.style.paddingLeft = '14px';
 
         project.appendChild(name);
         project.appendChild(description);
