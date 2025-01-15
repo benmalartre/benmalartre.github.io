@@ -6,6 +6,7 @@ var buildProjectsCallback=function(projects, data) {
     descs.forEach(function (desc, index) {
 
         var project = document.createElement('section');
+        project.style.marginLeft = '16px';
         var name = document.createElement('h1');
         name.innerHTML = desc.label;
 
