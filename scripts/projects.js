@@ -6,16 +6,18 @@ var buildProjectsCallback=function(projects, data) {
     descs.forEach(function (desc, index) {
 
         var project = document.createElement('section');
-        project.style.marginLeft = '16px';
         var name = document.createElement('h1');
         name.innerHTML = desc.label;
+        name.style.paddingLeft = '24px';
 
         var description = document.createElement('div');
         description.innerHTML = desc.description;
+        description.style.paddingLeft = '16px';
 
         var thumb = document.createElement('img');
         thumb.src = desc.thumb;
         thumb.width = '320';
+        thumb.style.paddingLeft = '20px';
 
         project.appendChild(name);
         project.appendChild(description);
