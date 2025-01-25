@@ -2,7 +2,7 @@
     {
         "name": "jivaro",      
         "label": "Jivaro",      
-        "description": "Experimental OpenUSD based standalone application using glfw3 and imgui (C++)",
+        "description": "Experimental OpenUSD based standalone application using glfw3 and imgui (C++).\nThe basic idea is to add an execution engine in an hydra 2.0 sceneIndex.\nFeaturing and implementation of a XPBD solver.",
         "thumb": "../images/usd/jivaro.gif",
         "url": "https://github.com/benmalartre/Jivaro"
     },
