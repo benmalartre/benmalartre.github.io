@@ -119,6 +119,8 @@ Application_t.prototype.Initialize = function(){
 	elem = document.querySelector('#content');
 	this.content = new Content_t(elem);
 
+	this.SetContent("usd");
+
 
 	this.OnResize();
 	
