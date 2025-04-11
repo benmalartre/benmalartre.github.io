@@ -3,15 +3,6 @@ const MODE_UNITIALIZED = 0
 const MODE_HORIZONTAL = 1
 const MODE_VERTICAL = 2
 
-const MODE_HOME = 0;
-const MODE_CALENDAR = 1;
-const MODE_SHOWS = 2;
-const MODE_MAP = 3;
-const MODE_CONTACTS = 4;
-const MODE_CHECKOUT = 5;
-
-var APP_MODE = MODE_HOME;
-
 const GRID_TEMPLATE_VERTICAL = {
 	'roof':{'left': '0px','top':'0px','width':'100%','height':'10%' },
 	'menu':{'left': '0px','top':'10%','width':'100%','height':'5%' },

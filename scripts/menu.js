@@ -23,7 +23,6 @@ function MenuItem_t(name, parent, id, callback){
 
 MenuItem_t.prototype.OnClick = function(event){
 	var elem = event.target;
-	APP_MODE = elem.menu_id;
 	app.SetContent(elem.name);
 	elem.parent.active.style.backgroundColor = "transparent";
 	elem.parent.active.style.color = "white";
