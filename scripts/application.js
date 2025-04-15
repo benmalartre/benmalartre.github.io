@@ -27,6 +27,7 @@ function FixScrollUpdateSafariIOs() {
     const isMobileSafari = isIosSafari && window.innerWidth < 768;
     if (isMobileSafari) {
         (function () {
+			alert("this is f****g safari mobile!");
             // Create a hidden log div
             const content = document.querySelector('#content');
 
