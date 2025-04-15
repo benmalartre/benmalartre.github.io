@@ -27,13 +27,12 @@ function FixScrollUpdateSafariIOs() {
     const isMobileSafari = isIosSafari && window.innerWidth < 768;
     if (isMobileSafari) {
         (function () {
-			alert("THIS IS F*****G MOBILE SAFARI");
             // Create a hidden log div
             const content = document.querySelector('#content');
 
             // Function to update the log with the scroll position
             function updateScrollContent() {
-                content.innerHTML = window.scrollY.toFixed(0);
+                content.scrollY = window.scrollY.toFixed(0);
             }
 
             // Add listeners for scroll and touch events
