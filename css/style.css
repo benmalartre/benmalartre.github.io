@@ -1,3 +1,6 @@
+* {
+    -webkit-overflow-scrolling: touch;
+}
 
 body {
     background-color: white;
@@ -73,7 +76,6 @@ ul {
     overflow-y: auto;
     background-color: black;
     -ms-overflow-style: none;  
-    -webkit-overflow-scrolling: touch;
     height: calc(100% + 1px);
 }
   
