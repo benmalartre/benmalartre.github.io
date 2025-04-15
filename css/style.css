@@ -66,12 +66,12 @@ ul {
 }
   
 #content {
-    /*
     position:relative; 
     z-index: 1;
+    background-color: black;
+    /*
     -webkit-overflow-scrolling:touch;
     overflow-y:scroll;
-    background-color: black;
     -ms-overflow-style: none;  
     max-height: calc(100% + 1px);
     */
