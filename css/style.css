@@ -8,6 +8,7 @@ body {
     left:0px;
     margin:0px;
     padding: 0px;
+    overflow: hidden;
 }
   
  #grid {
@@ -69,12 +70,11 @@ ul {
     position:relative; 
     z-index: 1;
     background-color: black;
-    /*
+    
     -webkit-overflow-scrolling:touch;
     overflow-y:scroll;
     -ms-overflow-style: none;  
     max-height: calc(100% + 1px);
-    */
 }
   
 /* The menu */
