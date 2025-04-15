@@ -126,9 +126,6 @@ Application_t.prototype.Initialize = function(){
 	
 	window.addEventListener('resize', this.OnResize);
 	window.addEventListener('orientationchange', this.OnResize);
-	window.addEventListener('touchmove', false, undefined);
-	window.document.body.addEventListener('touchmove', false, undefined);
-
 
 }
 
@@ -139,6 +136,9 @@ Application_t.prototype.Update = function() {
 Application_t.prototype.SetContent = function(name){
 	var timestamp = Math.round(+new Date() / 1000);
 	MAKE_REQUEST('get', 'content/'+name+'.js', null, 'text/script');
+
+	var content = document.querySelector('#content');
+	content.style.minHeight = '1000px';
 }
 
 Application_t.prototype.RefreshUI = function(){
