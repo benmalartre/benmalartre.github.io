@@ -166,9 +166,6 @@ Application_t.prototype.Update = function() {
 Application_t.prototype.SetContent = function(name){
 	var timestamp = Math.round(+new Date() / 1000);
 	MAKE_REQUEST('get', 'content/'+name+'.js', null, 'text/script');
-
-	var content = document.querySelector('#content');
-	content.style.height = '2000px';
 }
 
 Application_t.prototype.RefreshUI = function(){
