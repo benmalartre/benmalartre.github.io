@@ -39,10 +39,10 @@ function FixScrollUpdateSafariIOs() {
             }
 
             // Add listeners for scroll and touch events
-            window.addEventListener('scroll', UpdateBackground, { passive: true, capture: true });
-            window.addEventListener('touchstart', UpdateBackground, { passive: true, capture: true });
-            window.addEventListener('touchmove', UpdateBackground, { passive: true, capture: true });
-            window.addEventListener('touchend', UpdateBackground, { passive: true, capture: true });
+            content.addEventListener('scroll', UpdateBackground, { passive: true, capture: false });
+            content.addEventListener('touchstart', UpdateBackground, { passive: true, capture: false });
+            content.addEventListener('touchmove', UpdateBackground, { passive: true, capture: false });
+            content.addEventListener('touchend', UpdateBackground, { passive: true, capture: false });
         })();
     }
 }
