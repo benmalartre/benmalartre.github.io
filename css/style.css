@@ -74,6 +74,7 @@ ul {
     background-color: black;
     -ms-overflow-style: none;  
     -webkit-overflow-scrolling: touch;
+    height: calc(100% + 1px);
     /*scrollbar-width: none;*/
 }
   
