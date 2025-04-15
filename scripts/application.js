@@ -47,7 +47,7 @@ function FixScrollUpdateSafariIOs() {
 }
 
 function SetGridItemCells(item, template, name){
-	item.style.position = 'absolute';
+	item.style.position = 'fixed';
 	item.style.left = template[name]['left'];
 	item.style.top = template[name]['top'];
 	item.style.width = template[name]['width'];
