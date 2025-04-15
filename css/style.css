@@ -70,7 +70,7 @@ ul {
 #content {
     position:absolute;
     z-index:1;
-    overflow: scroll;
+    overflow-y: auto;
     background-color: black;
     -ms-overflow-style: none;  
     -webkit-overflow-scrolling: touch;
