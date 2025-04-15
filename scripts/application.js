@@ -21,29 +21,6 @@ includeScript('/scripts/automata.js');
 
 var app = null;
 
-function FixScrollUpdateSafariIOs() {
-    const isIosSafari = navigator.userAgent.match(/(iPod|iPhone|iPad)/) && navigator.userAgent.match(/AppleWebKit/);
-    // Check if it's an iOS device and Safari
-    const isMobileSafari = isIosSafari && window.innerWidth < 768;
-    if (isMobileSafari) {
-        (function () {
-            // Create a hidden log div
-            const content = document.querySelector('#content');
-
-            // Function to update the log with the scroll position
-            function updateScrollContent() {
-                content.scrollTop = window.scrollY.toFixed(0);
-            }
-
-            // Add listeners for scroll and touch events
-            window.addEventListener('scroll', updateScrollContent, { passive: true, capture: true });
-            window.addEventListener('touchstart', updateScrollContent, { passive: true, capture: true });
-            window.addEventListener('touchmove', updateScrollContent, { passive: true, capture: true });
-            window.addEventListener('touchend', updateScrollContent, { passive: true, capture: true });
-        })();
-    }
-}
-
 function SetGridItemCells(item, template, name){
 	item.style.position = 'absolute';
 	item.style.left = template[name]['left'];
@@ -150,7 +127,6 @@ Application_t.prototype.Initialize = function(){
 	window.addEventListener('resize', this.OnResize);
 	window.addEventListener('orientationchange', this.OnResize);
 
-	FixScrollUpdateSafariIOs();
 
 }
 
@@ -161,6 +137,9 @@ Application_t.prototype.Update = function() {
 Application_t.prototype.SetContent = function(name){
 	var timestamp = Math.round(+new Date() / 1000);
 	MAKE_REQUEST('get', 'content/'+name+'.js', null, 'text/script');
+
+	var content = document.querySelector('#content');
+	content.style.height = '2000px';
 }
 
 Application_t.prototype.RefreshUI = function(){
