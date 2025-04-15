@@ -126,6 +126,10 @@ Application_t.prototype.Initialize = function(){
 	
 	window.addEventListener('resize', this.OnResize);
 	window.addEventListener('orientationchange', this.OnResize);
+	window.addEventListener('touchmove', false, undefined);
+	window.document.body.addEventListener('touchmove', false, undefined);
+
+
 }
 
 Application_t.prototype.Update = function() {  
