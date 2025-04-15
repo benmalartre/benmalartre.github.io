@@ -34,6 +34,7 @@ function FixScrollUpdateSafariIOs() {
             // Function to update the log with the scroll position
             function updateLog() {
                 //logDiv.innerHTML = window.scrollY.toFixed(0);
+				content.style.backgroundColor = GetRandomColor(200,100,30,0.5);
             }
 
             // Add listeners for scroll and touch events
