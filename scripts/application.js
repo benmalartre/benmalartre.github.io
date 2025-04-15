@@ -26,6 +26,7 @@ function FixScrollUpdateSafariIOs() {
     // Check if it's an iOS device and Safari
     const isMobileSafari = isIosSafari && window.innerWidth < 768;
     if (isMobileSafari) {
+		alert("THIS IS MOBILE SAFARI");
         (function () {
             // Create a hidden log div
             const logDiv = document.createElement('div');
