@@ -29,21 +29,18 @@ function FixScrollUpdateSafariIOs() {
 		alert("THIS IS MOBILE SAFARI");
         (function () {
             // Create a hidden log div
-            const logDiv = document.createElement('div');
-            logDiv.style.height = '0px'; // Set the height to 0 pixels
-            logDiv.style.overflow = 'hidden'; // Hide the content
-            document.body.appendChild(logDiv);
+            const content = document.querySelector('#content');
 
             // Function to update the log with the scroll position
-            function updateLog() {
-                logDiv.innerHTML = window.scrollY.toFixed(0);
+            function updateScrollContent() {
+                content.innerHTML = window.scrollY.toFixed(0);
             }
 
             // Add listeners for scroll and touch events
-            window.addEventListener('scroll', updateLog, { passive: true, capture: true });
-            window.addEventListener('touchstart', updateLog, { passive: true, capture: true });
-            window.addEventListener('touchmove', updateLog, { passive: true, capture: true });
-            window.addEventListener('touchend', updateLog, { passive: true, capture: true });
+            window.addEventListener('scroll', updateScrollContent, { passive: true, capture: true });
+            window.addEventListener('touchstart', updateScrollContent, { passive: true, capture: true });
+            window.addEventListener('touchmove', updateScrollContent, { passive: true, capture: true });
+            window.addEventListener('touchend', updateScrollContent, { passive: true, capture: true });
         })();
     }
 }
@@ -67,7 +64,7 @@ function OnVertical(){
 	var menu = document.querySelector('#menu');
 	SetGridItemCells(menu, GRID_TEMPLATE_VERTICAL, 'menu');
 
-	var content = document.querySelector('#content')
+	var content = document.querySelector('#content');
 	SetGridItemCells(content, GRID_TEMPLATE_VERTICAL, 'content');
 }
 
