@@ -32,16 +32,16 @@ function FixScrollUpdateSafariIOs() {
             const content = document.getElementById('#content');
 
             // Function to update the log with the scroll position
-            function updateLog() {
+            function UpdateBackground() {
                 //logDiv.innerHTML = window.scrollY.toFixed(0);
 				content.style.backgroundColor = GetRandomColor(200,100,30,0.5);
             }
 
             // Add listeners for scroll and touch events
-            content.addEventListener('scroll', updateLog, { passive: true, capture: true });
-            content.addEventListener('touchstart', updateLog, { passive: true, capture: true });
-            content.addEventListener('touchmove', updateLog, { passive: true, capture: true });
-            content.addEventListener('touchend', updateLog, { passive: true, capture: true });
+            window.addEventListener('scroll', UpdateBackground, { passive: true, capture: true });
+            window.addEventListener('touchstart', UpdateBackground, { passive: true, capture: true });
+            window.addEventListener('touchmove', UpdateBackground, { passive: true, capture: true });
+            window.addEventListener('touchend', UpdateBackground, { passive: true, capture: true });
         })();
     }
 }
