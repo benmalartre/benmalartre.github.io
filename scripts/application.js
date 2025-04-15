@@ -32,7 +32,7 @@ function FixScrollUpdateSafariIOs() {
 
             // Function to update the log with the scroll position
             function updateScrollContent() {
-                content.scrollY = window.scrollY.toFixed(0);
+                content.scrollTop = window.scrollY.toFixed(0);
             }
 
             // Add listeners for scroll and touch events
