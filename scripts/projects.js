@@ -33,9 +33,10 @@ var buildProjectsCallback=function(projects, data) {
             link.title = desc.url;
             link.href = desc.url;
             var url = document.createTextNode(desc.name);
+            
+            link.appendChild(github);
             link.appendChild(url);
 
-            project.appendChild(github);
             project.appendChild(link);
         }
 
