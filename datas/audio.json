@@ -2,7 +2,7 @@
     {
         "name": "bendow",      
         "label": "Bendow",      
-        "description": "Bendow is an experimental sound synthetiser and sequencer.\nEach track is composed of a note sequence and a node based graph that generate the sound.\nIt's build on Sound Synthesis Toolkit for the audio, glfw for the windowing system and imgui for the ui.",
+        "description": "Bendow is an experimental sound synthetiser and sequencer.\nEach track is composed of a notes sequence and a nodes graph that generate the sound.\nIt's build on Sound Synthesis Toolkit for the audio, GLFW for the windowing system and DearImGui for the ui.",
         "thumb": "../images/audio/bendow.gif",
         "url": "https://github.com/benmalartre/STK/tree/master/Bendow"
     }
