@@ -27,7 +27,6 @@ function FixScrollUpdateSafariIOs() {
     const isMobileSafari = isIosSafari && window.innerWidth < 768;
     if (isMobileSafari) {
         (function () {
-			alert("this is mobile iOS, my scroll buggy...");
             // Create a hidden log div
             const content = document.getElementById('#content');
 
