@@ -24,6 +24,9 @@ var buildProjectsCallback=function(projects, data) {
     closeBtn.innerHTML = '✖';
     closeBtn.className = 'close-btn';
 
+    var popupBody = document.createElement('div');
+    popupBody.className = 'popup-body';
+
     var popupImg = document.createElement('img');
     popupImg.src = descs[0].thumb;
     popupImg.id = "popup-image";
@@ -31,8 +34,10 @@ var buildProjectsCallback=function(projects, data) {
     popupHead.appendChild(popupTitle);
     popupHead.appendChild(closeBtn);
 
+    popupBody.appendChild(popupImg);
+
     popup.appendChild(popupHead);
-    popup.appendChild(popupImg);
+    popup.appendChild(popupBody);
 
     projects.elem.appendChild(overlay);
     projects.elem.appendChild(popup);
