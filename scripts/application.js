@@ -21,31 +21,6 @@ includeScript('/scripts/automata.js');
 
 var app = null;
 
-function FixScrollUpdateSafariIOs() {
-    const isIosSafari = navigator.userAgent.match(/(iPod|iPhone|iPad)/) && navigator.userAgent.match(/AppleWebKit/);
-    // Check if it's an iOS device and Safari
-    const isMobileSafari = isIosSafari && window.innerWidth < 768;
-    if (isMobileSafari) {
-        (function () {
-            // Create a hidden log div
-            const content = document.getElementById('#content');
-
-            // Function to update the log with the scroll position
-            function UpdateBackground() {
-                //logDiv.innerHTML = window.scrollY.toFixed(0);
-				content.style.backgroundColor = GetRandomColor(200,100,30,0.5);
-				alert('whoop-whoop!!');
-            }
-
-            // Add listeners for scroll and touch events
-            content.addEventListener('scroll', UpdateBackground, { passive: true, capture: false });
-            content.addEventListener('touchstart', UpdateBackground, { passive: true, capture: false });
-            content.addEventListener('touchmove', UpdateBackground, { passive: true, capture: false });
-            content.addEventListener('touchend', UpdateBackground, { passive: true, capture: false });
-        })();
-    }
-}
-
 function SetGridItemCells(item, template, name){
 	item.style.position = 'fixed';
 	item.style.left = template[name]['left'];
@@ -151,9 +126,6 @@ Application_t.prototype.Initialize = function(){
 	
 	window.addEventListener('resize', this.OnResize);
 	window.addEventListener('orientationchange', this.OnResize);
-
-	FixScrollUpdateSafariIOs();
-
 
 }
 

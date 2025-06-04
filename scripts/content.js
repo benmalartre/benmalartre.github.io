@@ -4,12 +4,11 @@ function Content_t(parent){
     this.parentElement = parent;
     this.elem = document.createElement('div');
     this.elem.id = 'content_slider';
-    this.elem.style.position = 'relative';
+    this.elem.style.position = 'fixed';
     this.elem.style.background = 'black';
     this.elem.style.display = 'block';  
     this.elem.style.width = '100%';
     this.elem.style.height = '100%';
-    this.elem.style.touchAction = 'none';
     parent.appendChild(this.elem);
 
     this.objects = new Array();
