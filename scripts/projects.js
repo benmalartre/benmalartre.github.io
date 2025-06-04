@@ -2,6 +2,40 @@
 
 var buildProjectsCallback=function(projects, data) {
     var descs = JSON.parse(data);
+
+    var overlay = document.createElement('div');
+    overlay.id = 'overlay';
+    overlay.className = 'overlay';
+
+    var popup = document.createElement('div');
+    popup.id = 'popup';
+    popup.className = 'popup';
+
+    var popupHead = document.createElement('div');
+    popupHead.className = 'popup-header';
+
+    var popupTitle = document.createElement('span');
+    popupTitle.className = 'popup-title';
+    popupTitle.id = 'popupTitle';
+    popupTitle.innerHTML = descs[0].label;
+
+    var closeBtn = document.createElement('div');
+    closeBtn.id = 'close-btn';
+    closeBtn.innerHTML = '✖';
+    closeBtn.className = 'close-btn';
+
+    var popupImg = document.createElement('img');
+    popupImg.src = descs[0].thumb;
+    popupImg.id = "popup-image";
+
+    popupHead.appendChild(popupTitle);
+    popupHead.appendChild(closeBtn);
+
+    popup.appendChild(popupHead);
+    popup.appendChild(popupImg);
+
+    projects.elem.appendChild(overlay);
+    projects.elem.appendChild(popup);
     
     descs.forEach(function (desc, index) {
 
@@ -15,9 +49,11 @@ var buildProjectsCallback=function(projects, data) {
         description.style.paddingLeft = '12px';
 
         var thumb = document.createElement('img');
+        thumb.className = 'thumb';
         thumb.src = desc.thumb;
         thumb.width = '320';
         thumb.style.paddingLeft = '14px';
+        thumb.setAttribute('title', desc.label);
 
         project.appendChild(name);
         project.appendChild(description);
@@ -39,6 +75,26 @@ var buildProjectsCallback=function(projects, data) {
 
             project.appendChild(link);
         }
+
+        thumb.addEventListener('click', function(e) {
+            if (e.target && e.target.classList.contains('thumb')) {
+                const largeSrc = e.target.src;
+                popupImg.src = largeSrc;
+                popupTitle.innerHTML = e.target.getAttribute('title');
+                popup.style.display = 'block';
+                overlay.style.display = 'block';
+            }
+        });
+
+        closeBtn.addEventListener('click', () => {
+            popup.style.display = 'none';
+            overlay.style.display = 'none';
+        });
+
+        overlay.addEventListener('click', () => {
+            popup.style.display = 'none';
+            overlay.style.display = 'none';
+        });
 
         projects.elem.appendChild(project);
 
